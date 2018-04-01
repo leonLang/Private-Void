@@ -40,7 +40,6 @@ public class Main{
 	            }
 	   
 	            panel.repaint();
-        		Game.run();
 
         		System.out.println("hi");
 
