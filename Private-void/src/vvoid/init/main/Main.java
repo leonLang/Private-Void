@@ -41,7 +41,8 @@ public class Main {
 	            while( now - lastUpdateTime > TIME_BETWEEN_UPDATES && updateCount < MAX_UPDATES_BEFORE_RENDER )
 	            {
 	               //updateGame();
-	            	System.out.println("hi");
+	            	Game.draw();
+	        		Game.run();
 	               lastUpdateTime += TIME_BETWEEN_UPDATES;
 	               updateCount++;
 	            }
