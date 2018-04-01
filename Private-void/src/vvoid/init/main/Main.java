@@ -35,15 +35,13 @@ public class Main {
 	               updateCount++;
 	            }
 	   
-	              float interpolation = Math.min(1.0f, (float) ((now - lastUpdateTime) / TIME_BETWEEN_UPDATES) );
 	            Game.draw();
         		Game.run();
 
-        		System.out.println("hu");
+        		System.out.println("hi");
 
 	            lastRenderTime = now;
 	         
-	            //Update the frames we got.
 	            int thisSecond = (int) (lastUpdateTime / 1000000000);
 	            if (thisSecond > lastSecondTime)
 	            {
@@ -53,7 +51,6 @@ public class Main {
 	               lastSecondTime = thisSecond;
 	            }
 	         
-	            //Yield until it has been at least the target time between renders. This saves the CPU from hogging.
 	            while ( now - lastRenderTime < TARGET_TIME_BETWEEN_RENDERS && now - lastUpdateTime < TIME_BETWEEN_UPDATES)
 	            {
 	               Thread.yield();
