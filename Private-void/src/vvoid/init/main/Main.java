@@ -12,23 +12,13 @@ public class Main {
 		loop();
 	}
 	public static void loop() {
-		 //This value would probably be stored elsewhere.
 	      final double GAME_HERTZ = 30.0;
-	      //Calculate how many ns each frame should take for our target game hertz.
 	      final double TIME_BETWEEN_UPDATES = 1000000000 / GAME_HERTZ;
-	      //At the very most we will update the game this many times before a new render.
-	      //If you're worried about visual hitches more than perfect timing, set this to 1.
 	      final int MAX_UPDATES_BEFORE_RENDER = 5;
-	      //We will need the last update time.
 	      double lastUpdateTime = System.nanoTime();
-	      //Store the last time we rendered.
-	      double lastRenderTime = System.nanoTime();
-	      
-	      //If we are able to get as high as this FPS, don't render again.
+	      double lastRenderTime = System.nanoTime();   
 	      final double TARGET_FPS = 60;
-	      final double TARGET_TIME_BETWEEN_RENDERS = 1000000000 / TARGET_FPS;
-	      
-	      //Simple way of finding FPS.
+	      final double TARGET_TIME_BETWEEN_RENDERS = 1000000000 / TARGET_FPS; 
 	      int lastSecondTime = (int) (lastUpdateTime / 1000000000);
 	      
 	      while (running)
@@ -38,12 +28,9 @@ public class Main {
 	         
 	         if (!paused)
 	         {
-	             //Do as many game updates as we need to, potentially playing catchup.
 	            while( now - lastUpdateTime > TIME_BETWEEN_UPDATES && updateCount < MAX_UPDATES_BEFORE_RENDER )
 	            {
 	               //updateGame();
-	            	Game.draw();
-	        		Game.run();
 	               lastUpdateTime += TIME_BETWEEN_UPDATES;
 	               updateCount++;
 	            }
@@ -58,6 +45,11 @@ public class Main {
 	            //Render. To do so, we need to calculate interpolation for a smooth render.
 	            float interpolation = Math.min(1.0f, (float) ((now - lastUpdateTime) / TIME_BETWEEN_UPDATES) );
 	          //  drawGame(interpolation);
+            	Game.draw();
+        		Game.run();
+
+        		System.out.println("hu");
+
 	            lastRenderTime = now;
 	         
 	            //Update the frames we got.
