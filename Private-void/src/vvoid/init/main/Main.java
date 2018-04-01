@@ -1,8 +1,11 @@
 package vvoid.init.main;
 
+import javax.swing.JPanel;
+import javax.swing.RepaintManager;
+
 import pPrivate.Void.game.Game;
 
-public class Main {
+public class Main{
 	public static boolean running = true;
 	public static boolean paused = false;
 	   private static int fps = 60;
@@ -37,7 +40,6 @@ public class Main {
 	   
 	            Game.draw();
         		Game.run();
-
         		System.out.println("hi");
 
 	            lastRenderTime = now;
