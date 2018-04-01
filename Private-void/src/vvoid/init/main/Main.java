@@ -8,6 +8,7 @@ public class Main {
 	   private static int fps = 60;
 	   private static int frameCount = 0;
 	public static void main(String[] args) {
+		Game.setup();
 		loop();
 	}
 	public static void loop() {

@@ -4,10 +4,10 @@ import vvoid.init.main.Frame;
 
 public class Game {
 	public static void run() {
-		new Frame(800, 800,"Titel",true);
+		
 	}
 	public static void setup() {
-		
+		new Frame(800, 800,"titel",true);
 	}
 	public static void draw() {
 		
