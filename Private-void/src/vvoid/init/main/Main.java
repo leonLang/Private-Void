@@ -34,12 +34,13 @@ public class Main{
 	            while( now - lastUpdateTime > TIME_BETWEEN_UPDATES && updateCount < MAX_UPDATES_BEFORE_RENDER )
 	            {
 	               //updateGame();
+	        		Game.run();
+
 	               lastUpdateTime += TIME_BETWEEN_UPDATES;
 	               updateCount++;
 	            }
 	   
 	            Game.draw();
-        		Game.run();
         		System.out.println("hi");
 
 	            lastRenderTime = now;
