@@ -1,5 +1,6 @@
 package vvoid.init.main;
 
+import pPrivate.Void.game.DrawPanel;
 import pPrivate.Void.game.Game;
 
 public class Main {
@@ -7,6 +8,7 @@ public class Main {
 	public static boolean paused = false;
 	   private static int fps = 60;
 	   private static int frameCount = 0;
+		public static DrawPanel panel;
 	public static void main(String[] args) {
 		Game.setup();
 		loop();
@@ -35,7 +37,7 @@ public class Main {
 	               updateCount++;
 	            }
 	   
-	            Game.draw();
+	            panel.repaint();
         		Game.run();
 
         		System.out.println("hi");

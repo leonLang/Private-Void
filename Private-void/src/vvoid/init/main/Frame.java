@@ -5,11 +5,15 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
-public class Frame extends JFrame {
+import pPrivate.Void.game.DrawPanel;
 
-	private static final long serialVersionUID = 9019603114311641540L;
+public class Frame extends JFrame {
+		
+
 
 	public Frame(int WIDTH,int HEIGHT,String title,boolean Resizable) {
+		 Main.panel = new DrawPanel();
+		add(Main.panel);
 		//get screen size
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 		int screenWIDTH = (int) screen.getWidth();
@@ -18,7 +22,6 @@ public class Frame extends JFrame {
 		
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//setLocationRelativeTo(null);
 		setLocation(screenWIDTH/2-WIDTH/2,screenHEIGHT/2-HEIGHT/2);
 		
 		setTitle(title);
