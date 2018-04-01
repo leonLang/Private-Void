@@ -35,15 +35,7 @@ public class Main {
 	               updateCount++;
 	            }
 	   
-	            //If for some reason an update takes forever, we don't want to do an insane number of catchups.
-	            //If you were doing some sort of game that needed to keep EXACT time, you would get rid of this.
-	            if ( now - lastUpdateTime > TIME_BETWEEN_UPDATES)
-	            {
-	               lastUpdateTime = now - TIME_BETWEEN_UPDATES;
-	            }
-	         
-	            //Render. To do so, we need to calculate interpolation for a smooth render.
-	            float interpolation = Math.min(1.0f, (float) ((now - lastUpdateTime) / TIME_BETWEEN_UPDATES) );
+	              float interpolation = Math.min(1.0f, (float) ((now - lastUpdateTime) / TIME_BETWEEN_UPDATES) );
 	          //  drawGame(interpolation);
             	Game.draw();
         		Game.run();
