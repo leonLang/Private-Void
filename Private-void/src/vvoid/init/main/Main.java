@@ -36,8 +36,7 @@ public class Main {
 	            }
 	   
 	              float interpolation = Math.min(1.0f, (float) ((now - lastUpdateTime) / TIME_BETWEEN_UPDATES) );
-	          //  drawGame(interpolation);
-            	Game.draw();
+	            Game.draw();
         		Game.run();
 
         		System.out.println("hu");
@@ -59,21 +58,12 @@ public class Main {
 	            {
 	               Thread.yield();
 	            
-	               //This stops the app from consuming all your CPU. It makes this slightly less accurate, but is worth it.
-	               //You can remove this line and it will still work (better), your CPU just climbs on certain OSes.
-	               //FYI on some OS's this can cause pretty bad stuttering. Scroll down and have a look at different peoples' solutions to this.
 	               try {Thread.sleep(1);} catch(Exception e) {} 
 	            
 	               now = System.nanoTime();
 	            }
 	         }
 	      }
-	      
-		/*while(running) {
-		Game.draw();
-		Game.run();
-		}
-		*/
 	}
 
 }
