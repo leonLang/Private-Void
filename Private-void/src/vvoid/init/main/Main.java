@@ -1,9 +1,11 @@
 package vvoid.init.main;
 
+
 import pPrivate.Void.game.DrawPanel;
+
 import pPrivate.Void.game.Game;
 
-public class Main {
+public class Main{
 	public static boolean running = true;
 	public static boolean paused = false;
 	   private static int fps = 60;
@@ -32,7 +34,9 @@ public class Main {
 	         {
 	            while( now - lastUpdateTime > TIME_BETWEEN_UPDATES && updateCount < MAX_UPDATES_BEFORE_RENDER )
 	            {
-	               //updateGame();
+	               //updateGame();comment
+	        		Game.run();
+
 	               lastUpdateTime += TIME_BETWEEN_UPDATES;
 	               updateCount++;
 	            }
