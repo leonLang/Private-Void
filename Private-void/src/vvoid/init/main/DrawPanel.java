@@ -1,8 +1,10 @@
-package pPrivate.Void.game;
+package vvoid.init.main;
 
 import java.awt.Graphics;
 
 import javax.swing.JPanel;
+
+import pPrivate.Void.game.Game;
 
 public class DrawPanel extends JPanel{
 	public DrawPanel() {

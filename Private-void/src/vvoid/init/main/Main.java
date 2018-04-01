@@ -1,8 +1,6 @@
 package vvoid.init.main;
 
 
-import pPrivate.Void.game.DrawPanel;
-
 import pPrivate.Void.game.Game;
 
 public class Main{
