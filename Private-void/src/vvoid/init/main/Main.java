@@ -41,7 +41,6 @@ public class Main{
 	   
 	            panel.repaint();
 
-        		System.out.println("hi");
 
 	            lastRenderTime = now;
 	         
