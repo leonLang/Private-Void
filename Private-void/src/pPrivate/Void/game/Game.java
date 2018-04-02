@@ -7,17 +7,20 @@ import java.awt.Graphics2D;
 import vvoid.init.main.Camera;
 import vvoid.init.main.Collision;
 import vvoid.init.main.Frame;
+import vvoid.init.main.LevelCompiler;
 
 public class Game {
 	//public static Player player;
 	public static Camera cam;
 	public static Player player;
+	public static LevelCompiler compiler;
 	public static int x = 0;
 	public static void run() {
 		//x++;
 		Collision.Collis(200, 200, Objekte.E1Width, Objekte.E1Height, 200, 100, Objekte.E2Width, Objekte.E2Height);
 	}
 	public static void setup() {
+		compiler = new LevelCompiler();
 		player = new Player();
 		new Frame(1200, 800,"titel",true);
 

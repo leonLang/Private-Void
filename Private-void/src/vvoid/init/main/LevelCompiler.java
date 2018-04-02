@@ -15,7 +15,7 @@ public class LevelCompiler {
 	}
 	public void read() {
 		try {
-		File file = new File("./Private-void/GameLevel/level.pll");
+		File file = new File("/Private-void/src/Level/level.pll");
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		  String st;
 		  while ((st = br.readLine()) != null)
