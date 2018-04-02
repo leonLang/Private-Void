@@ -20,10 +20,10 @@ public class Game {
 		cam = new Camara(0 ,0);
 	}
 	public static void draw(Graphics g) {
+		Player.drawPlayer(g);
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.translate(cam.getX(), cam.getY());
 		g.drawRect(100, 100, 100+x, 100);
-		Player.drawPlayer(g);
 		
 	}
 	
