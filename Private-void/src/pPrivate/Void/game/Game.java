@@ -7,16 +7,18 @@ import vvoid.init.main.Camara;
 import vvoid.init.main.Frame;
 
 public class Game {
-	public static Player player;
+	//public static Player player;
 	public static Camara cam;
+	public static Player player;
 	public static int x = 0;
 	public static void run() {
 		//x++;
-		Camara.add(10);
+
 	}
 	public static void setup() {
-		new Frame(1200, 800,"titel",true);
 		player = new Player();
+		new Frame(1200, 800,"titel",true);
+
 		cam = new Camara(0 ,0);
 	}
 	public static void draw(Graphics g) {

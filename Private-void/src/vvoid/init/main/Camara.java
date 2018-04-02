@@ -14,7 +14,7 @@ public class Camara {
 		return y;
 	}
 	public static void add(int i) {
-		x+= i;
+		x-= i;
 	}
 
 }

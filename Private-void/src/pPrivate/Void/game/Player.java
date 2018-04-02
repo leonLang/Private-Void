@@ -4,6 +4,8 @@ import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import vvoid.init.main.Camara;
+
 public class Player extends Game implements KeyListener{
 	public Player() {
 		
@@ -13,17 +15,26 @@ public class Player extends Game implements KeyListener{
 	}
 	@Override
 	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
+		if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+			System.out.println("hi");
+			Camara.add(10);
+		}
 		
 	}
 	@Override
 	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
+		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+			System.out.println("hi");
+			Camara.add(10);
+		}
 		
 	}
 	@Override
 	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
+		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+			System.out.println("hi");
+			Camara.add(10);
+		}
 		
 	}
 }
