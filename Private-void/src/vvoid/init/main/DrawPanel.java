@@ -16,6 +16,8 @@ public class DrawPanel extends JPanel{
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Game.draw(g);
+		g.drawRect(400, 200, 100, 100);
+		g.drawRect(300, 200, 100, 100);
 	}
 
 }
