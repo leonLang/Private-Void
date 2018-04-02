@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 
 import vvoid.init.main.Camara;
+import vvoid.init.main.Collision;
 import vvoid.init.main.Frame;
 
 public class Game {
@@ -13,7 +14,7 @@ public class Game {
 	public static int x = 0;
 	public static void run() {
 		//x++;
-
+		Collision.Collis(200, 200, Objekte.E1Width, Objekte.E1Height, 300, 300, Objekte.E2Width, Objekte.E2Height);
 	}
 	public static void setup() {
 		player = new Player();

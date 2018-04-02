@@ -6,6 +6,7 @@ import java.awt.Toolkit;
 import javax.swing.JPanel;
 
 import pPrivate.Void.game.Game;
+import pPrivate.Void.game.Objekte;
 
 public class DrawPanel extends JPanel{
 
@@ -17,8 +18,8 @@ public class DrawPanel extends JPanel{
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Game.draw(g);
-		g.drawRect(400, 200, 100, 100);
-		g.drawRect(300, 200, 300, 300);
+		Objekte.enemy1(300, 300, g);
+		Objekte.enemy2(200, 200, g);
 		//x geht nach links und y nach unten
 		Toolkit.getDefaultToolkit();
 	}
