@@ -12,7 +12,7 @@ public class Game {
 	public static int x = 0;
 	public static void run() {
 		//x++;
-		Camara.add(10);
+		Camara.add(1);
 	}
 	public static void setup() {
 		new Frame(1200, 800,"titel",true);
