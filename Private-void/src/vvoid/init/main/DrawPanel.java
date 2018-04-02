@@ -18,7 +18,8 @@ public class DrawPanel extends JPanel{
 		super.paintComponent(g);
 		Game.draw(g);
 		g.drawRect(400, 200, 100, 100);
-		g.drawRect(300, 200, 100, 100);
+		g.drawRect(300, 200, 300, 300);
+		//x geht nach links und y nach unten
 		Toolkit.getDefaultToolkit();
 	}
 
