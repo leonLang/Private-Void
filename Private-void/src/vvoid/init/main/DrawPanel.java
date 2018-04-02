@@ -18,8 +18,8 @@ public class DrawPanel extends JPanel{
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Game.draw(g);
-		Objekte.enemy1(300, 300, g);
-		Objekte.enemy2(200, 200, g);
+		Objekte.enemy1(200, 200, g);
+		Objekte.enemy2(200, 100, g);
 		//x geht nach links und y nach unten
 		Toolkit.getDefaultToolkit();
 	}
