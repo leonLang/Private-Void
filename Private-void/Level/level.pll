@@ -1,0 +1,10 @@
+!pllDOCUMENT
+//Background src	Hexa	Hexa	Hexa	Dezi	Hexa
+//Entry points	id 00x	X	Y	R	Texture id
+//End					
+//Block objects	id 01x	X	Y	R	Texture id
+//Enemies	id 10x	X	Y	R	Texture id
+//Events	id 11x	X	Y		
+00x0001 0000 0000 040 FFFF
+00x0002 0001 0000 000 FFFF
+00x0003 ABC0 0500 360 DF66
