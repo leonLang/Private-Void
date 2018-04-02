@@ -1,9 +1,9 @@
 package vvoid.init.main;
 
-public class Camara {
+public class Camera {
 	static float x;
 	float y;
-	public Camara(float x, float y) {
+	public Camera(float x, float y) {
 		this.x = x;
 		this.y = y;
 	}
