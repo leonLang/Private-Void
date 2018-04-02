@@ -1,21 +1,29 @@
 package pPrivate.Void.game;
 
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 
+import vvoid.init.main.Camara;
 import vvoid.init.main.Frame;
-import vvoid.init.main.LevelCompiler;
 
 public class Game {
+	public static Player player;
+	public static Camara cam;
 	public static int x = 0;
 	public static void run() {
-		x++;
+		//x++;
+		Camara.add(10);
 	}
 	public static void setup() {
 		new Frame(1200, 800,"titel",true);
-		new LevelCompiler();
+		player = new Player();
+		cam = new Camara(0 ,0);
 	}
 	public static void draw(Graphics g) {
+		Graphics2D g2d = (Graphics2D) g;
+		g2d.translate(cam.getX(), cam.getY());
 		g.drawRect(100, 100, 100+x, 100);
+		Player.drawPlayer(g);
 		
 	}
 	
