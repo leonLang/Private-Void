@@ -12,6 +12,7 @@ public class Main{
 	public static void main(String[] args) {
 		Game.setup();
 		loop();
+		//hi
 	}
 	public static void loop() {
 	      final double GAME_HERTZ = 30.0;
