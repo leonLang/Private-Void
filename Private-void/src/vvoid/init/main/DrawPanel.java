@@ -1,6 +1,7 @@
 package vvoid.init.main;
 
 import java.awt.Graphics;
+import java.awt.Toolkit;
 
 import javax.swing.JPanel;
 
@@ -18,6 +19,7 @@ public class DrawPanel extends JPanel{
 		Game.draw(g);
 		g.drawRect(400, 200, 100, 100);
 		g.drawRect(300, 200, 100, 100);
+		Toolkit.getDefaultToolkit();
 	}
 
 }
