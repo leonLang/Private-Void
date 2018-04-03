@@ -12,6 +12,7 @@ public class Objekte {
 	public static int y1=202;
 	public static int x2=200;
 	public static int y2=202;
+	
 	public static void enemy1(int x, int y,Graphics g) {
 		g.drawRect(x1, y1, E1Width, E1Height);
 	}
