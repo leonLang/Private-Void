@@ -5,6 +5,7 @@ import java.awt.Toolkit;
 
 import javax.swing.JPanel;
 
+import pPrivate.Void.game.Enemie;
 import pPrivate.Void.game.Game;
 import pPrivate.Void.game.Objekte;
 
@@ -21,6 +22,8 @@ public class DrawPanel extends JPanel{
 		Objekte.enemy1(200, 200, g);
 		Objekte.enemy2(200, 100, g);
 		//x geht nach links und y nach unten
+		Enemie.createEnemie(1);
+		System.out.println(Enemie.x2);
 		Toolkit.getDefaultToolkit();
 	}
 
