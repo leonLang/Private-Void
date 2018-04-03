@@ -2,6 +2,7 @@ package vvoid.init.main;
 
 import java.awt.Graphics;
 import java.awt.Toolkit;
+import java.util.Iterator;
 
 import javax.swing.JPanel;
 
@@ -22,9 +23,15 @@ public class DrawPanel extends JPanel{
 		//Objekte.enemy1(200, 200, g);
 		//Objekte.enemy2(200, 100, g);
 		//x geht nach links und y nach unten
-		Enemie.createEnemie(1,g,700,700);
-		Enemie.createEnemie(2,g,600,700);
+			
+		int x = 0;
 
+		for (int i = 0; i < 80000; i++) {
+			x= x+10;
+			System.out.println(x);
+			Enemie.createEnemie(1,g,500,x);
+		}
+	
 		Toolkit.getDefaultToolkit();
 	}
 
