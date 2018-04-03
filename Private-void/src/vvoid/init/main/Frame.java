@@ -5,6 +5,7 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
+import pPrivate.Void.game.Enemie;
 import pPrivate.Void.game.Game;
 
 public class Frame extends JFrame {
@@ -28,7 +29,7 @@ public class Frame extends JFrame {
 		setTitle(title);
 		setSize(WIDTH, HEIGHT);
 		setResizable(Resizable);
-		
+		Enemie enemie = new Enemie();
 	}
 
 

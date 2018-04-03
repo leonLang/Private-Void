@@ -13,16 +13,17 @@ public class Enemie {
 	public static int x2;
 	public static int x3;
 	public static int x4;
-	public Enemie(int x1, int x2, int x3, int x4) {
+	
+	public Enemie() {
 		try {
-			pipe1 = ImageIO.read(getClass().getResourceAsStream("metroid.png"));
+			pipe1 = ImageIO.read(getClass().getResourceAsStream("/hi.jpg"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		this.x2 = x2;
-		this.x3 = x3;
-		this.x4 = x4;	
+		//this.x2 = x2;
+	//	this.x3 = x3;
+	//	this.x4 = x4;	
 	}
 	public static void createEnemie(int ID,Graphics g,int x, int y) {
 		x2= x;
