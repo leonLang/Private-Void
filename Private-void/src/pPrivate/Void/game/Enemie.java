@@ -17,7 +17,7 @@ public class Enemie {
 	public static void createEnemie(int ID) {
 		switch(ID) {
 		case 1:
-			x2= 105;
+			x2= 705;
 			x3=200;
 			x4=1;
 			break;
