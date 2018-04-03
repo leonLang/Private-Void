@@ -27,6 +27,7 @@ public class Game {
 		cam = new Camera(0 ,0);
 	}
 	public static void draw(Graphics g) {
+		//g.drawImage(LevelCompiler., 0, 0, null);
 		Player.drawPlayer(g);
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.translate(cam.getX(), cam.getY());

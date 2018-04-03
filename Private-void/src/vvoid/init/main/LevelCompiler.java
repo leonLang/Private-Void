@@ -11,7 +11,7 @@ import java.util.EmptyStackException;
 import pPrivate.Void.game.Objekte;
 
 public class LevelCompiler {
-	String path;
+	static String path;
 	public LevelCompiler() {
 
 		read();
@@ -82,6 +82,9 @@ public class LevelCompiler {
 	}
 	private void createObject() {
 		
+	}
+	public static String getPath() {
+		return path;
 	}
 
 }
