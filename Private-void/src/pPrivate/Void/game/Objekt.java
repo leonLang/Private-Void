@@ -16,13 +16,7 @@ public class Objekt {
 	private void checkID(int id) {
 
 	}
-	public static  void drawObjects(Graphics g) {
-		switch(id) {
-		case 1:
-			System.out.println(id);
-			break;
-		default:
-
-		}
+	public void drawObjects(Graphics g) {
+		
 	}
 }
