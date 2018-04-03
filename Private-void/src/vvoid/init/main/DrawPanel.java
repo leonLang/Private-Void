@@ -31,6 +31,7 @@ public class DrawPanel extends JPanel{
 			Enemie.createEnemie(1,g,500,x);
 		}*/
 		Enemie.enemieType1(100, 100, g);
+		//hi
 		Toolkit.getDefaultToolkit();
 	}
 
