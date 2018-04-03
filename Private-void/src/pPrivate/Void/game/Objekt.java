@@ -16,7 +16,9 @@ public class Objekt {
 	private void checkID(int id) {
 
 	}
+
 	public void drawObjects(Graphics g) {
+		System.out.println("geht");
 		
 	}
 }
