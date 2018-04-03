@@ -6,11 +6,11 @@ import java.awt.event.KeyListener;
 
 import vvoid.init.main.Camera;
 
-public class Player extends Game implements KeyListener{
+public class Player implements KeyListener{
 	public Player() {
 		
 	}
-	public static void drawPlayer(Graphics g) {
+	public void drawPlayer(Graphics g) {
 		g.drawRect(200, 200, 100, 100);
 	}
 	@Override

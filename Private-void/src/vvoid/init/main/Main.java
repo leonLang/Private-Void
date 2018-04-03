@@ -12,7 +12,7 @@ public class Main{
 	public static void main(String[] args) {
 		Game.setup();
 		loop();
-		//hi
+		
 	}
 	public static void loop() {
 	      final double GAME_HERTZ = 30.0;
@@ -34,7 +34,7 @@ public class Main{
 	            while( now - lastUpdateTime > TIME_BETWEEN_UPDATES && updateCount < MAX_UPDATES_BEFORE_RENDER )
 	            {
 	               //updateGame();comment
-	        		Game.run();
+	        		
 
 	               lastUpdateTime += TIME_BETWEEN_UPDATES;
 	               updateCount++;

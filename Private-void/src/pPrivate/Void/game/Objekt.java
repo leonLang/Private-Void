@@ -19,6 +19,6 @@ public class Objekt {
 
 	public void drawObjects(Graphics g) {
 		System.out.println("geht");
-		
+		g.drawRect(100, 100, 100, 100);
 	}
 }
