@@ -1,5 +1,5 @@
 package pPrivate.Void.game;
 
-public class Enemy {
-
+public class Enemie {
+	
 }

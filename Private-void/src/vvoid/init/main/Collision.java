@@ -1,7 +1,5 @@
 package vvoid.init.main;
 
-import pPrivate.Void.game.Objekte;
-
 public class Collision {
 	
 	public static boolean Collis(int Obj1X,int Obj1Y,int Obj1Width, int Obj1Height,int Obj2X,int Obj2Y,int Obj2Width, int Obj2Height) {
