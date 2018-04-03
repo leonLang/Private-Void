@@ -10,6 +10,8 @@ import vvoid.init.main.Frame;
 import vvoid.init.main.LevelCompiler;
 
 public class Game {
+	public static final int WIDTH = 1200;
+	public static final int HEIGHT = 800;
 	public static Player player;
 	public static Camera cam;
 	public static LevelCompiler compiler;
@@ -26,10 +28,10 @@ public class Game {
 		compiler = new LevelCompiler();
 		cam = new Camera(0 ,0);
 		player = new Player();
-		new Frame(1200, 800,"titel",true);
+		new Frame(WIDTH, HEIGHT,"titel",true);
 	}
 	public static void draw(Graphics g) {
-		g.drawImage(LevelCompiler.getbackground(), 0, 0, null);
+		g.drawImage(LevelCompiler.getbackground(), 0, 0, WIDTH, HEIGHT, null);
 		player.drawPlayer(g);
 		Graphics g2d = (Graphics2D) g;
 		g2d.translate(cam.getX(), cam.getY());
