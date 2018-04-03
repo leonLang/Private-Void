@@ -5,9 +5,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
 import javax.imageio.ImageIO;
 
+import pPrivate.Void.game.Enemie;
 import pPrivate.Void.game.Objekt;
 
 public class LevelCompiler {
@@ -15,6 +15,8 @@ public class LevelCompiler {
 	public static Image img;
 	public static Object[] objects = new Object[(int) Math.pow(2, 15)];
 	public static int Objectlenght = 0;
+	public static Enemie[] enemie = new Enemie[(int) Math.pow(2, 15)];
+	public static int EnemieLenght = 0;
 	public LevelCompiler() {
 
 		read();
@@ -40,8 +42,8 @@ public class LevelCompiler {
 						  		 convertD(st.substring(18, 21)),//Rotation
 						  		 convertH(st.substring(22, 26))//TextureID
 						  		 };
-				    System.out.println(st);
-				    System.out.println(Arrays.toString(Object));
+				   // System.out.println(st);
+				    //System.out.println(Arrays.toString(Object));
 					CreateObject(Object);
 			  	}
 		  	}
@@ -64,10 +66,10 @@ public class LevelCompiler {
 	}
 
 	public void CreateObject(int[] Object) throws Exception {
-		System.out.println(Arrays.toString(Object));
+		//System.out.println(Arrays.toString(Object));
 		switch(Object[0]) {
 		case 0:
-			System.out.println(0);
+			
 			createBackground(Object[1]);
 			break;
 		case 1:
