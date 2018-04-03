@@ -13,9 +13,9 @@ public class Objekt {
 		this.x = x;
 		this.y = y;
 		this.TextureID = TextureID;
-		größe(IDO);
+		size(IDO);
 	}
-	private void größe(int IDO) {
+	private void size(int IDO) {
 		switch(IDO) {
 		case 1:
 			width = 100;
