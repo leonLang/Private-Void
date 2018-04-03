@@ -45,7 +45,7 @@ public class Enemie {
 		g.drawRect(x, y, E1Width, E1Height);
 
 	}
-
+//0
 }
 
 
