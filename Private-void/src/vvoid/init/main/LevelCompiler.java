@@ -107,7 +107,7 @@ public class LevelCompiler {
 	}
 	private void createEnemie(int IDO, int x, int y,int width, int height, int rotation, int TextureID) {
 		enemie[EnemieLenght] = new Enemie(IDO,x,y,rotation,TextureID);
-		EnemieLenght++;
+		EnemieLenght++;//
 	}
 
 }
