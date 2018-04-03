@@ -22,9 +22,9 @@ public class DrawPanel extends JPanel{
 		Objekte.enemy1(200, 200, g);
 		Objekte.enemy2(200, 100, g);
 		//x geht nach links und y nach unten
-		Enemie.createEnemie(1);
+		Enemie.createEnemie(1,g);
 		System.out.println(Enemie.x2);
-		Enemie.enemieType1(Enemie.x2, Enemie.x3, 1, g);
+		//Enemie.enemieType1(Enemie.x2, Enemie.x3, 1, g);
 		Toolkit.getDefaultToolkit();
 	}
 

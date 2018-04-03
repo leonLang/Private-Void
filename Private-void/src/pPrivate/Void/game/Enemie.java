@@ -11,15 +11,15 @@ public class Enemie {
 	public Enemie(int x1, int x2, int x3, int x4) {
 		this.x2 = x2;
 		this.x3 = x3;
-		this.x4 = x4;
-		createEnemie(x1);
+		this.x4 = x4;	
 	}
-	public static void createEnemie(int ID) {
+	public static void createEnemie(int ID,Graphics g) {
 		switch(ID) {
 		case 1:
 			x2= 705;
 			x3=200;
 			x4=1;
+			enemieType1(x2, x3, 1, g);
 			break;
 			//usw.
 		case 2:
