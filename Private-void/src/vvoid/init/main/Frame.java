@@ -5,7 +5,6 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
-import pPrivate.Void.game.Enemie;
 import pPrivate.Void.game.Game;
 
 public class Frame extends JFrame {
