@@ -29,7 +29,7 @@ public class Frame extends JFrame {
 		setTitle(title);
 		setSize(WIDTH, HEIGHT);
 		setResizable(Resizable);
-		Enemie enemie = new Enemie();
+		//Enemie enemie = new Enemie();
 	}
 
 

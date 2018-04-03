@@ -30,7 +30,7 @@ public class DrawPanel extends JPanel{
 			x= x+10;
 			Enemie.createEnemie(1,g,500,x);
 		}*/
-		
+		Enemie.enemieType1(100, 100, g);
 		Toolkit.getDefaultToolkit();
 	}
 

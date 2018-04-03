@@ -38,7 +38,7 @@ public class Game {
 			LevelCompiler.objects[i].drawObjects(g);
 		}
 		for(int i = 0;i < LevelCompiler.EnemieLenght;i++) {
-			LevelCompiler.enemie[i].drawEnemie(g);
+			//LevelCompiler.enemie[i].drawEnemie(g);
 		}
 		g.drawRect(100, 100, 100+x, 100);
 		
