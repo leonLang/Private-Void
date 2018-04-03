@@ -13,30 +13,21 @@ import pPrivate.Void.game.Objekt;
 public class LevelCompiler {
 	private String path;
 	public static Image img;
+	public static Object[] objects = new Object[(int) Math.pow(2, 15)];
+	public static int Objectlenght = 0;
 	public LevelCompiler() {
 
 		read();
 	}
 
 	public void read() {
-		int arrayO = 0;
-		int arrayE = 0;
+
 
 		try {
 		File file = new File("Level/level.pll");
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		  String st = br.readLine();
 		  if(st.contains("!pllDOCUMENT")) {
-		  while((st = br.readLine()) != null) {
-			  if(st.contains("//") != true) {
-				 if(convertD(st.substring(0, 2)) == 1) {
-					 arrayO++;
-					 System.out.println("hi");
-				 } else if(convertD(st.substring(0, 2)) == 2) {
-					 arrayE++;
-				 }
-			  }
-		  }
 		  
 		  while ((st = br.readLine()) != null) {
 			  if(st.contains("//") != true) {
@@ -54,13 +45,15 @@ public class LevelCompiler {
 					CreateObject(Object);
 			  	}
 		  	}
+		  
 		  } else {
-			  System.out.println("this is not a pll file");
+			  System.out.println("this is not a .pll file");
 		  }
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
+
 	public int convertH(String s) {
 		int p = Integer.parseInt(s, 16);
 		return p;
@@ -101,7 +94,8 @@ public class LevelCompiler {
 	}
 	
 	private void createObject(int IDO, int x, int y, int rotation, int TextureID) {
-		//new Objekt(IDO,x,y,rotation,TextureID);
+		objects[Objectlenght] = new Objekt(IDO,x,y,rotation,TextureID);
+		Objectlenght++;
 	}
 	private void createEnemie(int ID, int x, int y, int rotation, int TextureID) {
 		

@@ -21,6 +21,9 @@ public class Game {
 	}
 	public static void setup() {
 		compiler = new LevelCompiler();
+		for(int i = 0;i < LevelCompiler.Objectlenght;i++) {
+			System.out.println(x);
+		}
 		player = new Player();
 		new Frame(1200, 800,"titel",true);
 

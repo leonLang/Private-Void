@@ -16,7 +16,6 @@ public class Player extends Game implements KeyListener{
 	@Override
 	public void keyPressed(KeyEvent e) {
 		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
-			System.out.println("hi");
 			Camera.add(10);
 		}
 		

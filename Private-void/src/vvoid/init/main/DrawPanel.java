@@ -26,11 +26,11 @@ public class DrawPanel extends JPanel{
 			
 		int x = 0;
 
-		for (int i = 0; i < 80; i++) {
+		/*for (int i = 0; i < 80; i++) {
 			x= x+10;
 			System.out.println(x);
 			Enemie.createEnemie(1,g,500,x);
-		}
+		}*/
 	
 		Toolkit.getDefaultToolkit();
 	}
