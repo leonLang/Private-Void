@@ -20,7 +20,7 @@ public class Enemie {
 		
 	}
 	public static void enemieType1(int x, int y, Graphics g) {
-		sheet = new SpriteSheet(sheet)
+		//sheet = new SpriteSheet(sheet)
         g.drawRect(100, 100, 100, 100);
         g.drawImage(metroid,100,100,100,100,null);
     }
