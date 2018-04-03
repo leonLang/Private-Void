@@ -2,36 +2,28 @@ package pPrivate.Void.game;
 
 import java.awt.Graphics;
 
+import vvoid.init.main.TextureSystem;
+
 public class Objekt {
 	public int x;
 	public int y;
 	private int width;
 	private int height;
 	private int TextureID;
+	private int IDO;
 
-	public Objekt(int IDO, int x, int y, int rotation, int TextureID) {
+	public Objekt(int IDO, int x, int y,int width, int height, int rotation, int TextureID) {
 		this.x = x;
 		this.y = y;
+		this.IDO = IDO;
 		this.TextureID = TextureID;
-		size(IDO);
+		this.width = width;
+		this.height = height;
 	}
-	private void size(int IDO) {
-		switch(IDO) {
-		case 1:
-			width = 100;
-			height = 100;
-			break;
-		case 2:
-			width = 100;
-			height = 200;
-			break;
-			//feel free to add more Dimensions :)
-		default:
-			width = 0;
-			height = 0;
-		}
-	}
+	
 	public void drawObjects(Graphics g) {
 		g.drawRect(x, y, width, height);
+		g.drawImage(TextureSystem.TextureSystem(IDO), x, y, width, height, null);
+
 	}
 }

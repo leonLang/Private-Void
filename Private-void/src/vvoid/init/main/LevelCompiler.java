@@ -102,12 +102,12 @@ public class LevelCompiler {
 	}
 	
 	private void createObject(int IDO, int x, int y,int width, int height, int rotation, int TextureID) {
-		objects[Objectlenght] = new Objekt(IDO,x,y,rotation,TextureID);
+		objects[Objectlenght] = new Objekt(IDO,x,y,width,height,rotation,TextureID);
 		Objectlenght++;
 	}
 	private void createEnemie(int IDO, int x, int y,int width, int height, int rotation, int TextureID) {
 		enemie[EnemieLenght] = new Enemie(IDO,x,y,rotation,TextureID);
-		EnemieLenght++;//
+		EnemieLenght++;
 	}
 
 }

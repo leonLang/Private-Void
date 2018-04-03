@@ -7,16 +7,18 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class TextureSystem {
-	String s;
-	BufferedImage img;
-	public TextureSystem(int tid) {
-		s = "texture" + tid + ".jpg";
+	static String TexturePath;
+	static BufferedImage img;
+	public static BufferedImage TextureSystem(int tid) {
+		TexturePath = "assats/textures/Objects/texture" + tid + ".jpg";
 		
 		try {
-			img = ImageIO.read(new File(s));
+			img = ImageIO.read(new File(TexturePath));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		return img;
+		
 		
 	}
 }
