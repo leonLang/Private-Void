@@ -32,7 +32,7 @@ public class Enemie {
 		case 1:
 			enemieType1(x2, x3, g);
 			break;
-			//usw.
+			//usw.1
 		case 2:
 			enemieType2(x2, x3,  g);
 			break;
