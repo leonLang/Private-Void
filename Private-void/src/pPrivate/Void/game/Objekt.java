@@ -22,8 +22,12 @@ public class Objekt {
 	}
 	
 	public void drawObjects(Graphics g) {
+		if(IDO == 1) {
 		g.drawRect(x, y, width, height);
-		g.drawImage(TextureSystem.TextureSystem(IDO), x, y, width, height, null);
+		g.drawImage(TextureSystem.TextureSystem(TextureID), x, y, width, height, null);
+		} else if(IDO == 2) {
+			g.drawRect(x, y, width, height);
+		}
 
 	}
 }
