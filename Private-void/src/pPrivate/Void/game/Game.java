@@ -33,7 +33,7 @@ public class Game {
 		g.drawImage(LevelCompiler.getbackground(), 0, 0, null);
 		Player.drawPlayer(g);
 		Graphics2D g2d = (Graphics2D) g;
-		g2d.translate(cam.getX(), cam.getY());
+	//	g2d.translate(cam.getX(), cam.getY());
 		for(int i = 0;i <= LevelCompiler.Objectlenght;i++) {
 		//	LevelCompiler.objects[i].drawObjects(g);
 		}

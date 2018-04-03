@@ -8,6 +8,8 @@ import javax.imageio.ImageIO;
 
 public class Enemie {
 	private static BufferedImage metroid;
+	private SpriteSheet sheet;
+	
 	public Enemie() {
 		try {
 			metroid = ImageIO.read(getClass().getResourceAsStream("metroid.png"));
