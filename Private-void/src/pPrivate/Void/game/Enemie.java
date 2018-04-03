@@ -8,7 +8,7 @@ import javax.imageio.ImageIO;
 
 public class Enemie {
 	private static BufferedImage metroid;
-	private SpriteSheet sheet;
+	private static SpriteSheet sheet;
 	
 	public Enemie() {
 		try {
@@ -20,9 +20,9 @@ public class Enemie {
 		
 	}
 	public static void enemieType1(int x, int y, Graphics g) {
-		//sheet = new SpriteSheet(sheet)
+		sheet = new SpriteSheet(metroid);
         g.drawRect(100, 100, 100, 100);
-        g.drawImage(metroid,100,100,100,100,null);
+        g.drawImage(sheet.crop(0, 0, 32, 32),100,100,100,100,null);
     }
 
 }
