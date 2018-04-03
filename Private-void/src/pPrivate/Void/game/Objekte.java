@@ -8,11 +8,15 @@ public class Objekte {
 	public static int E1Height=100;
 	public static int E2Width=200;
 	public static int E2Height=1000;
+	public static int x1=100;
+	public static int y1=100;
+	public static int x2=100;
+	public static int y2=100;
 	public static void enemy1(int x, int y,Graphics g) {
-		g.drawRect(x, y, E1Width, E1Height);
+		g.drawRect(x1, y1, E1Width, E1Height);
 	}
 	public static void enemy2(int x,int y, Graphics g) {
-		g.drawRect(x, y, E2Width, E2Height);
+		g.drawRect(x2, y2, E2Width, E2Height);
 	}
 	public static void CreateObject(int[] Object) {
 		System.out.println(Arrays.toString(Object));
