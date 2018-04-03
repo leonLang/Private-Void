@@ -13,27 +13,24 @@ public class Enemie {
 		this.x3 = x3;
 		this.x4 = x4;	
 	}
-	public static void createEnemie(int ID,Graphics g) {
+	public static void createEnemie(int ID,Graphics g,int x, int y) {
+		x2= x;
+		x3 =y;
 		switch(ID) {
 		case 1:
-			x2= 705;
-			x3=200;
-			x4=1;
-			enemieType1(x2, x3, 1, g);
+			enemieType1(x2, x3, g);
 			break;
 			//usw.
 		case 2:
-			x2=100;
-			x3=150;
-			x4=2;
+			enemieType2(x2, x3,  g);
 			break;
 		}
 	}
-	public static void enemieType1(int x, int y, int textureid, Graphics g) {
+	public static void enemieType1(int x, int y, Graphics g) {
 		g.drawRect(x, y, E1Width, E1Height);
 
 	}
-	public static void enemieType2(int x, int y, int textureid, Graphics g) {
+	public static void enemieType2(int x, int y, Graphics g) {
 		g.drawRect(x, y, E1Width, E1Height);
 
 	}
