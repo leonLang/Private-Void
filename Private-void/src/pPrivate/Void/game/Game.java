@@ -24,10 +24,9 @@ public class Game {
 		 * Das JFrame immer als letztes initialisieren, da sonst Fehler auftreten.
 		 * Die werte für Frame müssen erst mit der Camera und der Play Klasse erstellt werden.
 		 */
+		compiler = new LevelCompiler();
 		cam = new Camera(0 ,0);
 		player = new Player();
-		enemie = new Enemie();
-		compiler = new LevelCompiler();
 		new Frame(1200, 800,"titel",true);
 	}
 	public static void draw(Graphics g) {
@@ -35,15 +34,14 @@ public class Game {
 		player.drawPlayer(g);
 		Graphics g2d = (Graphics2D) g;
 		g2d.translate(cam.getX(), cam.getY());
-		for(int i = 0;i <= LevelCompiler.Objectlenght;i++) {
-		//	LevelCompiler.objects[i].drawObjects(g);
-		}
+
 		for(int i = 0;i < LevelCompiler.EnemieLenght;i++) {
-			//LevelCompiler.enemie[i].drawEnemie(g);
+			LevelCompiler.enemie[i].drawEnemie(g);
+		}
+		for(int i = 0;i < LevelCompiler.Objectlenght;i++) {
+			LevelCompiler.objects[i].drawObjects(g);
 		}
 		g2d.translate(-cam.getX(), -cam.getY());
-		g.drawRect(100, 100, 100+x, 100);
-		enemie.enemieType1(100, 100, g);
 		
 	}
 	

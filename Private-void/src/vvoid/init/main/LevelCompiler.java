@@ -13,10 +13,11 @@ import pPrivate.Void.game.Objekt;
 public class LevelCompiler {
 	private String path;
 	public static Image img;
-	public static Objekt[] objects = new Objekt[(int) Math.pow(2, 15)];
-	public static int Objectlenght = 0;
+
 	public static Enemie[] enemie = new Enemie[(int) Math.pow(2, 15)];
 	public static int EnemieLenght = 0;
+	public static Objekt[] objects = new Objekt[(int) Math.pow(2, 15)];
+	public static int Objectlenght = 0;
 	public LevelCompiler() {
 
 		read();
@@ -76,6 +77,7 @@ public class LevelCompiler {
 			createObject(Object[1],Object[2],Object[3],Object[4],Object[5]);
 			break;
 		case 2:
+			createEnemie(Object[1],Object[2],Object[3],Object[4],Object[5]);
 			break;
 		default:
 			throw new Exception("The id of the Object is not avalible:" + Object[0]);
@@ -99,8 +101,8 @@ public class LevelCompiler {
 		objects[Objectlenght] = new Objekt(IDO,x,y,rotation,TextureID);
 		Objectlenght++;
 	}
-	private void createEnemie(int ID, int x, int y, int rotation, int TextureID) {
-		//enemie[EnemieLenght] = new Enemie(ID,x,y,rotation,TextureID);
+	private void createEnemie(int IDO, int x, int y, int rotation, int TextureID) {
+		enemie[EnemieLenght] = new Enemie(IDO,x,y,rotation,TextureID);
 		EnemieLenght++;
 	}
 

@@ -7,7 +7,6 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class SpriteSheet {
-	private BufferedImage sheet;
 	private  BufferedImage metroid;
 
 	

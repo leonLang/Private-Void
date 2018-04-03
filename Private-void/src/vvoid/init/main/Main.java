@@ -9,8 +9,9 @@ public class Main{
 	   private static int fps = 60;
 	   private static int frameCount = 0;
 		public static DrawPanel panel;
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Game.setup();
+
 		loop();
 		
 	}
