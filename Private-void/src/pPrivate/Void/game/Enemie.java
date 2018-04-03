@@ -15,7 +15,7 @@ public class Enemie {
 	public static int x4;
 	public Enemie(int x1, int x2, int x3, int x4) {
 		try {
-			pipe1 = ImageIO.read(getClass().getResourceAsStream("Background/background0.jpg"));
+			pipe1 = ImageIO.read(getClass().getResourceAsStream("/metroid.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -39,7 +39,7 @@ public class Enemie {
 	}
 	public static void enemieType1(int x, int y, Graphics g) {
 		g.drawRect(x, y, E1Width, E1Height);
-		//g.drawImage(pipe1,100,100,100,100,null);
+		g.drawImage(pipe1,100,100,100,100,null);
 	}
 	public static void enemieType2(int x, int y, Graphics g) {
 		g.drawRect(x, y, E1Width, E1Height);
