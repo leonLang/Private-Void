@@ -7,6 +7,8 @@ import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
+import pPrivate.Void.game.Objekte;
+
 public class LevelCompiler {
 	public LevelCompiler() {
 
@@ -25,15 +27,16 @@ public class LevelCompiler {
 			  if(st.contains("//") != true) {
 
 				  int[] Object= {
-						  		 convert(st.substring(0, 1)),
-						  		 convert(st.substring(3, 7)),
-						  		 convert(st.substring(8, 12)),
-						  		 convert(st.substring(13, 17)),
-						  		 convert(st.substring(18, 21)),
-						  		 convert(st.substring(22, 26))
+						  		 convertB(st.substring(0, 2)),
+						  		 convertH(st.substring(3, 7)),
+						  		 convertH(st.substring(8, 12)),
+						  		 convertH(st.substring(13, 17)),
+						  		 convertD(st.substring(18, 21)),
+						  		 convertH(st.substring(22, 26))
 						  		 };
 				    System.out.println(st);
 				    System.out.println(Arrays.toString(Object));
+					Objekte.CreateObject(Object);
 			  	}
 		  	}
 		  } else {
@@ -43,8 +46,16 @@ public class LevelCompiler {
 			e.printStackTrace();
 		}
 	}
-	public int convert(String s) {
+	public int convertH(String s) {
 		int p = Integer.parseInt(s, 16);
+		return p;
+	}
+	public int convertD(String s) {
+		int p = Integer.parseInt(s, 10);
+		return p;
+	}
+	public int convertB(String s) {
+		int p = Integer.parseInt(s, 2);
 		return p;
 	}
 
