@@ -15,7 +15,7 @@ public class Enemie {
 	public static int x4;
 	public Enemie(int x1, int x2, int x3, int x4) {
 		try {
-			pipe1 = ImageIO.read(getClass().getResourceAsStream("/metroid.png"));
+			pipe1 = ImageIO.read(getClass().getResourceAsStream("metroid.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

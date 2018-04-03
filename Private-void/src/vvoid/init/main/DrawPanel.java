@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 
 import pPrivate.Void.game.Enemie;
 import pPrivate.Void.game.Game;
-import pPrivate.Void.game.Objekte;
+//import pPrivate.Void.game.Objekte;
 
 public class DrawPanel extends JPanel{
 

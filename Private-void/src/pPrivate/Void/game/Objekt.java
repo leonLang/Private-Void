@@ -10,7 +10,7 @@ public class Objekt {
 	public int TextureID;
 	public Objekt(int IDO, int x, int y, int rotation, int TextureID) {
 		this.id = IDO;
-		//checkID(id);
+
 
 	}
 	private void checkID(int id) {
@@ -22,7 +22,7 @@ public class Objekt {
 			System.out.println(id);
 			break;
 		default:
-		//	System.out.println("ne");
+
 		}
 	}
 }

@@ -17,7 +17,7 @@ public class Game {
 	public static int x = 0;
 	public static void run() {
 		//x++;
-		Collision.Collis(Objekte.x1, Objekte.y1, Objekte.E1Width, Objekte.E1Height, Objekte.x2, Objekte.y2, Objekte.E2Width, Objekte.E2Height);
+		//Collision.Collis(Objekte.x1, Objekte.y1, Objekte.E1Width, Objekte.E1Height, Objekte.x2, Objekte.y2, Objekte.E2Width, Objekte.E2Height);
 	}
 	public static void setup() {
 		compiler = new LevelCompiler();
