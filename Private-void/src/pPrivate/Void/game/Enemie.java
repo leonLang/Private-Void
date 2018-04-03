@@ -18,7 +18,7 @@ public class Enemie {
 
 	public void drawEnemie(Graphics g) {
         g.drawRect(100, 100, 200, 100);
-       // g.drawImage(sheet.crop(0, 0, 32, 32),100,100,100,100,null);
+        g.drawImage(sheet.crop(0, 0, 32, 32),100,100,100,100,null);
 		
 	}
 
