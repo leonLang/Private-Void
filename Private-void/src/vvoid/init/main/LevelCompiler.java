@@ -47,8 +47,8 @@ public class LevelCompiler {
 						  		 convertD(st.substring(28, 31)),//Rotation
 						  		 convertH(st.substring(32, 36)),//TextureID
 						  		 };
-				    System.out.println(st);
-				    System.out.println(Arrays.toString(Object));
+				    //System.out.println(st);
+				    //System.out.println(Arrays.toString(Object));
 					CreateObject(Object);
 			  	}
 		  	}
