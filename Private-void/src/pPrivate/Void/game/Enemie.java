@@ -1,10 +1,6 @@
 package pPrivate.Void.game;
 
 import java.awt.Graphics;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 
 public class Enemie {
 	private static SpriteSheet sheet = new SpriteSheet();
@@ -19,9 +15,9 @@ public class Enemie {
 		this.x = x;
 		this.y = y;
 		this.TextureID = TextureID;
-		größe(IDO);
+		size(IDO);
 	}
-	private void größe(int IDO) {
+	private void size(int IDO) {
 		switch(IDO) {
 		case 1:
 			width = 100;
