@@ -27,7 +27,7 @@ public class LevelCompiler {
 
 
 		try {
-		File file = new File("Level/level.pll");
+		File file = new File("assats/Level/level.pll");
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		  String st = br.readLine();
 		  if(st.contains("!pllDOCUMENT")) {
@@ -37,7 +37,7 @@ public class LevelCompiler {
 
 				  int[] Object= {
 						  		 convertD(st.substring(0, 2)),//ID
-						  		 convertH(st.substring(3, 7)),//IDO
+						  		 convertH(st.substring(3, 7)),//IDO IDO means IDObject
 						  		 convertH(st.substring(8, 12)),//X-Coordinate
 						  		 convertH(st.substring(13, 17)),//Y-Coordinate
 						  		 convertD(st.substring(18, 21)),//Rotation
@@ -85,7 +85,7 @@ public class LevelCompiler {
 	}
 	
 	private void  createBackground(int id) {
-		this.path = "Background/background" + Integer.toString(id) + ".jpg";
+		this.path = "assats/Background/background" + Integer.toString(id) + ".jpg";
 		try {
 			img = ImageIO.read(new File(this.path));
 		} catch (IOException e) {
