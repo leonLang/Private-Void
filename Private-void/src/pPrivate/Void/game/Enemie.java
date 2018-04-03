@@ -16,7 +16,7 @@ public class Enemie {
 	
 	public Enemie() {
 		try {
-			pipe1 = ImageIO.read(getClass().getResourceAsStream("/hi.jpg"));
+			pipe1 = ImageIO.read(getClass().getResourceAsStream("hi.jpg"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -25,7 +25,7 @@ public class Enemie {
 	//	this.x3 = x3;
 	//	this.x4 = x4;	
 	}
-	public static void createEnemie(int ID,Graphics g,int x, int y) {
+	public void drawEnemie(Graphics g) {
 		x2= x;
 		x3 =y;
 		switch(ID) {

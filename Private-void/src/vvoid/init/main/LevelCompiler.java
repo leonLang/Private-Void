@@ -13,7 +13,7 @@ import pPrivate.Void.game.Objekt;
 public class LevelCompiler {
 	private String path;
 	public static Image img;
-	public static Object[] objects = new Object[(int) Math.pow(2, 15)];
+	public static Objekt[] objects = new Objekt[(int) Math.pow(2, 15)];
 	public static int Objectlenght = 0;
 	public static Enemie[] enemie = new Enemie[(int) Math.pow(2, 15)];
 	public static int EnemieLenght = 0;

@@ -35,9 +35,10 @@ public class Game {
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.translate(cam.getX(), cam.getY());
 		for(int i = 0;i <= LevelCompiler.Objectlenght;i++) {
-			Object ob;
-			ob = LevelCompiler.objects[i];
-
+			LevelCompiler.objects[i].drawObjects(g);
+		}
+		for(int i = 0;i < LevelCompiler.EnemieLenght;i++) {
+			LevelCompiler.enemie[i].drawEnemie(g);
 		}
 		g.drawRect(100, 100, 100+x, 100);
 		
