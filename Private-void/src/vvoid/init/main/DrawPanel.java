@@ -11,7 +11,7 @@ import pPrivate.Void.game.Game;
 //import pPrivate.Void.game.Objekte;
 
 public class DrawPanel extends JPanel{
-
+	//Enemie enemie = new Enemie();
 	private static final long serialVersionUID = -7664245199454481726L;
 	public DrawPanel() {
 		

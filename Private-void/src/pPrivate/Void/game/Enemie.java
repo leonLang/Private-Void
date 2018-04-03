@@ -7,6 +7,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class Enemie {
+	public static String pipeO = "metroid.png";
 	private static BufferedImage pipe1;
 	public static int E1Width=200;
 	public static int E1Height=200;
@@ -16,14 +17,14 @@ public class Enemie {
 	
 	public Enemie() {
 		try {
-			pipe1 = ImageIO.read(getClass().getResourceAsStream("/hi.jpg"));
+			pipe1 = ImageIO.read(getClass().getResourceAsStream(pipeO));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		//this.x2 = x2;
-	//	this.x3 = x3;
-	//	this.x4 = x4;	
+		//this.x3 = x3;
+		//this.x4 = x4;	
 	}
 	public static void createEnemie(int ID,Graphics g,int x, int y) {
 		x2= x;
