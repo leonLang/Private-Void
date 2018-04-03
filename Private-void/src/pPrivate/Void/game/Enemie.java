@@ -45,7 +45,7 @@ public class Enemie {
 		System.out.println(IDO);
 		if (this.IDO == 1) {
         g.drawRect(x, y, width, height);
-        g.drawImage(sheet.crop(0, 0, 25, 25),x,y,width,height,null);
+        g.drawImage(sheet.crop(9, 7, 20, 14),x,y,width,height,null);
        // g.drawImage(sheet.crop(0, 0, 32, 32),100,100,100,100,null);
 		}
 		if (this.IDO==2) {
