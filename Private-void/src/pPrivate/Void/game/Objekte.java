@@ -14,16 +14,6 @@ public class Objekte {
 	public static void enemy2(int x,int y, Graphics g) {
 		g.drawRect(x, y, E2Width, E2Height);
 	}
-	public static void CreateObject(int[] Object) {
-		System.out.println(Arrays.toString(Object));
-		switch(Object[0]) {
-		case 0:
-			System.out.println(0);
-			break;
-		case 1:
-			break;
-		default:
-			break;
-		}
-	}
+
+
 }

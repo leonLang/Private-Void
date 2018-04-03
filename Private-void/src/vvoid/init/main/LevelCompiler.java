@@ -6,10 +6,12 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.EmptyStackException;
 
 import pPrivate.Void.game.Objekte;
 
 public class LevelCompiler {
+	String path;
 	public LevelCompiler() {
 
 		read();
@@ -36,7 +38,7 @@ public class LevelCompiler {
 						  		 };
 				    System.out.println(st);
 				    System.out.println(Arrays.toString(Object));
-					Objekte.CreateObject(Object);
+					CreateObject(Object);
 			  	}
 		  	}
 		  } else {
@@ -57,6 +59,29 @@ public class LevelCompiler {
 	public int convertB(String s) {
 		int p = Integer.parseInt(s, 2);
 		return p;
+	}
+	public void CreateObject(int[] Object) throws Exception {
+		System.out.println(Arrays.toString(Object));
+		switch(Object[0]) {
+		case 0:
+			System.out.println(0);
+			createBackground(Object[1]);
+			break;
+		case 1:
+			createObject();
+			break;
+		case 2:
+			break;
+		default:
+			throw new Exception("The id of the Object is not avalible:" + Object[0]);
+		}
+	}
+	private void  createBackground(int id) {
+		this.path = "background" + Integer.toString(id) + ".jpg";
+		System.out.println(path);
+	}
+	private void createObject() {
+		
 	}
 
 }
