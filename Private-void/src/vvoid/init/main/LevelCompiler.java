@@ -81,8 +81,9 @@ public class LevelCompiler {
 			throw new Exception("The id of the Object is not avalible:" + Object[0]);
 		}
 	}
+	
 	private void  createBackground(int id) {
-		this.path = "background" + Integer.toString(id) + ".jpg";
+		this.path = "Background/background" + Integer.toString(id) + ".jpg";
 		try {
 			img = ImageIO.read(new File(this.path));
 		} catch (IOException e) {
