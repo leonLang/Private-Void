@@ -12,7 +12,6 @@ import vvoid.init.main.LevelCompiler;
 public class Game {
 	public static Player player;
 	public static Camera cam;
-	public static Enemie enemie;
 	public static LevelCompiler compiler;
 	public static int x = 0;
 	public static void run() {
