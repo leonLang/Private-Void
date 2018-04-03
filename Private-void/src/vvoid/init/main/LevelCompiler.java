@@ -1,17 +1,22 @@
 package vvoid.init.main;
 
+import java.awt.Image;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.EmptyStackException;
 
+import javax.imageio.ImageIO;
+
 import pPrivate.Void.game.Objekte;
 
 public class LevelCompiler {
-	static String path;
+	private String path;
+	public static Image img;
 	public LevelCompiler() {
 
 		read();
@@ -78,13 +83,18 @@ public class LevelCompiler {
 	}
 	private void  createBackground(int id) {
 		this.path = "background" + Integer.toString(id) + ".jpg";
+		try {
+			img = ImageIO.read(new File(this.path));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		System.out.println(path);
 	}
 	private void createObject() {
 		
 	}
-	public static String getPath() {
-		return path;
+	public static Image getbackground() {
+		return img;
 	}
 
 }
