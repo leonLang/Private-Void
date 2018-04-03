@@ -41,21 +41,21 @@ public class Enemie {
 	}
 
 	public void drawEnemie(Graphics g) {
-		if (zaehler == 0) {
-			zaehler =1;
+		if (zaehler <= 50) {
+			zaehler = zaehler +1;
 		}
 		else {
 			zaehler=0;
 		}
 		if (this.IDO == 1) {
-			if(zaehler == 0) {
+			if(zaehler > 25) {
         g.drawRect(x, y, width, height);
         g.drawImage(sheet.crop(9, 7, 16, 14),x,y,width,height,null);
        // g.drawImage(sheet.crop(0, 0, 32, 32),100,100,100,100,null);
 			}
-        if (zaehler == 1) {
+        if (zaehler < 25) {
             g.drawRect(x, y, width, height);
-            g.drawImage(sheet.crop(9, 16, 16, 14),x,y,width,height,null);
+            g.drawImage(sheet.crop(27, 7, 16, 14),x,y,width,height,null);
        
 		}
 		}
