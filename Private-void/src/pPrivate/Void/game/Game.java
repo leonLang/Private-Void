@@ -29,6 +29,7 @@ public class Game {
 	public static void draw(Graphics g) {
 		g.drawImage(LevelCompiler.getbackground(), 0, 0, null);
 		Player.drawPlayer(g);
+		Objekt.drawObjects(g);
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.translate(cam.getX(), cam.getY());
 		g.drawRect(100, 100, 100+x, 100);

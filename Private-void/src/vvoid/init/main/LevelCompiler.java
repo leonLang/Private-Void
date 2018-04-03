@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import javax.imageio.ImageIO;
 
+import pPrivate.Void.game.Objekt;
+
 public class LevelCompiler {
 	private String path;
 	public static Image img;
@@ -17,18 +19,30 @@ public class LevelCompiler {
 	}
 
 	public void read() {
-
+		int arrayO = 0;
+		int arrayE = 0;
 
 		try {
 		File file = new File("Level/level.pll");
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		  String st = br.readLine();
 		  if(st.contains("!pllDOCUMENT")) {
+		  while((st = br.readLine()) != null) {
+			  if(st.contains("//") != true) {
+				 if(convertD(st.substring(0, 2)) == 1) {
+					 arrayO++;
+					 System.out.println("hi");
+				 } else if(convertD(st.substring(0, 2)) == 2) {
+					 arrayE++;
+				 }
+			  }
+		  }
+		  
 		  while ((st = br.readLine()) != null) {
 			  if(st.contains("//") != true) {
 
 				  int[] Object= {
-						  		 convertB(st.substring(0, 2)),//ID
+						  		 convertD(st.substring(0, 2)),//ID
 						  		 convertH(st.substring(3, 7)),//IDO
 						  		 convertH(st.substring(8, 12)),//X-Coordinate
 						  		 convertH(st.substring(13, 17)),//Y-Coordinate
@@ -55,10 +69,7 @@ public class LevelCompiler {
 		int p = Integer.parseInt(s, 10);
 		return p;
 	}
-	public int convertB(String s) {
-		int p = Integer.parseInt(s, 2);
-		return p;
-	}
+
 	public void CreateObject(int[] Object) throws Exception {
 		System.out.println(Arrays.toString(Object));
 		switch(Object[0]) {
@@ -89,10 +100,10 @@ public class LevelCompiler {
 		return img;
 	}
 	
-	private void createObject(int ID, int x, int y, int rotation, int TextureID) {
-		
+	private void createObject(int IDO, int x, int y, int rotation, int TextureID) {
+		//new Objekt(IDO,x,y,rotation,TextureID);
 	}
-	private void createEnemie() {
+	private void createEnemie(int ID, int x, int y, int rotation, int TextureID) {
 		
 	}
 

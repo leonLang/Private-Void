@@ -20,6 +20,9 @@ public class Objekte {
 	public static void enemy2(int x,int y, Graphics g) {
 		g.drawRect(x2, y2, E2Width, E2Height);
 	}
+	public void objekt() {
+		
+	}
 
 
 }
