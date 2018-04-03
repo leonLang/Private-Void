@@ -17,5 +17,6 @@ public class TextureSystem {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 	}
 }

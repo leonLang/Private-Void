@@ -5,6 +5,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
+
 import javax.imageio.ImageIO;
 
 import pPrivate.Void.game.Enemie;
@@ -40,11 +42,13 @@ public class LevelCompiler {
 						  		 convertH(st.substring(3, 7)),//IDO IDO means IDObject
 						  		 convertH(st.substring(8, 12)),//X-Coordinate
 						  		 convertH(st.substring(13, 17)),//Y-Coordinate
-						  		 convertD(st.substring(18, 21)),//Rotation
-						  		 convertH(st.substring(22, 26))//TextureID
+						  		 convertH(st.substring(18, 22)),//WIDTH
+						  		 convertH(st.substring(23, 27)),//HEIGHT
+						  		 convertD(st.substring(28, 31)),//Rotation
+						  		 convertH(st.substring(32, 36)),//TextureID
 						  		 };
-				   // System.out.println(st);
-				    //System.out.println(Arrays.toString(Object));
+				    System.out.println(st);
+				    System.out.println(Arrays.toString(Object));
 					CreateObject(Object);
 			  	}
 		  	}
@@ -74,10 +78,10 @@ public class LevelCompiler {
 			createBackground(Object[1]);
 			break;
 		case 1:
-			createObject(Object[1],Object[2],Object[3],Object[4],Object[5]);
+			createObject(Object[1],Object[2],Object[3],Object[4],Object[5],Object[6],Object[7]);
 			break;
 		case 2:
-			createEnemie(Object[1],Object[2],Object[3],Object[4],Object[5]);
+			createEnemie(Object[1],Object[2],Object[3],Object[4],Object[5],Object[6],Object[7]);
 			break;
 		default:
 			throw new Exception("The id of the Object is not avalible:" + Object[0]);
@@ -97,11 +101,11 @@ public class LevelCompiler {
 		return img;
 	}
 	
-	private void createObject(int IDO, int x, int y, int rotation, int TextureID) {
+	private void createObject(int IDO, int x, int y,int width, int height, int rotation, int TextureID) {
 		objects[Objectlenght] = new Objekt(IDO,x,y,rotation,TextureID);
 		Objectlenght++;
 	}
-	private void createEnemie(int IDO, int x, int y, int rotation, int TextureID) {
+	private void createEnemie(int IDO, int x, int y,int width, int height, int rotation, int TextureID) {
 		enemie[EnemieLenght] = new Enemie(IDO,x,y,rotation,TextureID);
 		EnemieLenght++;
 	}
