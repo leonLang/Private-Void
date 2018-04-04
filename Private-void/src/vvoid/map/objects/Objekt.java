@@ -1,4 +1,4 @@
-package vvoid.Void.game;
+package vvoid.map.objects;
 
 import java.awt.Graphics;
 

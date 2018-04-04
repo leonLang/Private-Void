@@ -1,6 +1,8 @@
-package vvoid.Void.game;
+package vvoid.map.objects;
 
 import java.awt.Graphics;
+
+import vvoid.Void.game.SpriteSheet;
 
 public class Enemie {
 	private static SpriteSheet sheet = new SpriteSheet();

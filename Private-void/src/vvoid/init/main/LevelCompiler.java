@@ -9,8 +9,8 @@ import java.util.Arrays;
 
 import javax.imageio.ImageIO;
 
-import vvoid.Void.game.Enemie;
-import vvoid.Void.game.Objekt;
+import vvoid.map.objects.Enemie;
+import vvoid.map.objects.Objekt;
 
 public class LevelCompiler {
 	private String path;
