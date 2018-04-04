@@ -18,6 +18,7 @@ public class Enemie {
 		this.y = y;
 		this.TextureID = TextureID;
 		this.IDO = IDO;
+		System.out.println(height);
 	}
 
 	public void drawEnemie(Graphics g) {

@@ -5,11 +5,10 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
-
 import javax.imageio.ImageIO;
 
 import vvoid.map.objects.Enemie;
+import vvoid.map.objects.Event;
 import vvoid.map.objects.Objekt;
 
 public class LevelCompiler {
@@ -20,6 +19,8 @@ public class LevelCompiler {
 	public static int EnemieLenght = 0;
 	public static Objekt[] objects = new Objekt[(int) Math.pow(2, 15)];
 	public static int Objectlenght = 0;
+	public static Event[] event = new Event[(int) Math.pow(2,  15)];
+	public static int EventLenght = 0;
 	public LevelCompiler() {
 
 		read();
@@ -30,6 +31,7 @@ public class LevelCompiler {
 
 		try {
 		File file = new File("assats/Level/level.pll");
+		@SuppressWarnings("resource")
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		  String st = br.readLine();
 		  if(st.contains("!pllDOCUMENT")) {
@@ -83,6 +85,9 @@ public class LevelCompiler {
 		case 2:
 			createEnemie(Object[1],Object[2],Object[3],Object[4],Object[5],Object[6],Object[7]);
 			break;
+		case 3:
+			createEvent(Object[1],Object[2],Object[3],Object[4],Object[5],Object[6]);
+			break;
 		default:
 			throw new Exception("The id of the Object is not avalible:" + Object[0]);
 		}
@@ -109,5 +114,10 @@ public class LevelCompiler {
 		enemie[EnemieLenght] = new Enemie(IDO,x,y,width,height,rotation,TextureID);
 		EnemieLenght++;
 	}
+	private void createEvent(int IDO, int x, int y,int width, int height, int rotation) {
+		event[EventLenght] = new Event(IDO,x,y,width,height,rotation);
+		EventLenght++;
+	};
+		
 
 }
