@@ -5,7 +5,7 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
-import pPrivate.Void.game.Game;
+import vvoid.Void.game.Game;
 
 public class Frame extends JFrame {
 

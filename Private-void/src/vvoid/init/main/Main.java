@@ -1,7 +1,7 @@
 package vvoid.init.main;
 
 
-import pPrivate.Void.game.Game;
+import vvoid.Void.game.Game;
 
 public class Main{
 	public static boolean running = true;

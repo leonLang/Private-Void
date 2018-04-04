@@ -9,8 +9,8 @@ import java.util.Arrays;
 
 import javax.imageio.ImageIO;
 
-import pPrivate.Void.game.Enemie;
-import pPrivate.Void.game.Objekt;
+import vvoid.Void.game.Enemie;
+import vvoid.Void.game.Objekt;
 
 public class LevelCompiler {
 	private String path;
@@ -106,7 +106,7 @@ public class LevelCompiler {
 		Objectlenght++;
 	}
 	private void createEnemie(int IDO, int x, int y,int width, int height, int rotation, int TextureID) {
-		enemie[EnemieLenght] = new Enemie(IDO,x,y,rotation,TextureID);
+		enemie[EnemieLenght] = new Enemie(IDO,x,y,width,height,rotation,TextureID);
 		EnemieLenght++;
 	}
 

@@ -1,4 +1,4 @@
-package pPrivate.Void.game;
+package vvoid.Void.game;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;
