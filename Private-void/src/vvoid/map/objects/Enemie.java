@@ -36,11 +36,6 @@ public class Enemie {
 	
 		
 		
-		if (this.IDO==2) {
-			  g.drawRect(x, y, width, height);
-		      g.drawImage(sheet.crop(25, 25, 25, 25),x,y,width,height,null);
-		       
-		}
 	}
 	public void sh(Graphics g, int x1, int y1, int w1, int h1, int x2, int y2, int w2, int h2) {
 		EnemieMovement.movement(g, x1, y1, w1, h1, x2, y2,w2, h2, x, y, width, height);
