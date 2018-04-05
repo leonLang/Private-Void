@@ -16,6 +16,7 @@ public class Game {
 	public static Camera cam;
 	public static LevelCompiler compiler;
 	public static int x = 0;
+	public static boolean peter = true;
 	public static void run() {
 		//x++;
 		//Collision.Collis(Objekte.x1, Objekte.y1, Objekte.E1Width, Objekte.E1Height, Objekte.x2, Objekte.y2, Objekte.E2Width, Objekte.E2Height);
@@ -31,7 +32,8 @@ public class Game {
 		new Frame(WIDTH, HEIGHT,"titel",true);
 	}
 	public static void draw(Graphics g) {
-		g.drawImage(LevelCompiler.getbackground(), 0, 0, WIDTH, HEIGHT, null);
+			g.drawImage(LevelCompiler.getbackground(), 0, 0, WIDTH, HEIGHT, null);
+
 		player.drawPlayer(g);
 		Graphics g2d = (Graphics2D) g;
 		g2d.translate(cam.getX(), cam.getY());
@@ -41,6 +43,7 @@ public class Game {
 		}
 		for(int i = 0;i < LevelCompiler.Objectlenght;i++) {
 			LevelCompiler.objects[i].drawObjects(g);
+			System.out.println(LevelCompiler.Objectlenght);
 		}
 		g2d.translate(-cam.getX(), -cam.getY());
 		

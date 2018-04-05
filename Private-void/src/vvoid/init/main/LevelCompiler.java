@@ -1,6 +1,7 @@
 package vvoid.init.main;
 
 import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -13,7 +14,7 @@ import vvoid.map.objects.Objekt;
 
 public class LevelCompiler {
 	private String path;
-	public static Image img;
+	public static BufferedImage img;
 
 	public static Enemie[] enemie = new Enemie[(int) Math.pow(2, 15)];
 	public static int EnemieLenght = 0;
@@ -80,13 +81,13 @@ public class LevelCompiler {
 			createBackground(Object[1]);
 			break;
 		case 1:
-			createObject(Object[1],Object[2],Object[3],Object[4],Object[5],Object[6],Object[7]);
+			createObject(Object);
 			break;
 		case 2:
-			createEnemie(Object[1],Object[2],Object[3],Object[4],Object[5],Object[6],Object[7]);
+			createEnemie(Object);
 			break;
 		case 3:
-			createEvent(Object[1],Object[2],Object[3],Object[4],Object[5],Object[6]);
+			createEvent(Object);
 			break;
 		default:
 			throw new Exception("The id of the Object is not avalible:" + Object[0]);
@@ -102,20 +103,20 @@ public class LevelCompiler {
 		}
 		System.out.println(path);
 	}
-	public static Image getbackground() {
+	public static BufferedImage getbackground() {
 		return img;
 	}
 	
-	private void createObject(int IDO, int x, int y,int width, int height, int rotation, int TextureID) {
-		objects[Objectlenght] = new Objekt(IDO,x,y,width,height,rotation,TextureID);
+	private void createObject(int[] data) {
+		objects[Objectlenght] = new Objekt(data);
 		Objectlenght++;
 	}
-	private void createEnemie(int IDO, int x, int y,int width, int height, int rotation, int TextureID) {
-		enemie[EnemieLenght] = new Enemie(IDO,x,y,width,height,rotation,TextureID);
+	private void createEnemie(int[] data) {
+		enemie[EnemieLenght] = new Enemie(data);
 		EnemieLenght++;
 	}
-	private void createEvent(int IDO, int x, int y,int width, int height, int rotation) {
-		event[EventLenght] = new Event(IDO,x,y,width,height,rotation);
+	private void createEvent(int[] data) {
+		event[EventLenght] = new Event(data);
 		EventLenght++;
 	};
 		

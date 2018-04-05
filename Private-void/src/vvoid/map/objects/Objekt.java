@@ -12,18 +12,18 @@ public class Objekt {
 	private int TextureID;
 	private int IDO;
 
-	public Objekt(int IDO, int x, int y,int width, int height, int rotation, int TextureID) {
-		this.x = x;
-		this.y = y;
-		this.IDO = IDO;
-		this.TextureID = TextureID;
-		this.width = width;
-		this.height = height;
+	public Objekt(int[] data) {
+		this.IDO = data[1];
+		this.x = data[2];
+		this.y = data[3];
+		this.width = data[4];
+		this.height = data[5];
+		this.TextureID = data[6];
 	}
 	
 	public void drawObjects(Graphics g) {
 		if(IDO == 1) {
-		g.drawRect(x, y, width, height);
+		//g.drawRect(x, y, width, height);
 		g.drawImage(TextureSystem.TextureSystem(TextureID), x, y, width, height, null);
 		} else if(IDO == 2) {
 			g.drawRect(x, y, width, height);
