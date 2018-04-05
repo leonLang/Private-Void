@@ -26,7 +26,7 @@ public class Objekt {
 		//g.drawRect(x, y, width, height);
 		g.drawImage(TextureSystem.TextureSystem(TextureID), x, y, width, height, null);
 		} else if(IDO == 2) {
-			g.drawRect(x, y, width, height);
+			g.drawRect(x, y, width, height);//
 		}
 
 	}

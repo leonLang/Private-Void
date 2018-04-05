@@ -112,7 +112,7 @@ public class LevelCompiler {
 		Objectlenght++;
 	}
 	private void createEnemie(int[] data) {
-		enemie[EnemieLenght] = new Enemie(data);
+		enemie[EnemieLenght] = new Enemie(data);//
 		EnemieLenght++;
 	}
 	private void createEvent(int[] data) {
