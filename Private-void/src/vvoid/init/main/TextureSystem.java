@@ -11,7 +11,6 @@ public class TextureSystem {
 	static BufferedImage img;
 	public static BufferedImage textureSystem(int tid) {
 		TexturePath = "assats/textures/Objects/texture" + tid + ".jpg";
-		
 		try {
 			img = ImageIO.read(new File(TexturePath));
 		} catch (IOException e) {

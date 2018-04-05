@@ -100,7 +100,6 @@ public class LevelCompiler {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println(path);
 	}
 	public static BufferedImage getbackground() {
 		return img;

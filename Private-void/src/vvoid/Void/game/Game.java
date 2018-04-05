@@ -42,7 +42,6 @@ public class Game {
 		}
 		for(int i = 0;i < LevelCompiler.Objectlenght;i++) {
 			LevelCompiler.objects[i].drawObjects(g);
-			System.out.println(LevelCompiler.Objectlenght);
 		}
 		g2d.translate(-cam.getX(), -cam.getY());
 		

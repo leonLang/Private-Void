@@ -19,7 +19,7 @@ public class Enemie {
 		this.y = data[3];
 		this.width = data[4];
 		this.height = data[5];
-		this.TextureID = data[6];
+		this.TextureID = data[7];
 	}
 
 	public void drawEnemie(Graphics g) {

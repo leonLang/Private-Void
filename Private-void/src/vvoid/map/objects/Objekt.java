@@ -11,6 +11,7 @@ public class Objekt {
 	private int height;
 	private int TextureID;
 	private int IDO;
+	private int rotation;
 
 	public Objekt(int[] data) {
 		this.IDO = data[1];
@@ -18,7 +19,8 @@ public class Objekt {
 		this.y = data[3];
 		this.width = data[4];
 		this.height = data[5];
-		this.TextureID = data[6];
+		this.rotation = data[6];
+		this.TextureID = data[7];
 	}
 	
 	public void drawObjects(Graphics g) {
