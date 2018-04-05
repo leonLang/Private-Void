@@ -13,14 +13,13 @@ public class Enemie {
 	private int height;
 	private int TextureID;
 	private int IDO;	
-	public Enemie(int IDO, int x, int y,int width, int height, int rotation, int TextureID) {
-		this.x = x;
-		this.y = y;
-		this.width = width;
-		this.height = height;
-		this.TextureID = TextureID;
-		this.IDO = IDO;
-		System.out.println(height);
+	public Enemie(int[] data) {
+		this.IDO = data[1];
+		this.x = data[2];
+		this.y = data[3];
+		this.width = data[4];
+		this.height = data[5];
+		this.TextureID = data[6];
 	}
 
 	public void drawEnemie(Graphics g) {

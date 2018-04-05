@@ -5,7 +5,6 @@ import java.awt.Graphics2D;
 
 
 import vvoid.init.main.Camera;
-import vvoid.init.main.Collision;
 import vvoid.init.main.Frame;
 import vvoid.init.main.LevelCompiler;
 
