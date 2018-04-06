@@ -3,12 +3,14 @@ package vvoid.map.objects;
 import java.awt.Graphics;
 
 import vvoid.Void.game.SpriteSheet;
+import vvoid.init.main.Collision;
 
 public class Enemie {
+	private boolean test = true;
 	private static SpriteSheet sheet = new SpriteSheet();
 	public static int[] widthA = new int[100];
 	public int x;
-	private int zaehler;
+	public static int zaehler,zaehler1;
 	public int y;
 	private int width;
 	private int height;
@@ -22,7 +24,7 @@ public class Enemie {
 		this.width = data[4];
 		this.height = data[5];
 		this.TextureID = data[7];
-		EOArrey.Enemy(this.width, this.height, this.x, this.y);
+		EOArrey.EnemyS(this.width, this.height, this.x, this.y);
 
 	}
 
@@ -39,9 +41,15 @@ public class Enemie {
 					break;
 		 		}
 	}
+	
+	
 	public void sh(Graphics g, int x1, int y1, int w1, int h1, int x2, int y2, int w2, int h2) {
-		x=x+1;
+	x=x+1;
+	EOArrey.EnemyR(x, y);
 		EnemieMovement.movement(g, x1, y1, w1, h1, x2, y2,w2, h2, x, y, width, height);
-		}
+		Collision.Collis(EOArrey.xE[0], EOArrey.yE[0],EOArrey.widthE[0], EOArrey.heightE[0], EOArrey.xO[0], EOArrey.yO[0], EOArrey.widthO[0], EOArrey.heightO[0]);
+		
+	}
+	
 
 }

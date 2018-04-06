@@ -21,6 +21,7 @@ public class Objekt {
 		this.height = data[5];
 		this.rotation = data[6];
 		this.TextureID = data[7];
+		EOArrey.Objekt(this.width, this.height, this.x, this.y);
 	}
 	
 	public void drawObjects(Graphics g) {
