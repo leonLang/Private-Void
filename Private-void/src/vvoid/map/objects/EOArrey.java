@@ -1,5 +1,7 @@
 package vvoid.map.objects;
 
+import vvoid.init.main.Collision;
+
 public class EOArrey {
 	public static int[] widthE = new int[10000];
 	public static int[] heightE = new int[10000];
@@ -37,6 +39,10 @@ public class EOArrey {
 	else {
 		zaehler++;
 	}
+	if (Collision.Collis(EOArrey.xE[0], EOArrey.yE[0],EOArrey.widthE[0], EOArrey.heightE[0], EOArrey.xO[0], EOArrey.yO[0], EOArrey.widthO[0], EOArrey.heightO[0]) == true) {
+		System.out.println("colli");
+}
+
 	}
 	
 	public static void Objekt(int width, int height, int x, int y){

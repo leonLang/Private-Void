@@ -47,9 +47,7 @@ public class Enemie {
 	x=x+1;
 	EOArrey.EnemyR(x, y);
 		EnemieMovement.movement(g, x1, y1, w1, h1, x2, y2,w2, h2, x, y, width, height);
-		Collision.Collis(EOArrey.xE[0], EOArrey.yE[0],EOArrey.widthE[0], EOArrey.heightE[0], EOArrey.xO[0], EOArrey.yO[0], EOArrey.widthO[0], EOArrey.heightO[0]);
-		
-	}
+			}
 	
 
 }
