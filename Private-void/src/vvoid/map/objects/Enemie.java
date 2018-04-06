@@ -6,6 +6,7 @@ import vvoid.Void.game.SpriteSheet;
 
 public class Enemie {
 	private static SpriteSheet sheet = new SpriteSheet();
+	public  int[] widthA;
 	public int x;
 	private int zaehler;
 	public int y;
@@ -23,7 +24,8 @@ public class Enemie {
 	}
 
 	public void drawEnemie(Graphics g) {
-		
+		widthA[1] =  this.width;
+	//	System.out.println(widthA[1]);
 		switch(this.IDO) {
 				case 1:
 					sh(g, 9, 7, 16, 14, 27, 7, 16, 14);
