@@ -14,7 +14,7 @@ public class EOArrey {
 	public static int zA;
 	public static int zA1;
 	public static int zaehler;
-
+	public static int zaehler1;
 
 	public static void EnemyS(int width, int height, int x, int y) {
 		widthE[zA] = width;
@@ -39,8 +39,10 @@ public class EOArrey {
 	else {
 		zaehler++;
 	}
+	
 	if (Collision.Collis(EOArrey.xE[0], EOArrey.yE[0],EOArrey.widthE[0], EOArrey.heightE[0], EOArrey.xO[0], EOArrey.yO[0], EOArrey.widthO[0], EOArrey.heightO[0]) == true) {
 		System.out.println("colli");
+		System.out.println(zA1);
 }
 
 	}

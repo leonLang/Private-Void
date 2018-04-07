@@ -37,7 +37,6 @@ public class Enemie {
 					
 				case 2:
 					sh(g, 25, 25, 25, 25, 50, 25, 25, 25);
-					//noch en tanzendes Sprit als freude für dich morgen xD
 					break;
 		 		}
 	}
