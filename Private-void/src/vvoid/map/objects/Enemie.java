@@ -45,7 +45,8 @@ public class Enemie {
 	public void sh(Graphics g, int x1, int y1, int w1, int h1, int x2, int y2, int w2, int h2) {
 	y=y-1;
 	if(EOArrey.test==true) {
-		y=700;
+		y=y+1;
+		x=x+1;
 	}
 	EOArrey.EnemyR(x, y);
 		EnemieMovement.movement(g, x1, y1, w1, h1, x2, y2,w2, h2, x, y, width, height);
