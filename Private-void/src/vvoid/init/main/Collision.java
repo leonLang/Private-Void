@@ -7,6 +7,7 @@ public class Collision {
 				//System.out.println("collision");
 				return true;
 			}
+		
 		else {
 		return false;
 		}

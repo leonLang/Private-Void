@@ -16,25 +16,20 @@ public class EOArrey {
 	public static int zaehler;
 	public static int zaehler1;
 	public static int zaehler2;
-
+	public static boolean test=false;
 	public static void EnemyS(int width, int height, int x, int y) {
 		widthE[zA] = width;
 		heightE[zA] = height;
 		xE[zA] = x;
 		yE[zA] = y;
 
-	//	System.out.println(xE[zA]);
-	//	System.out.println(zA);
 		zA++;
 		
 	}
 	public static void EnemyR(int x, int y) {
 		EOArrey.xE[zaehler] =x;
-		
-		System.out.println(zaehler);
-		System.out.println(x);
-		System.out.println(EOArrey.xE[zaehler]);
-	if (zaehler >= EOArrey.zA-1) {
+		EOArrey.yE[zaehler] =y;
+		if (zaehler >= EOArrey.zA-1) {
 		zaehler = 0;
 	}
 	else {
@@ -55,11 +50,15 @@ public class EOArrey {
 	
 	public static void Collision() {
 		while (zaehler1 > 0) {
-			System.out.println("hi;");
 			zaehler1--;
 		if (Collision.Collis(EOArrey.xE[zaehler], EOArrey.yE[zaehler],EOArrey.widthE[zaehler], EOArrey.heightE[zaehler], EOArrey.xO[zaehler2], EOArrey.yO[zaehler2], EOArrey.widthO[zaehler2], EOArrey.heightO[zaehler2]) == true) {
 			System.out.println("colli");
-			System.out.println(zA1);
+			EOArrey.yE[zaehler] = 700;
+			System.out.println(zaehler);
+			test = true;
+		}
+		else {
+			test=false;
 		}
 		zaehler2++;
 	}
