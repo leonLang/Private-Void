@@ -29,7 +29,6 @@ public class Collision {
 		}
 		public boolean Coll() {
 			if(this.Obj1Y+Obj1Height>=Obj2Y && Obj2Y+Obj2Height>=Obj1Y  && Obj1X+Obj1Width>=Obj2X && Obj2X+Obj2Width>Obj1X) {
-					//System.out.println("collision");
 					return true;
 				}
 			else {
