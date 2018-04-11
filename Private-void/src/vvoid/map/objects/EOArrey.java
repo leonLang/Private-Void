@@ -5,13 +5,15 @@ import vvoid.init.main.Collision;
 public class EOArrey {
 	public static int[] widthE = new int[10000];
 	public static int[] heightE = new int[10000];
-	public static int eAmount = -1;
 	public static int[] xE = new int[10000];
 	public static int[] yE = new int[10000];
-	public  int[] widthO = new int[10000];
-	public  int[] heightO = new int[10000];
-	public  int[] xO = new int[10000];
-	public  int[] yO = new int[10000];
+	public static int[] widthO = new int[10000];
+	public static int[] heightO = new int[10000];
+	public static int[] xO = new int[10000];
+	public static int[] yO = new int[10000];
+	
+	public static int eAmount, oAmount = -1;
+
 	public  int[] col = new int[10000];
 	public  int zA;
 	public  int zA1;
