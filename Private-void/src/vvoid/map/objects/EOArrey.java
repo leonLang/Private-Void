@@ -17,7 +17,7 @@ public class EOArrey {
 	public  int zA;
 	public  int zA1;
 	public  static int zaehler;
-	public  int zaehler1;
+	public  int zaehler1, zaehler3,zaehler4;
 	public  int zaehler2;
 	public  boolean test=false;
 	public static int y13,x13;
@@ -40,11 +40,21 @@ public class EOArrey {
 		coll = new Collision(xE[zaehler], yE[zaehler], widthE[zaehler], heightE[zaehler], xO[zaehler1], yO[zaehler1], widthO[zaehler1],heightO[zaehler1]);
 		
 		if (hallo() == true ) {
+			zaehler4=1;
 			y13 = y13 -1;
 			x13++;
 			zaehler1 = 1000000;
-			
 		}
+		/*if (hallo() == false && zaehler4 ==1) {
+			zaehler3++;
+			if(zaehler3 >=10) {
+			x13--;
+			}
+		} */
+		else {
+			zaehler3=0;
+		}
+		
 		zaehler1++;
 	
 		}
