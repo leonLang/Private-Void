@@ -2,9 +2,10 @@ package vvoid.init.main;
 
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 import javax.imageio.ImageIO;
 
 import vvoid.map.objects.Enemie;
@@ -30,9 +31,8 @@ public class LevelCompiler {
 
 
 		try {
-		File file = new File("assats/Level/level.pll");
-		@SuppressWarnings("resource")
-		BufferedReader br = new BufferedReader(new FileReader(file));
+		InputStream file = ResourceLoader.load(("/Level/level.pll"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(file));
 		  String st = br.readLine();
 		  if(st.contains("!pllDOCUMENT")) {
 		  
@@ -76,8 +76,9 @@ public class LevelCompiler {
 		//System.out.println(Arrays.toString(Object));
 		switch(Object[0]) {
 		case 0:
-			
+			if(Object[1] != 0) {
 			createBackground(Object[1]);
+			}
 			break;
 		case 1:
 			createObject(Object);
@@ -94,9 +95,9 @@ public class LevelCompiler {
 	}
 	
 	private void  createBackground(int id) {
-		this.path = "assats/Background/background" + Integer.toString(id) + ".jpg";
+		this.path = "/Background/background+" + Integer.toString(id) + ".jpg";
 		try {
-			img = ImageIO.read(new File(this.path));
+			img = ImageIO.read(ResourceLoader.load((this.path)));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

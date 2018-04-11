@@ -25,10 +25,10 @@ public class Objekt {
 	}
 	
 	public void drawObjects(Graphics g) {
-		if(IDO == 1) {
-		//g.drawRect(x, y, width, height);
+		if(IDO == 0) {
+		g.drawRect(x, y, width, height);
 		g.drawImage(TextureSystem.textureSystem(TextureID), x, y, width, height, null);
-		} else if(IDO == 2) {
+		} else if(IDO == 1) {
 			g.drawRect(x, y, width, height);//
 		}
 
