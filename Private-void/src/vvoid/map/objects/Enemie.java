@@ -2,10 +2,7 @@ package vvoid.map.objects;
 
 import java.awt.Graphics;
 
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MoveAction;
-
 import vvoid.Void.game.SpriteSheet;
-import vvoid.init.main.Collision;
 
 public class Enemie {
 	public EnemieMovement move = new EnemieMovement();
