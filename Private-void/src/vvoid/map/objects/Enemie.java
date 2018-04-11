@@ -2,10 +2,13 @@ package vvoid.map.objects;
 
 import java.awt.Graphics;
 
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MoveAction;
+
 import vvoid.Void.game.SpriteSheet;
 import vvoid.init.main.Collision;
 
 public class Enemie {
+	public EnemieMovement move;
 	private boolean test = true;
 	private static SpriteSheet sheet = new SpriteSheet();
 	public static int[] widthA = new int[100];
@@ -24,8 +27,8 @@ public class Enemie {
 		this.width = data[4];
 		this.height = data[5];
 		this.TextureID = data[7];
-		EOArrey.EnemyS(this.width, this.height, this.x, this.y);
-
+		//EOArrey.EnemyS(this.width, this.height, this.x, this.y);
+		 move = new EnemieMovement();
 	}
 
 	public void drawEnemie(Graphics g) {
@@ -44,12 +47,17 @@ public class Enemie {
 	
 	public void sh(Graphics g, int x1, int y1, int w1, int h1, int x2, int y2, int w2, int h2) {
 	y=y-1;
-	if(EOArrey.test==true) {
+	//EOArrey.EnemyR(x, y);
+	/*if(EOArrey.test==true) {
+		System.out.println(EOArrey.zA1);
+		
+	}
+	if(EOArrey.col[2] == 1) {
 		y=y+1;
 		x=x+1;
 	}
-	EOArrey.EnemyR(x, y);
-		EnemieMovement.movement(g, x1, y1, w1, h1, x2, y2,w2, h2, x, y, width, height);
+	*/
+		move.movement(g, x1, y1, w1, h1, x2, y2,w2, h2, x, y, width, height);
 			}
 	
 
