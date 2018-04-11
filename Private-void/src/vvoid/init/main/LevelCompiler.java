@@ -40,14 +40,14 @@ public class LevelCompiler {
 			  if(st.contains("//") != true) {
 
 				  int[] Object= {
-						  		 convertD(st.substring(0, 2)),//ID
-						  		 convertH(st.substring(3, 7)),//IDO IDO means IDObject
-						  		 convertH(st.substring(8, 12)),//X-Coordinate
-						  		 convertH(st.substring(13, 17)),//Y-Coordinate
-						  		 convertH(st.substring(18, 22)),//WIDTH
-						  		 convertH(st.substring(23, 27)),//HEIGHT
-						  		 convertD(st.substring(28, 31)),//Rotation
-						  		 convertH(st.substring(32, 36)),//TextureID
+						  		 convertD(st.substring(0, st.lastIndexOf("x"))),//ID
+						  		 convertH(st.substring(st.lastIndexOf("x") + 1, st.lastIndexOf("-"))),//IDO IDO means IDObject
+						  		 convertH(st.substring(st.lastIndexOf("-") + 1, st.lastIndexOf("y"))),//X-Coordinate
+						  		 convertH(st.substring(st.lastIndexOf("y") + 1, st.lastIndexOf("w"))),//Y-Coordinate
+						  		 convertH(st.substring(st.lastIndexOf("w") + 1, st.lastIndexOf("h"))),//WIDTH
+						  		 convertH(st.substring(st.lastIndexOf("h") + 1, st.lastIndexOf("r"))),//HEIGHT
+						  		 convertD(st.substring(st.lastIndexOf("r") + 1, st.lastIndexOf("t"))),//Rotation
+						  		 convertH(st.substring(st.lastIndexOf("t") + 1, st.lastIndexOf(";"))),//TextureID
 						  		 };
 				    //System.out.println(st);
 				    //System.out.println(Arrays.toString(Object));
