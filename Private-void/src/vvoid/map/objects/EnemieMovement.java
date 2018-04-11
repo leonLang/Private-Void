@@ -5,11 +5,11 @@ import java.awt.Graphics;
 import vvoid.Void.game.SpriteSheet;
 
 public class EnemieMovement {
-	public static int zaehler =0;
-	static int z1 = 25*(EOArrey.zA+1);
-	private static SpriteSheet sheet = new SpriteSheet();
+	public int zaehler =0;
+	static int z1 = 25;
+	private  SpriteSheet sheet = new SpriteSheet();
 	
-	public static void movement(Graphics g,int x1,int y1,int w1,int h1,int x2, int y2, int w2, int h2,int x,int y,int width,int height){
+	public  void movement(Graphics g,int x1,int y1,int w1,int h1,int x2, int y2, int w2, int h2,int x,int y,int width,int height){
 		if (zaehler <= z1) {
 		zaehler = zaehler +1;
 		}
