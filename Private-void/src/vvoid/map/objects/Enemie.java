@@ -8,7 +8,8 @@ import vvoid.Void.game.SpriteSheet;
 import vvoid.init.main.Collision;
 
 public class Enemie {
-	public EnemieMovement move;
+	public EnemieMovement move = new EnemieMovement();
+	public EOArrey eo = new EOArrey();
 	private boolean test = true;
 	private static SpriteSheet sheet = new SpriteSheet();
 	public static int[] widthA = new int[100];
@@ -27,8 +28,8 @@ public class Enemie {
 		this.width = data[4];
 		this.height = data[5];
 		this.TextureID = data[7];
+		eo.EnemyS(width, height, x, y);
 		//EOArrey.EnemyS(this.width, this.height, this.x, this.y);
-		 move = new EnemieMovement();
 	}
 
 	public void drawEnemie(Graphics g) {

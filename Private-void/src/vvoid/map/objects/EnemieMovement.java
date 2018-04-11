@@ -5,7 +5,7 @@ import java.awt.Graphics;
 import vvoid.Void.game.SpriteSheet;
 
 public class EnemieMovement {
-	public  int zaehler =0;
+	public int zaehler =0;
 	static int z1 = 25;
 	private  SpriteSheet sheet = new SpriteSheet();
 	

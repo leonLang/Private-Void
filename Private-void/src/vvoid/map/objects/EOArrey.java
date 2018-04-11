@@ -3,10 +3,11 @@ package vvoid.map.objects;
 import vvoid.init.main.Collision;
 
 public class EOArrey {
-	public  int[] widthE = new int[10000];
-	public  int[] heightE = new int[10000];
-	public  int[] xE = new int[10000];
-	public  int[] yE = new int[10000];
+	public static int[] widthE = new int[10000];
+	public static int[] heightE = new int[10000];
+	public static int eAmount = -1;
+	public static int[] xE = new int[10000];
+	public static int[] yE = new int[10000];
 	public  int[] widthO = new int[10000];
 	public  int[] heightO = new int[10000];
 	public  int[] xO = new int[10000];
@@ -20,13 +21,13 @@ public class EOArrey {
 	public  int x,y;
 	public  boolean test=false;
 	public  void EnemyS(int width, int height, int x, int y) {
-		widthE[zA] = width;
-		heightE[zA] = height;
-		xE[zA] = x;
-		yE[zA] = y;
-
+		eAmount++;
+		widthE[eAmount] = width;
+		heightE[eAmount] = height;
+		xE[eAmount] = x;
+		yE[eAmount] = y;
 		zA++;
-		
+		System.out.println(yE[eAmount]);
 	}
 
 	public  void  EnemyR(int x, int y) {
