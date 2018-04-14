@@ -46,11 +46,11 @@ public class Enemie {
 	
 	
 	public void sh(Graphics g, int x1, int y1, int w1, int h1, int x2, int y2, int w2, int h2) {
-	y=y+1;
+	//y=y+1;
 	eo.EnemyR(x,y);
 	y= EOArrey.y13;
 	x= EOArrey.x13;
-	System.out.println(EOArrey.y13);
+	//System.out.println(EOArrey.y13);
 	//EOArrey.EnemyR(x, y);
 	/*if(EOArrey.test==true) {
 		System.out.println(EOArrey.zA1);
