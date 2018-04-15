@@ -21,7 +21,7 @@ public class Enemie {
 	private int IDO;	
 	public int zA;
 	public Enemie(int[] data) {
-		this.IDO = data[1];
+		this.IDO = data[7];
 		this.x = data[2];
 		this.y = data[3];
 		this.width = data[4];
