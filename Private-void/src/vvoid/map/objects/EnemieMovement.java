@@ -6,7 +6,7 @@ import vvoid.Void.game.SpriteSheet;
 
 public class EnemieMovement {
 	public int zaehler =0;
-	static int z1 = 25;
+	static int z1 = 5;
 	private  SpriteSheet sheet = new SpriteSheet();
 	
 	public  void movement(Graphics g,int x1,int y1,int w1,int h1,int x2, int y2, int w2, int h2,int x,int y,int width,int height){
@@ -17,12 +17,12 @@ public class EnemieMovement {
 			zaehler=0;
 		}
 		if(zaehler > z1/2) {
-	        g.drawRect(x, y, width, height);
+	       // g.drawRect(x, y, width, height);
 	        g.drawImage(sheet.crop(x1, y1, w1, h1),x,y,width,height,null);
 	       // g.drawImage(sheet.crop(0, 0, 32, 32),100,100,100,100,null);
 				}
 	        if (zaehler <= z1/2) {
-	            g.drawRect(x, y, width, height);
+	           // g.drawRect(x, y, width, height);
 	g.drawImage(sheet.crop(x2, y2, w2, h2),x,y,width,height,null);
 	       
 			}
