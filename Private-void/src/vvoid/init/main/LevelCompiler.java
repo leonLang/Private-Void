@@ -76,7 +76,7 @@ public class LevelCompiler {
 		//System.out.println(Arrays.toString(Object));
 		switch(Object[0]) {
 		case 0:
-			if(Object[1] != 0 && Object[2] != 0) {
+			if(Object[1] != 0) {
 			createBackground(Object[1]);
 			}
 			break;
@@ -84,11 +84,13 @@ public class LevelCompiler {
 			createObject(Object);
 			break;
 		case 2:
-			createEnemie(Object);
+			//soft object;
 			break;
 		case 3:
-			createEvent(Object);
+			createEnemie(Object);
 			break;
+		case 4:
+			createEvent(Object);
 		default:
 			throw new Exception("The id of the Object is not avalible:" + Object[0]);
 		}
