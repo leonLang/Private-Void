@@ -22,8 +22,11 @@ public class EOArrey {
 	public  int h11,h12,h21,h22,h13,h14,h15;
 	public  int zaehler2;
 	public  boolean test=false;
-	public static int y13,x13;
+	public static int y1,x1;
 	public boolean start = true;
+	public boolean oben,unten,links,rechts,rL;
+	public boolean stop1,stop2,stop3,stop4;
+	public int o1,o2,u1,l1,r1,test1,test2;
 	public  void EnemyS(int width, int height, int x, int y) {
 		eAmount++;
 		widthE[eAmount] = width;
@@ -36,118 +39,123 @@ public class EOArrey {
 	}
 
 	public  void  EnemyR(int x, int y) {
-		y13 =y;
-		x13 = x;
+		y1 =y;
+		x1 = x;
 		xE[zaehler] =x;
 		yE[zaehler] =y;
 		while (zaehler1<= oAmount) {
-		coll = new Collision(xE[zaehler], yE[zaehler], widthE[zaehler], heightE[zaehler], xO[zaehler1], yO[zaehler1], widthO[zaehler1],heightO[zaehler1]);
-	
-		/*if (yE[zaehler]+heightE[zaehler]+4 >= yO[zaehler1] && yE[zaehler]+heightE[zaehler]-4 <= yO[zaehler1]) {
-		}
-		if(yE[zaehler]-5 >= yO[zaehler1]+ heightO[zaehler1] && yE[zaehler]+5 <= yO[zaehler1]+ heightO[zaehler1] ) {
+			//coll = new Collision(xE[zaehler], yE[zaehler], widthE[zaehler], heightE[zaehler], xO[zaehler1], yO[zaehler1], widthO[zaehler1],heightO[zaehler1]);		
+			//System.out.println(yE[zaehler]+ "G:" + yO[zaehler1] );
 			
-		}
-		if (xE[zaehler]+5 >= xO[zaehler1]+widthO[zaehler1] && xE[zaehler]-5 <= xO[zaehler1]+widthO[zaehler1]) {
-			
-		}
-		*/
-		if (hallo() == 1 ) {
-			System.out.println("coll");
+			if (test2 == 0) {
+			coll = new Collision(xE[zaehler], yE[zaehler], widthE[zaehler], heightE[zaehler], xO[zaehler1], yO[zaehler1], widthO[zaehler1],heightO[zaehler1]);		
+				
+			if (coll.Coll1() == 1 ) {
 			start=false;
-			/*y13 = y13 -1;
-			zaehler5 =1;
-			x13++;
-			zaehler3=0;
-			//System.out.println("alles");
-			zaehler1 = 1000000;
-			h11 =0;
-			h12=0;
-			z1=0;
-			h14=0;
-			*/
 		}
-		/*else {
-			z1++;
-			if (z1 >=5) {
-				
-			if (hallo1() == 1) {
-				//System.out.println("links");
-				h11=1;
-				h12=0;
-				h14=1;
+		if(coll.CollOben() == 1) {
+			test2 =1;
+			x1++;
+			oben = true;
+			o1=0;	
+		}
+		else {
+			if (oben == true) {
+				o1++;
+				System.out.println("oben");
+				if (o1>=oAmount+1) {
+				y1++;
+				oben = false;
+				}
 			}
-			if(h14 == 1) {
-			if (hallo3()==1) {
-				h13=0;
-				System.out.println("es kommt was");
-				h14=0;
-			}
-			else {
-				h13=1;
-			}
-			}
-			if (h13==1 && h12>=2) {
-				x13--;
-				h13=0;
-				
-			}
-			
-			if (hallo2() ==1 ) {
-				h21=1;
-				//h11=0;
-				//h12=0;
-				h22=0;
-				//x13--;
-				
+		}
+		
+		if(coll.CollUnten() == 1) {
+			test2 =1;
+			x1--;
+			unten = true;
+			o2=0;	
+		}
+		else {
+			if (unten == true) {
+				o2++;
 				System.out.println("unten");
+				if (o2>=oAmount+1) {
+				//x1--;
+				unten = false;
+				}
 			}
-		}*/
+		}
+		
+		
+		//}
+		if (rL == false) {
+		if (stop2 == false) {
+		if(coll.CollRechts() == 1) {
+			//zaehler1=10000;
+			test2 = 1;
+			System.out.println("rechts");
+			y1++;
+			rechts = true;
+			r1=0;
+			rL =true;
+			stop2 = true;
+			test=true;
+			//zaehler1=-1;
+		}
+		 else{
+			 if (rechts == true) {
+				 r1++;
+				 if(r1>=oAmount+1) {
+					 x1--;
+					 System.out.println("no");
+				 rechts = false;
+				 }
+					 
+			 }
+			
+		}
+		}
+		}
+		if (rL == true) {
+			
+			//System.out.println("joa");
+		if (coll.Coll4() == 1) {
+			test2=1;
+			test=false;
+			System.out.println("unten12");
+			y1= y1-1;
+			x1 = x1+1;
+			}
+		}
+		
+		
+		
+		
+
+		}
 		zaehler1++;
+		}
+		test2=0;
+		stop2= false;
+		stop3 =false;
+		stop4= false;
+		if (test == true) {
+			test = false;
+		}
+		else {
+		rL=false;
 		}
 	
 		if(start == true) {
-			y13++;
+			y1++;
 		}
 		
-		/*if (hallo() == false && zaehler4 ==1) {
-			zaehler3++;
-			if(zaehler3 >=10) {
-			x13--;
-			}
-		} */
 		
 		
 		
 		
-		if(h11==1) {
-			h12++;
-		}
 		
-		if(h21==1) {
-			h22++;
-			System.out.println(h22);
-		}
-		if (h12 >=2) {
-			
-			x13--;
-			y13--;
-		}
-		if (h22 >=2) {
-			h11=0;
-			h12=0;
-			//x13--;
-			y13--;
-		}
-		if (zaehler5==1){
-			zaehler3 = zaehler3+1;
-			//System.out.println(zaehler3);
-		}
-		if (zaehler3 >=4) {
-			//y13--;
-			//x13--;
-			
-		}
 		zaehler1 =0;
 		if (zaehler >= eAmount-1) {
 		zaehler = 0;
@@ -157,47 +165,9 @@ public class EOArrey {
 	}
 	//zaehler1 = zA1;
 	//Collision();
-	}
-	public int hallo() {
-		//coll.Coll2();
-		if (coll.Coll1() == 1) {
-			return 1;
-		}
-		else {
-			return 0;
-		}
 		
 	}
-	public int hallo1() {
-		//die linke seite der Collision
-		if (coll.Coll2() == 1) {
-			return 1;
-		}
-		else {
-			return 0;
-		}
-		
-	}
-	public int hallo2() {
-		//die untere seite der Collision
-		if (coll.Coll3() == 1) {
-			return 1;
-		}
-		else {
-			return 0;
-		}
-		
-	}
-	public int hallo3() {
-		//die untere seite der Collision
-		if (coll.Coll4() == 1) {
-			return 1;
-		}
-		else {
-			return 0;
-		}
-		
-	}
+	
 	
 	public  void Objekt(int width, int height, int x, int y){
 		oAmount++;

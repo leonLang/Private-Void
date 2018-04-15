@@ -20,7 +20,50 @@ public class Collision {
 	
 		
 		
+		public int CollOben() {
+			if(Obj1Y+Obj1Height>=Obj2Y && Obj2Y+Obj2Height-1>=Obj1Y && Obj1X+Obj1Width-1>=Obj2X && Obj2X+Obj2Width-1>=Obj1X) {
+					z1=1;
+					//System.out.println("klappti");
+					return 1;
+				}
+			else {
+				return 0;
+			}
 		
+		}
+		public int CollUnten() {
+			if(Obj1Y+Obj1Height-1>=Obj2Y && Obj2Y+Obj2Height>=Obj1Y && Obj1X+Obj1Width-1>=Obj2X && Obj2X+Obj2Width-1>=Obj1X) {
+					z1=1;
+					//System.out.println("klappti");
+					return 1;
+				}
+			else {
+				return 0;
+			}
+		
+		}
+		public int CollLinks() {
+			if(Obj1Y+Obj1Height-1>=Obj2Y && Obj2Y+Obj2Height-1>=Obj1Y && Obj1X+Obj1Width-1>=Obj2X && Obj2X+Obj2Width-1>=Obj1X) {
+					z1=1;
+					//System.out.println("klappti");
+					return 1;
+				}
+			else {
+				return 0;
+			}
+		
+		}
+		public int CollRechts() {
+			if(Obj1Y+Obj1Height-1>=Obj2Y && Obj2Y+Obj2Height-1>=Obj1Y && Obj1X+Obj1Width-1>=Obj2X && Obj2X+Obj2Width>=Obj1X) {
+					z1=1;
+					//System.out.println("klappti");
+					return 1;
+				}
+			else {
+				return 0;
+			}
+		
+		}
 		
 		public int Coll1() {
 			if(this.Obj1Y+Obj1Height>=Obj2Y && Obj2Y+Obj2Height>=Obj1Y && Obj1X+Obj1Width>=Obj2X && Obj2X+Obj2Width>=Obj1X) {
@@ -54,7 +97,7 @@ public class Collision {
 		
 		}
 		public int Coll4() {
-			if(Obj1Y+Obj1Height+1>=Obj2Y && Obj2Y+Obj2Height>=Obj1Y && Obj1X+Obj1Width>=Obj2X && Obj2X+Obj2Width>=Obj1X) {
+			if(Obj1Y+Obj1Height>=Obj2Y && Obj2Y+Obj2Height-1>=Obj1Y && Obj1X+Obj1Width-1>=Obj2X && Obj2X+Obj2Width-1>=Obj1X) {
 					z1=1;
 					//System.out.println("klappti");
 					return 1;
@@ -64,5 +107,6 @@ public class Collision {
 			}
 		
 		}
+		
 		
 }
