@@ -21,10 +21,10 @@ public class EOArrey {
 	public  int zaehler1, zaehler4,zaehler5,zaehler3,z1;
 	public  int h11,h12,h21,h22,h13,h14,h15;
 	public  int zaehler2;
-	public  boolean test=false;
+	public  boolean test=false,testU;
 	public static int y1,x1;
 	public boolean start = true;
-	public boolean oben,unten,links,rechts,rL;
+	public boolean oben,unten,links,rechts,rL,uH;
 	public boolean stop1,stop2,stop3,stop4;
 	public int o1,o2,o3,u1,l1,r1,test1,test2;
 	public  void EnemyS(int width, int height, int x, int y) {
@@ -70,22 +70,7 @@ public class EOArrey {
 			}
 		}
 		
-		if(coll.CollUnten() == 1) {
-			test2 =1;
-			x1--;
-			unten = true;
-			o2=0;	
-		}
-		else {
-			if (unten == true) {
-				o2++;
-				if (o2>=oAmount+1) {
-				y1--;
-				//System.out.println("unten");
-				unten = false;
-				}
-			}
-		}
+		
 		
 		if(coll.CollLinks() == 1) {
 			test2 =1;
@@ -101,6 +86,35 @@ public class EOArrey {
 				x1++;
 				links = false;
 				}
+			}
+		}
+		if(uH == false) {
+		if(coll.CollUnten() == 1) {
+			test2 =1;
+			x1--;
+			unten = true;
+			o2=0;	
+			uH = true;
+			testU = true;
+		}
+		else {
+			if (unten == true) {
+				o2++;
+				if (o2>=oAmount+1) {
+				y1--;
+				System.out.println("unten");
+				unten = false;
+				}
+			}
+		}
+		}
+		if (uH == true) {
+			if(coll.CollLinks() == 1) {
+				test2=1;
+				testU=false;
+				System.out.println("uh");
+				x1++;
+				y1++;
 			}
 		}
 		//}
@@ -119,7 +133,7 @@ public class EOArrey {
 				 r1++;
 				 if(r1>=oAmount+1) {
 					 x1--;
-					 //System.out.println("no");
+					// System.out.println("no");
 				 rechts = false;
 				 }
 					 
@@ -131,7 +145,7 @@ public class EOArrey {
 		if (rL == true) {
 			
 			//System.out.println("joa");
-		if (coll.Coll4() == 1) {
+		if (coll.CollOben() == 1) {
 			test2=1;
 			test=false;
 			//System.out.println("unten12");
@@ -153,6 +167,13 @@ public class EOArrey {
 		}
 		else {
 		rL=false;
+		}
+		
+		if(testU == true) {
+			testU = false;
+		}
+		else {
+			uH=false;
 		}
 	
 		if(start == true) {
