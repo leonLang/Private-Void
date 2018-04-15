@@ -21,10 +21,10 @@ public class EOArrey {
 	public  int zaehler1, zaehler4,zaehler5,zaehler3,z1;
 	public  int h11,h12,h21,h22,h13,h14,h15;
 	public  int zaehler2;
-	public  boolean test=false,testU;
+	public  boolean test=false,testU,testO;
 	public static int y1,x1;
 	public boolean start = true;
-	public boolean oben,unten,links,rechts,rL,uH;
+	public boolean oben,unten,links,rechts,rL,uH,oR;
 	public boolean stop1,stop2,stop3,stop4;
 	public int o1,o2,o3,u1,l1,r1,test1,test2;
 	public  void EnemyS(int width, int height, int x, int y) {
@@ -53,22 +53,6 @@ public class EOArrey {
 			if (coll.Coll1() == 1 ) {
 			start=false;
 		}
-		if(coll.CollOben() == 1) {
-			test2 =1;
-			x1++;
-			oben = true;
-			o1=0;	
-		}
-		else {
-			if (oben == true) {
-				o1++;
-				//System.out.println("oben");
-				if (o1>=oAmount+1) {
-				y1++;
-				oben = false;
-				}
-			}
-		}
 		
 		
 		
@@ -88,6 +72,30 @@ public class EOArrey {
 				}
 			}
 		}
+		
+		if(oR == false) {
+		if(coll.CollOben() == 1) {
+			test2 =1;
+			x1++;
+			oben = true;
+			o1=0;	
+			oR= true;
+			testO = true;
+		}
+		else {
+			if (oben == true) {
+				o1++;
+				//System.out.println("oben");
+				if (o1>=oAmount+1) {
+				y1++;
+				oben = false;
+				}
+			}
+		}
+		}
+		
+		
+		
 		if(uH == false) {
 		if(coll.CollUnten() == 1) {
 			test2 =1;
@@ -96,6 +104,7 @@ public class EOArrey {
 			o2=0;	
 			uH = true;
 			testU = true;
+			//System.out.println("why");
 		}
 		else {
 			if (unten == true) {
@@ -174,6 +183,12 @@ public class EOArrey {
 		}
 		else {
 			uH=false;
+		}
+		if(testO == true) {
+			testO = false;
+		}
+		else {
+			oR=false;
 		}
 	
 		if(start == true) {
