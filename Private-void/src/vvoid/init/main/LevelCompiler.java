@@ -76,7 +76,7 @@ public class LevelCompiler {
 		//System.out.println(Arrays.toString(Object));
 		switch(Object[0]) {
 		case 0:
-			if(Object[1] != 0) {
+			if(Object[1] != 0 && Object[2] != 0) {
 			createBackground(Object[1]);
 			}
 			break;
