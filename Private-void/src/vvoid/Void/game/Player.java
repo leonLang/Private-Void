@@ -17,12 +17,13 @@ public class Player implements KeyListener{
 	public void keyPressed(KeyEvent e) {
 		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
 			Camera.add(10);
+			Game.move = true;
 		}
 		
 	}
 	@Override
 	public void keyReleased(KeyEvent e) {
-
+		Game.move = false;
 		
 	}
 	@Override

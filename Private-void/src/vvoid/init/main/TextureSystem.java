@@ -8,6 +8,7 @@ import javax.imageio.ImageIO;
 public class TextureSystem {
 	static String TexturePath;
 	static BufferedImage img;
+
 	public static BufferedImage textureSystem(int tid) {
 		TexturePath = "/textures/Objects/SObject+" + tid + ".jpg";
 		try {
@@ -16,7 +17,6 @@ public class TextureSystem {
 			e.printStackTrace();
 		}
 		return img;
-		
-		
+
 	}
 }

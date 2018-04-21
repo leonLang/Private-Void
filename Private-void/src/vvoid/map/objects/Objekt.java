@@ -1,6 +1,7 @@
 package vvoid.map.objects;
 
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
 
 import vvoid.init.main.TextureSystem;
 
@@ -12,6 +13,7 @@ public class Objekt {
 	private int TextureID;
 	private int IDO;
 	private int rotation;
+	private BufferedImage img;
 	public EOArrey eo = new EOArrey();
 	public Objekt(int[] data) {
 		this.IDO = data[1];
@@ -21,6 +23,7 @@ public class Objekt {
 		this.height = data[5];
 		this.rotation = data[6];
 		this.TextureID = data[7];
+	    img = TextureSystem.textureSystem(TextureID);
 		//EOArrey.Objekt(this.width, this.height, this.x, this.y);
 		eo.Objekt(width, height, x, y);
 	}
@@ -28,7 +31,7 @@ public class Objekt {
 	public void drawObjects(Graphics g) {
 		if(IDO == 0) {
 		g.drawRect(x, y, width, height);
-		g.drawImage(TextureSystem.textureSystem(TextureID), x, y, width, height, null);
+		g.drawImage(img, x, y, width, height, null);
 		} else if(IDO == 1) {
 			g.drawRect(x, y, width, height);//
 		}
