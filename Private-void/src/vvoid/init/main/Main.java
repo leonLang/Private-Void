@@ -32,7 +32,6 @@ public class Main {
 
 			if (!paused) {
 				while (now - lastUpdateTime > TIME_BETWEEN_UPDATES && updateCount < MAX_UPDATES_BEFORE_RENDER) {
-					// updateGame();comment
 
 					lastUpdateTime += TIME_BETWEEN_UPDATES;
 					updateCount++;

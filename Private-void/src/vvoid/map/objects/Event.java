@@ -7,6 +7,7 @@ public class Event {
 	public int width;
 	public int height;
 	public int TextureID;
+
 	public Event(int[] data) {
 		this.IDO = data[1];
 		this.x = data[2];
