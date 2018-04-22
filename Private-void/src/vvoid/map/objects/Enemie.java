@@ -1,6 +1,7 @@
 package vvoid.map.objects;
 
 import java.awt.Graphics;
+import java.awt.Image;
 
 import vvoid.Void.game.SpriteSheet;
 import vvoid.init.main.Collision;
@@ -8,61 +9,54 @@ import vvoid.init.main.Collision;
 public class Enemie {
 	public EnemieMovement move = new EnemieMovement();
 	public EOArrey eo = new EOArrey();
-	private boolean test = true;
 	public Collision coll,coll1;
-	private static SpriteSheet sheet = new SpriteSheet();
+	private  SpriteSheet sheet = new SpriteSheet();
 	public static int[] widthA = new int[100];
 	public int x;
+	private Image c,d,e,f;
 	public static int zaehler,zaehler1;
 	public int y;
 	private int width;
 	private int height;
-	private int TextureID;
 	private int IDO;	
 	public int zA;
 	public Enemie(int[] data) {
+		spritePos();
 		this.IDO = data[7];
-		this.x = data[2];
-		this.y = data[3];
-		this.width = data[4];
-		this.height = data[5];
-		this.TextureID = data[7];
+		this.x = data[2]+3;
+		this.y = data[3]+16;
+		this.width = data[4]-16;
+		this.height = data[5]-16;
 		eo.EnemyS(width, height, x, y);
-		//EOArrey.EnemyS(this.width, this.height, this.x, this.y);
+		move.test();
 	}
 
 	public void drawEnemie(Graphics g) {
 		
 		switch(this.IDO) {
 				case 1:
-					sh(g, 9, 7, 16, 14, 27, 7, 16, 14);
+					sh(g,c,d);
 					break;
 					
 				case 2:
-					sh(g, 25, 25, 25, 25, 50, 25, 25, 25);
+					sh(g,e,f);
 					break;
 		 		}
 	}
 	
 	
-	public void sh(Graphics g, int x1, int y1, int w1, int h1, int x2, int y2, int w2, int h2) {
-	//y=y+1;
+	public void sh(Graphics g, Image a1, Image a2) {
+	
 	eo.EnemyR(x,y);
 	y= EOArrey.y1;
 	x= EOArrey.x1;
-	//System.out.println(EOArrey.y13);
-	//EOArrey.EnemyR(x, y);
-	/*if(EOArrey.test==true) {
-		System.out.println(EOArrey.zA1);
-		
-	}
-	if(EOArrey.col[2] == 1) {
-		y=y+1;
-		x=x+1;
-	}
-	*/
-		move.movement(g, x1, y1, w1, h1, x2, y2,w2, h2, x, y, width, height);
+		move.movement(g,a1,a2, x, y, width, height);
 			}
-	
+	private void spritePos() {
+		c = sheet.crop(9, 7, 16, 14);
+		d = sheet.crop(27, 7, 16, 14);
+		e = sheet.crop(25, 25, 25, 25);
+		f = sheet.crop(50, 25, 25, 25);
+	}
 
 }
