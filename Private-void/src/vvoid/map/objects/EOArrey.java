@@ -12,7 +12,7 @@ public class EOArrey {
 	private boolean test, testU, testO, testL,start = true;
 	private boolean oben, unten, links, rechts, rL, uH, oR, lR;
 	private int o1, o2, o3, r1,  test2;
-
+	private int z7;
 	public void EnemyS(int width, int height, int x, int y) {
 		eAmount++;
 		widthE[eAmount] = width - 2;
@@ -24,6 +24,7 @@ public class EOArrey {
 	}
 
 	public void EnemyR(int x, int y) {
+		
 		y1 = y;
 		x1 = x;
 		xE[zaehler] = x;
