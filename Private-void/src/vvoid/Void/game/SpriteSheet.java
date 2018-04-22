@@ -17,6 +17,7 @@ public class SpriteSheet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
 	
 	public Image crop(int x, int y, int width, int height) {

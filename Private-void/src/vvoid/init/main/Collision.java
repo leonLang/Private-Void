@@ -20,6 +20,7 @@ public class Collision {
 	
 		
 		
+	
 		public int CollOben() {
 			if(Obj1Y+Obj1Height>=Obj2Y && Obj2Y+Obj2Height-1>=Obj1Y && Obj1X+Obj1Width-1>=Obj2X && Obj2X+Obj2Width-1>=Obj1X) {
 					z1=1;

@@ -50,7 +50,7 @@ public class Game {
 				LevelCompiler.objects[i].drawObjects(g);
 			}
 		g2d.translate(-cam.getX(), -cam.getY());
-
+ 
 	}
 
 }

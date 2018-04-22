@@ -13,6 +13,7 @@ public class Objekt {
 	private int TextureID;
 	private int IDO;
 	private int rotation;
+	
 	private BufferedImage img;
 	public EOArrey eo = new EOArrey();
 	public Objekt(int[] data) {

@@ -31,6 +31,7 @@ public class Enemie {
 		move.test();
 	}
 
+	
 	public void drawEnemie(Graphics g) {
 		
 		switch(this.IDO) {

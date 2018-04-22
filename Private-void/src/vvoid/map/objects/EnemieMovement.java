@@ -22,6 +22,7 @@ public class EnemieMovement {
 		else {
 			zaehler=0;
 		}
+		
 		if(zaehler > z1/2) {
 	       // g.drawRect(x, y, width, height);
 	        g.drawImage(a1,x,y,width,height,null);
