@@ -11,7 +11,7 @@ public class EnemieMovement {
 	private  SpriteSheet sheet = new SpriteSheet();
 	public Image c,d;
 	public void test() {
-		c = sheet.crop(9, 7, 16, 14);
+		c = sheet.crop(9, 7, 17, 14);
 		d = sheet.crop(27, 7, 16, 14);
 	}
 	public  void movement(Graphics g,Image a1,Image a2,int x,int y,int width,int height){

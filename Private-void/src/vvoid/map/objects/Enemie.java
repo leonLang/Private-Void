@@ -46,6 +46,7 @@ public class Enemie {
 	
 	
 	public void sh(Graphics g, Image a1, Image a2) {
+	
 	eo.EnemyR(x,y);
 	y= EOArrey.y1;
 	x= EOArrey.x1;
