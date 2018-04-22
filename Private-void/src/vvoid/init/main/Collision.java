@@ -3,7 +3,7 @@ package vvoid.init.main;
 public class Collision {
 	
 	private int Obj1Y,Obj1X,Obj1Width,Obj1Height,Obj2X,Obj2Y,Obj2Width,Obj2Height = 0;
-	private int z1,z2,z3,z4;
+	public int z1;
 	public Collision(int Obj1X,int Obj1Y,int Obj1Width, int Obj1Height,int Obj2X,int Obj2Y,int Obj2Width, int Obj2Height){
 		this.Obj1Y = Obj1Y;
 		this.Obj1X = Obj1X;
@@ -75,38 +75,7 @@ public class Collision {
 				return 0;
 			}
 		}
-		public int Coll2() {
-			if(Obj1Y+Obj1Height>=Obj2Y && Obj2Y+Obj2Height>=Obj1Y && Obj1X+Obj1Width>=Obj2X && Obj2X+Obj2Width+1>=Obj1X) {
-					z1=1;
-					//System.out.println("links");
-					return 1;
-				}
-			else {
-				return 0;
-			}
-		}
-		public int Coll3() {
-			if(Obj1Y+Obj1Height>=Obj2Y && Obj2Y+Obj2Height+1>=Obj1Y && Obj1X+Obj1Width>=Obj2X && Obj2X+Obj2Width>=Obj1X) {
-					z1=1;
-					//System.out.println("unten");
-					return 1;
-				}
-			else {
-				return 0;
-			}
 		
-		}
-		public int Coll4() {
-			if(Obj1Y+Obj1Height>=Obj2Y && Obj2Y+Obj2Height-1>=Obj1Y && Obj1X+Obj1Width-1>=Obj2X && Obj2X+Obj2Width-1>=Obj1X) {
-					z1=1;
-					//System.out.println("klappti");
-					return 1;
-				}
-			else {
-				return 0;
-			}
-		
-		}
 		
 		
 }
