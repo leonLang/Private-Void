@@ -22,6 +22,7 @@ public class Enemie {
 		this.width = data[4]-2;
 		this.height = data[5]-2;
 		eo.EnemyS(width, height, x, y);
+		move.test();
 	}
 
 	public void drawEnemie(Graphics g) {
