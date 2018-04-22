@@ -17,11 +17,9 @@ public class SpriteSheet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("zu oft");
 	}
 	
 	public Image crop(int x, int y, int width, int height) {
-		System.out.println("zu oft");
 		return metroid.getSubimage(x, y, width, height);
 	}
 }
