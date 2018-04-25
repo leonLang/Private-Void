@@ -1,17 +1,23 @@
 package vvoid.init.main;
 
 import vvoid.Void.game.Game;
+import vvoid.Void.game.Menue;
 
 public class Main {
 	public static boolean running = true;
 	public static boolean paused = false;
+	public static boolean menu= true;
+	public static boolean loading = false;
 	private static int fps = 60;
 	private static int frameCount = 0;
 	public static DrawPanel panel;
+	public static Menue menue;
 
 	public static void main(String[] args) throws InterruptedException {
-		Game.setup();
-		// new Frame(Game.WIDTH, Game.HEIGHT,"titel",true);
+		//Game.setup();
+		new Frame(Game.WIDTH, Game.HEIGHT,"titel",true);
+		menue = new Menue();
+		
 		loop();
 
 	}
@@ -36,7 +42,6 @@ public class Main {
 					lastUpdateTime += TIME_BETWEEN_UPDATES;
 					updateCount++;
 				}
-
 				panel.repaint();
 
 				lastRenderTime = now;
