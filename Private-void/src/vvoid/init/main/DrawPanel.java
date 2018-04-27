@@ -10,7 +10,6 @@ public class DrawPanel extends JPanel {
 	private static final long serialVersionUID = -7664245199454481726L;
 
 	public DrawPanel() {
-
 	}
 
 	@Override
@@ -18,7 +17,7 @@ public class DrawPanel extends JPanel {
 		super.paintComponent(g);
 		if(Main.menu != true && Main.loading != true) {
 		Game.draw(g);
-		System.out.println("draw");
+	//	System.out.println("draw");
 		} else {
 			Main.menue.drawMenue();
 		}

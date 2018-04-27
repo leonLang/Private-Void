@@ -90,7 +90,6 @@ public class LevelCompiler {
 					}
 					load();
 				}
-				Main.loading = false;
 				Main.panel.remove(Menue.bar);
 				Main.panel.remove(Menue.l1);
 				Game.setup();

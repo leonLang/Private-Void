@@ -14,8 +14,10 @@ public class Frame extends JFrame {
 	public Frame(int WIDTH, int HEIGHT, String title, boolean Resizable) {
 		Main.panel = new DrawPanel();
 		add(Main.panel);
-		this.addKeyListener(Game.player);
+		addKeyListener(Main.control);
 		// get screen size
+		setFocusable(true);
+		this.requestFocusInWindow();
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 		int screenWIDTH = (int) screen.getWidth();
 		int screenHEIGHT = (int) screen.getHeight();

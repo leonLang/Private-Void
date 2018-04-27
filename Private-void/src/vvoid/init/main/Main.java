@@ -1,5 +1,6 @@
 package vvoid.init.main;
 
+import vvoid.Void.game.Control;
 import vvoid.Void.game.Game;
 import vvoid.Void.game.Menue;
 
@@ -12,10 +13,13 @@ public class Main {
 	private static int frameCount = 0;
 	public static DrawPanel panel;
 	public static Menue menue;
+	public static Frame mainframe;
+	public static Control control;
 
 	public static void main(String[] args) throws InterruptedException {
 		//Game.setup();
-		new Frame(Game.WIDTH, Game.HEIGHT,"titel",true);
+		control = new Control();
+		mainframe = new Frame(Game.WIDTH, Game.HEIGHT,"titel",true);
 		menue = new Menue();
 		
 		loop();
