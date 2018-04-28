@@ -2,7 +2,7 @@ package vvoid.init.main;
 
 public class Camera {
 	static int x;
-	int y;
+	static int y;
 
 	public Camera(int x, int y) {
 		this.x = x;
@@ -17,8 +17,11 @@ public class Camera {
 		return y;
 	}
 
-	public static void add(int i) {
+	public static void addx(int i) {
 		x -= i;
+	}
+	public static void addy(int i) {
+		y -= i;
 	}
 
 }
