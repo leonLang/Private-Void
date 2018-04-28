@@ -27,6 +27,7 @@ public class EOArrey {
 	public boolean oben, unten, links, rechts, rL, uH, oR, lR;
 	public boolean stop1, stop2, stop3, stop4;
 	public int o1, o2, o3, u1, l1, r1, test1, test2, test3;
+	public boolean ters;
 
 	public void EnemyS(int width, int height, int x, int y) {
 		eAmount++;
@@ -128,7 +129,14 @@ public class EOArrey {
 						testU = false;
 						System.out.println("uh");
 						 x1++;
-						y1 = y1+2;
+						 if(ters == false) {
+						y1 = y1+2; 
+						ters = true;
+						 }
+						 else {
+							 y1++;
+						 }
+						 
 					}
 				}
 				// }
