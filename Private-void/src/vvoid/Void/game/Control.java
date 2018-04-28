@@ -50,18 +50,28 @@ public class Control implements KeyListener{
 			if(e.getKeyCode() == KeyEvent.VK_LEFT) {
 				Camera.addx(-10);
 				
-			}else if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+			} if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
 				Camera.addx(10);
 				
 			}
-			else if(e.getKeyCode() == KeyEvent.VK_UP) {
+			 if(e.getKeyCode() == KeyEvent.VK_UP) {
 				Camera.addy(-10);
 				
 			}
-			else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+			 if(e.getKeyCode() == KeyEvent.VK_DOWN) {
 				Camera.addy(10);
 	
 			}	
+			 if(e.getKeyCode() == KeyEvent.VK_Y) {
+				 
+			 }
+			 if(e.getKeyCode() == KeyEvent.VK_X) {
+				 
+			 }
+			 if(e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+				 
+			 }
+			 
 		}
 		
 	}
