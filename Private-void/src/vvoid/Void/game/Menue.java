@@ -34,6 +34,7 @@ public class Menue {
 		for(int i = 1;i < b.length;i++) {
 			b[i].setBackground(Color.gray);
 		}
+		b[1].setBackground(Color.YELLOW);
 
 		// UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 
