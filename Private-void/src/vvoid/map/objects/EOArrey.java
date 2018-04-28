@@ -128,7 +128,7 @@ public class EOArrey {
 						testU = false;
 						System.out.println("uh");
 						 x1++;
-						y1++;;
+						y1 = y1+2;
 					}
 				}
 				// }
