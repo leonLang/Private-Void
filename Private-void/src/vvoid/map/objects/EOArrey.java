@@ -72,7 +72,7 @@ public class EOArrey {
 					} else {
 						if (links == true) {
 							o3++;
-							// System.out.println("links");
+							 System.out.println("links");
 							if (o3 >= oAmount + 1) {
 								x1++;
 								links = false;
@@ -92,7 +92,7 @@ public class EOArrey {
 					} else {
 						if (oben == true) {
 							o1++;
-							// System.out.println("oben");
+							 System.out.println("oben");
 							if (o1 >= oAmount + 1) {
 								y1++;
 								oben = false;
@@ -127,14 +127,14 @@ public class EOArrey {
 						testU = false;
 						System.out.println("uh");
 						 x1++;
-						y1 = y1 + 1;
+						y1++;;
 					}
 				}
 				// }
 				if (rL == false) {
 					if (coll.CollRechts() == 1) {
 						test2 = 1;
-						// System.out.println("rechts");
+						 System.out.println("rechts");
 						y1++;
 						rechts = true;
 						r1 = 0;
@@ -145,7 +145,7 @@ public class EOArrey {
 							r1++;
 							if (r1 >= oAmount + 1) {
 								x1--;
-								// System.out.println("no");
+								 System.out.println("no");
 								rechts = false;
 							}
 
@@ -160,7 +160,7 @@ public class EOArrey {
 					if (coll.CollOben() == 1) {
 						test2 = 1;
 						test = false;
-						// System.out.println("unten12");
+						 System.out.println("unten12");
 						y1 = y1 - 1;
 						x1 = x1 + 1;
 					}
