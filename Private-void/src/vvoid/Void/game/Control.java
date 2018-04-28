@@ -45,15 +45,25 @@ public class Control implements KeyListener{
 					System.out.println("läuft");
 				}
 			}
-		}else
-		//Ingame Control
-		{
-		
-		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+		}else if(Main.running) {
 			Game.move = true;
-			Camera.add(10);
-		}	
+			if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+				Camera.addx(-10);
+				
+			}else if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+				Camera.addx(10);
+				
+			}
+			else if(e.getKeyCode() == KeyEvent.VK_UP) {
+				Camera.addy(-10);
+				
+			}
+			else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+				Camera.addy(10);
+	
+			}	
 		}
+		
 	}
 
 	@Override

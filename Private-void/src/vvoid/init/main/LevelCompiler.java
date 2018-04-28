@@ -81,8 +81,9 @@ public class LevelCompiler {
 																										// IDObject
 								convertH(st.substring(st.lastIndexOf("-") + 1, st.lastIndexOf("y"))), // X-Coordinate
 								convertH(st.substring(st.lastIndexOf("y") + 1, st.lastIndexOf("w"))), // Y-Coordinate
-								convertH(st.substring(st.lastIndexOf("w") + 1, st.lastIndexOf("h"))), // WIDTH
-								convertH(st.substring(st.lastIndexOf("h") + 1, st.lastIndexOf("r"))), // HEIGHT
+								50,50,
+								//convertH(st.substring(st.lastIndexOf("w") + 1, st.lastIndexOf("h"))), // WIDTH
+								//convertH(st.substring(st.lastIndexOf("h") + 1, st.lastIndexOf("r"))), // HEIGHT
 								convertD(st.substring(st.lastIndexOf("r") + 1, st.lastIndexOf("t"))), // Rotation
 								convertH(st.substring(st.lastIndexOf("t") + 1, st.lastIndexOf(";"))),// TextureID
 						};
