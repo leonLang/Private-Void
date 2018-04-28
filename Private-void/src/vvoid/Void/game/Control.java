@@ -16,7 +16,17 @@ public class Control implements KeyListener{
 		//Menue Control
 		if(Main.menu) {
 			if(e.getKeyCode() == KeyEvent.VK_ENTER) {
-				Main.menue.loadinto();
+				switch(Menue.MenueNumber) {
+				case 1:
+					Main.menue.loadinto();
+					break;
+				case 2:
+					break;
+				case 3:
+					break;
+				default:
+					break;
+				}
 			} else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
 				if(Menue.MenueNumber > 1) {
 					System.out.println(Menue.MenueNumber);
