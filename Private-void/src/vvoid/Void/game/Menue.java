@@ -31,13 +31,16 @@ public class Menue {
 
 
 		loading();
+		for(int i = 1;i < b.length;i++) {
+			b[i].setBackground(Color.gray);
+		}
 
 		// UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 
 	}
 	public void ChangeOption(int n, int m) {
-		//b[MenueNumber - 1].setBackground(Color.gray);
-		//b[n].setBackground(Color.YELLOW);
+		b[MenueNumber - m].setBackground(Color.gray);
+		b[n].setBackground(Color.YELLOW);
 	}
 
 	public void drawMenue() {
