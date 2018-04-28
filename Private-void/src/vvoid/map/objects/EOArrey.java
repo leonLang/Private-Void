@@ -39,6 +39,7 @@ public class EOArrey {
 
 	}
 
+	
 	public void EnemyR(int x, int y) {
 		y1 = y;
 		x1 = x;
