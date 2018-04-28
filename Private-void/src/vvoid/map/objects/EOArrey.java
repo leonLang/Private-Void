@@ -27,7 +27,7 @@ public class EOArrey {
 	public boolean oben, unten, links, rechts, rL, uH, oR, lR;
 	public boolean stop1, stop2, stop3, stop4;
 	public int o1, o2, o3, u1, l1, r1, test1, test2, test3;
-	public boolean ters;
+	public int zUnten,zUh,zUnten12;
 
 	public void EnemyS(int width, int height, int x, int y) {
 		eAmount++;
@@ -53,7 +53,6 @@ public class EOArrey {
 			 * widthO[zaehler1],heightO[zaehler1]); System.out.println(yE[zaehler]+ "G:" +
 			 * yO[zaehler1] );
 			 */
-
 			if (test2 == 0) {
 				coll = new Collision(xE[zaehler], yE[zaehler], widthE[zaehler], heightE[zaehler], xO[zaehler1],
 						yO[zaehler1], widthO[zaehler1], heightO[zaehler1]);
@@ -61,7 +60,11 @@ public class EOArrey {
 				if (coll.Coll1() == 1) {
 					start = false;
 				}
-
+				if(zUnten+zUnten12+zUh == 3) {
+					y1 = y1 + 2;
+					x1--;
+					test2 = 0;
+				}
 				if (lR == false) {
 					if (coll.CollLinks() == 1) {
 						test2 = 1;
@@ -119,6 +122,10 @@ public class EOArrey {
 								y1--;
 								System.out.println("unten");
 								unten = false;
+								zUnten = 1;
+							}
+							else {
+								zUnten = 0;
 							}
 						}
 					}
@@ -129,21 +136,20 @@ public class EOArrey {
 						testU = false;
 						System.out.println("uh");
 						 x1++;
-						 if(ters == false) {
-						y1 = y1+2; 
-						ters = true;
-						 }
-						 else {
-							 y1++;
-						 }
+						 	zUh = 1;
+							 y1 = y1 + 1;
+
 						 
+					}
+					else {
+						zUh = 0;
 					}
 				}
 				// }
 				if (rL == false) {
 					if (coll.CollRechts() == 1) {
 						test2 = 1;
-						 System.out.println("rechts");
+						// System.out.println("rechts");
 						y1++;
 						rechts = true;
 						r1 = 0;
@@ -154,7 +160,7 @@ public class EOArrey {
 							r1++;
 							if (r1 >= oAmount + 1) {
 								x1--;
-								 System.out.println("no");
+								 System.out.println("rechts");
 								rechts = false;
 							}
 
@@ -169,9 +175,13 @@ public class EOArrey {
 					if (coll.CollOben() == 1) {
 						test2 = 1;
 						test = false;
+						zUnten12 = 1;
 						 System.out.println("unten12");
 						y1 = y1 - 1;
 						x1 = x1 + 1;
+					}
+					else {
+						zUnten12 = 0;
 					}
 				}
 
