@@ -21,7 +21,6 @@ public class Main {
 		control = new Control();
 		mainframe = new Frame(Game.WIDTH, Game.HEIGHT,"titel",true);
 		menue = new Menue();
-		
 		loop();
 
 	}

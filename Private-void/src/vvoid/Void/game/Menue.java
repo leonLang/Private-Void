@@ -1,41 +1,50 @@
 package vvoid.Void.game;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.Color;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JProgressBar;
 import vvoid.init.main.Main;
 
-public class Menue implements ActionListener {
-	private JButton b1;
-	private JButton b2;
-	private JButton b3;
+public class Menue {
+	private JButton[] b = new JButton[4];
 	public static JProgressBar bar;
+	public static int MenueNumber;
 
 	public static JLabel l1;
 
 	public Menue() {
-		b1 = new JButton("Start Game");
-		b2 = new JButton("Load Game");
-		b3 = new JButton("Settings");
-
-		b1.addActionListener(this);
+		/*optional kann ein Hintergrund implementiert werden
+		 * Ich empfehle kein JLabel zu nehmen
+		 * ->Resultat davon ist eine Draw exception in DrawPanel 22;
+		 * 
+		 */
+		
+		
+		MenueNumber = 1;
+		b[1] = new JButton("Start Game");
+		b[2] = new JButton("Load Game");
+		b[3] = new JButton("Settings");
 
 		l1 = new JLabel("Loading...");
+
 
 		loading();
 
 		// UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 
 	}
+	public void ChangeOption(int n, int m) {
+		//b[MenueNumber - 1].setBackground(Color.gray);
+		//b[n].setBackground(Color.YELLOW);
+	}
 
 	public void drawMenue() {
 		if (Main.menu) {
-			Main.panel.add(b1);
-			Main.panel.add(b2);
-			Main.panel.add(b3);
+			Main.panel.add(b[1]);
+			Main.panel.add(b[2]);
+			Main.panel.add(b[3]);
 		}
 	}
 
@@ -49,22 +58,16 @@ public class Menue implements ActionListener {
 		Main.panel.add(bar);
 	}
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == b1) {
-			b1.removeActionListener(this);;
-			Main.panel.remove(b1);
-			Main.panel.remove(b2);
-			Main.panel.remove(b3);
+	public void loadinto() {
+			Main.panel.remove(b[1]);
+			Main.panel.remove(b[2]);
+			Main.panel.remove(b[3]);
 			bar.setVisible(true);
 			l1.setVisible(true);
 			Main.panel.repaint();
 			Main.loading = true;
 			Main.menu = false;
 			(new Game()).start();
-
-		} else {
-		}
 
 	}
 }

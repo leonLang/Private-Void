@@ -4,6 +4,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import vvoid.init.main.Camera;
+import vvoid.init.main.Main;
 
 public class Control implements KeyListener{
 	public Control() {
@@ -12,11 +13,37 @@ public class Control implements KeyListener{
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		System.out.println("es geht");
+		//Menue Control
+		if(Main.menu) {
+			if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+				Main.menue.loadinto();
+			} else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+				if(Menue.MenueNumber > 1) {
+					System.out.println(Menue.MenueNumber);
+					Menue.MenueNumber--;
+					Main.menue.ChangeOption(Menue.MenueNumber,-1);
+				} else {
+					
+				}
+			} else if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+				if(Menue.MenueNumber < 3) {
+					System.out.println(Menue.MenueNumber);
+					Menue.MenueNumber++;
+					Main.menue.ChangeOption(Menue.MenueNumber,1);
+					
+				} else {
+					System.out.println("läuft");
+				}
+			}
+		}else
+		//Ingame Control
+		{
+		
 		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
 			Game.move = true;
 			Camera.add(10);
-		}		
+		}	
+		}
 	}
 
 	@Override
