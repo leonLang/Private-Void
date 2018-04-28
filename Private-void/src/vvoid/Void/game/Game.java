@@ -4,53 +4,51 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 
 import vvoid.init.main.Camera;
-import vvoid.init.main.Frame;
 import vvoid.init.main.LevelCompiler;
+import vvoid.init.main.Main;
 
-public class Game {
-	public static final int WIDTH = 1200;
-	public static final int HEIGHT = 800;
-	public static Player player;
-	public static Camera cam;
-	public static LevelCompiler compiler;
-	public static int x = 0;
-	public static boolean move = false;
+public class Game extends Thread{
+    public static final int WIDTH = 1200;
+    public static final int HEIGHT = 800;
+    public static Player player;
+    public static Camera cam;
+    public static LevelCompiler compiler;
+    public static int x = 0;
+    public static boolean move = false;
 
-	public void run() {
-		// x++;
-		// Collision.Collis(Objekte.x1, Objekte.y1, Objekte.E1Width, Objekte.E1Height,
-		// Objekte.x2, Objekte.y2, Objekte.E2Width, Objekte.E2Height);
-	}
+    public void run() {
+        compiler = new LevelCompiler();
+    }
+    public static void setup() {
+        /*
+         * Das JFrame immer als letztes initialisieren, da sonst Fehler auftreten. Die
+         * werte fï¿½r Frame mï¿½ssen erst mit der Camera und der Play Klasse erstellt
+         * diese klasse suckt
+         * werden.
+         */
+        cam = new Camera(0, 0);
+        player = new Player();
+        Main.mainframe.addKeyListener(Main.control);
+        Main.loading = false;
+    } 
 
-	public static void setup() {
-		/*
-		 * Das JFrame immer als letztes initialisieren, da sonst Fehler auftreten. Die
-		 * werte f�r Frame m�ssen erst mit der Camera und der Play Klasse erstellt
-		 * werden.
-		 */
-		compiler = new LevelCompiler();
-		cam = new Camera(0, 0);
-		player = new Player();
-		new Frame(WIDTH, HEIGHT, "titel", true);
-	}
+    public static void draw(Graphics g) {
+        g.drawImage(LevelCompiler.getbackground(), 0, 0, WIDTH, HEIGHT, null);
+        player.drawPlayer(g);
+        Graphics g2d = (Graphics2D) g;
+        g2d.translate(cam.getX(), cam.getY());
 
-	public static void draw(Graphics g) {
-		g.drawImage(LevelCompiler.getbackground(), 0, 0, WIDTH, HEIGHT, null);
+        for (int i = 0; i < LevelCompiler.EnemieLenght; i++) {
+            LevelCompiler.enemie[i].drawEnemie(g);
+            LevelCompiler.enemie[i].drawEnemie(g);
+        }
 
-		player.drawPlayer(g);
-		Graphics g2d = (Graphics2D) g;
-		g2d.translate(cam.getX(), cam.getY());
+        if (move = true)
+            for (int i = 0; i < LevelCompiler.Objectlenght; i++) {
+                LevelCompiler.objects[i].drawObjects(g);
+            }
+        g2d.translate(-cam.getX(), -cam.getY());
 
-		
-		  for(int i = 0;i < LevelCompiler.EnemieLenght;i++) {
-		  LevelCompiler.enemie[i].drawEnemie(g); }
-		 
-		if (move = true)
-			for (int i = 0; i < LevelCompiler.Objectlenght; i++) {
-				LevelCompiler.objects[i].drawObjects(g);
-			}
-		g2d.translate(-cam.getX(), -cam.getY());
-
-	}
+    }
 
 }
