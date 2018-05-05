@@ -3,239 +3,23 @@ package vvoid.map.objects;
 import vvoid.init.main.Collision;
 
 public class EOArrey {
-	public static int[] widthE = new int[10000];
-	public static int[] heightE = new int[10000];
-	public static int[] xE = new int[10000];
-	public static int[] yE = new int[10000];
-	public static int[] widthO = new int[10000];
-	public static int[] heightO = new int[10000];
-	public static int[] xO = new int[10000];
-	public static int[] yO = new int[10000];
-	public Collision coll, coll1, coll2, coll3, coll4;
-	public static int eAmount = -1, oAmount = -1;
-	public int[] col = new int[10000];
-	public int zA;
-	public int zA1;
-	public int c1 = 5, c2 = -5, c3 = 5, c4 = -5;
-	public static int zaehler;
-	public int zaehler1, zaehler4, zaehler5, zaehler3, z1;
-	public int h11, h12, h21, h22, h13, h14, h15;
-	public int zaehler2;
-	public boolean test = false, testU, testO, testL;
-	public static int y1, x1;
-	public boolean start = true;
-	public boolean oben, unten, links, rechts, rL, uH, oR, lR;
-	public boolean stop1, stop2, stop3, stop4;
-	public int o1, o2, o3, u1, l1, r1, test1, test2, test3;
-	public int zUnten,zUh,zUnten12;
-	public int oneTime;
+
+	public static int[] widthO = new int[10000];// width(blocks)
+	public static int[] heightO = new int[10000];// height (blocks)
+	public static int[] xO = new int[10000]; // x-position (blocks)
+	public static int[] yO = new int[10000]; // y-postion (blocks)
+	public static int oAmount = -1; // number of blocks (-1 is for the array who starts with 0)
+	public int counter, start;
+	public int width, height, x, y; // get position and size from enemies
+	public boolean up, right,down,left;
+	public int oben, rechts,unten,links;
+	public Collision coll;
 
 	public void EnemyS(int width, int height, int x, int y) {
-		eAmount++;
-		widthE[eAmount] = width - 2;
-		heightE[eAmount] = height - 2;
-		xE[eAmount] = x;
-		yE[eAmount] = y;
-		zA++;
-		System.out.println(x);
-
-	}
-
-	
-	
-	public void EnemyR(int x, int y) {
-		y1 = y;
-		x1 = x;
-		xE[zaehler] = x;
-		yE[zaehler] = y;
-		while (zaehler1 <= oAmount) {
-			/*
-			 * coll = new Collision(xE[zaehler], yE[zaehler], widthE[zaehler],
-			 * heightE[zaehler], xO[zaehler1], yO[zaehler1],
-			 * widthO[zaehler1],heightO[zaehler1]); System.out.println(yE[zaehler]+ "G:" +
-			 * yO[zaehler1] );
-			 */
-			if (test2 == 0) {
-				coll = new Collision(xE[zaehler], yE[zaehler], widthE[zaehler], heightE[zaehler], xO[zaehler1],
-						yO[zaehler1], widthO[zaehler1], heightO[zaehler1]);
-
-				if (coll.Coll1() == 1) {
-					start = false;
-				}
-				if(zUnten+zUnten12+zUh == 4) {
-					y1 = y1 + 2;
-					x1--;
-					test2 = 0;
-					zUnten = 0 ;
-					zUnten12 = 0;
-					zUh = 0;
-				}
-				if (lR == false) {
-					if (coll.CollLinks() == 1) {
-						test2 = 1;
-						y1--;
-						links = true;
-						o3 = 0;
-						lR = true;
-						testL = true;
-
-					} else {
-						if (links == true) {
-							o3++;
-							 System.out.println("links");
-							if (o3 >= oAmount + 1) {
-								x1++;
-								links = false;
-							}
-						}
-					}
-				}
-
-				if (oR == false) {
-					if (coll.CollOben() == 1) {
-						test2 = 1;
-						x1++;
-						oben = true;
-						o1 = 0;
-						oR = true;
-						testO = true;
-					} else {
-						if (oben == true) {
-							o1++;
-							 System.out.println("oben");
-							if (o1 >= oAmount + 1) {
-								y1++;
-								oben = false;
-							}
-						}
-					}
-				}
-
-				if (uH == false) {
-					if (coll.CollUnten() == 1) {
-						test2 = 1;
-						x1--;
-						unten = true;
-						o2 = 0;
-						uH = true;
-						testU = true;
-						// System.out.println("why");
-					} else {
-						if (unten == true) {
-							o2++;
-							if (o2 >= oAmount + 1) {
-								y1--;
-								System.out.println("unten");
-								unten = false;
-								zUnten++;
-							}
-							else {
-								if(zUnten == 2) {
-									if(oneTime == 500) {
-								
-								System.out.println("mist");
-								zUnten = 0;
-								oneTime = 0;
-									}
-									oneTime++;
-								}
-							}
-						}
-					}
-				}
-				if (uH == true) {
-					if (coll.CollLinks() == 1) {
-						test2 = 1;
-						testU = false;
-						System.out.println("uh");
-						 x1++;
-						 	zUh = 1;
-							 y1 = y1 + 1;
-
-						 
-					}
-					else {
-						zUh = 0;
-					}
-				}
-				// }
-				if (rL == false) {
-					if (coll.CollRechts() == 1) {
-						test2 = 1;
-						// System.out.println("rechts");
-						y1++;
-						rechts = true;
-						r1 = 0;
-						rL = true;
-						test = true;
-					} else {
-						if (rechts == true) {
-							r1++;
-							if (r1 >= oAmount + 1) {
-								x1--;
-								 System.out.println("rechts");
-								rechts = false;
-							}
-
-						}
-
-					}
-
-				}
-				if (rL == true) {
-
-					// System.out.println("joa");
-					if (coll.CollOben() == 1) {
-						test2 = 1;
-						test = false;
-						zUnten12 = 1;
-						 System.out.println("unten12");
-						y1 = y1 - 1;
-						x1 = x1 + 1;
-					}
-					else {
-						zUnten12 = 0;
-					}
-				}
-
-			}
-			zaehler1++;
-		}
-		test2 = 0;
-		if (test == true) {
-			test = false;
-		} else {
-			rL = false;
-		}
-		if (testL == true) {
-			testL = false;
-		} else {
-			lR = false;
-		}
-		if (testU == true) {
-			testU = false;
-		} else {
-			uH = false;
-		}
-		if (testO == true) {
-			testO = false;
-		} else {
-			oR = false;
-		}
-
-		if (start == true) {
-			y1++;
-		}
-
-		zaehler1 = 0;
-		if (zaehler >= eAmount - 1) {
-			zaehler = 0;
-		} else {
-			zaehler++;
-		}
-		// zaehler1 = zA1;
-		// Collision();
-
+		this.width = width;
+		this.height = height;
+		this.x = x;
+		this.y = y;
 	}
 
 	public void Objekt(int width, int height, int x, int y) {
@@ -244,7 +28,179 @@ public class EOArrey {
 		heightO[oAmount] = height;
 		xO[oAmount] = x;
 		yO[oAmount] = y;
+		System.out.println(oAmount);
 
 	}
+
+	public void EnemyR(int oben1) {
+		/*
+		 * Change widhtO to +3 so you can detect if enemy is right from the block in the
+		 * start Change enemy width to 50 so you can detect if enemy is left from the
+		 * block in the start Change heightO to +16 to detect the enemy under the block
+		 */
+		counter = oAmount; // for editing oAmount without change it
+		while (counter >= 0) {
+
+			// Only do this in the beginning
+			if (start == 0) {
+				coll = new Collision(this.x, this.y, this.width, this.height, xO[counter], yO[counter], widthO[counter],
+						heightO[counter]);
+
+				if (coll.Coll1() == 1) {
+					// Check if block has collision from above
+					start = 1;
+				} else {
+					coll = new Collision(this.x, this.y, this.width, this.height, xO[counter], yO[counter],
+							widthO[counter], heightO[counter] + 16);
+					if (coll.Coll1() == 1) {
+						// Check if block has collision from below
+						y = y - 16;
+						start = 1;
+					} else {
+						coll = new Collision(this.x, this.y, 50, this.height, xO[counter], yO[counter], widthO[counter],
+								heightO[counter]);
+						if (coll.Coll1() == 1) {
+							// Check if block has collision from left
+							x = x + 13;
+							start = 1;
+
+						} else {
+							coll = new Collision(this.x, this.y, this.width, this.height, xO[counter], yO[counter],
+									widthO[counter] + 3, heightO[counter]);
+							if (coll.Coll1() == 1) {
+
+								x = x - 3;
+								start = 1;
+								// Check if block has collision from right
+							} else {
+								// y++;
+								// if it has no Collision move 1pixel below
+							}
+						}
+					}
+				}
+			}
+
+			coll = new Collision(this.x, this.y, this.width, this.height, xO[counter], yO[counter], widthO[counter],
+					heightO[counter]);
+			counter--;
+
+			if (coll.CollOben() == 1) {
+				/*
+				 * when it moves right there are two possibilites first: move up next:move down
+				 * you can only easily detect the collision up. To see if you have to move up
+				 * you have to check if the now used Collision is over and then move one pixel
+				 * down
+				 */
+				up = true;
+				oben = 0;
+				if (coll.CollLinks() == 1) {
+					System.out.println("why");
+					y--;
+					up = false;
+					x=x-2;
+					oben = 0;
+					// Only to check if if it goes up
+				} else {
+					x++;
+				}
+				// the code checks, that he only moves down if the collision is over
+			} else {
+				oben++;
+			}
+			if (up == true) {
+
+				if (oben >= oAmount * 3) {
+					y = y + 1;
+					up = false;
+				}
+			}
+
+			
+			if (coll.CollRechts() == 1) {
+				/*
+				 * when it moves down there are two possibilites first: move right next:move
+				 * left you can only easily detect the collision right. To see if you have to
+				 * move left you have to check if the now used Collision is over and then move
+				 * one pixel left
+				 */
+				right = true;
+				rechts = 0;
+				if (coll.CollOben() == 1) {
+					x++;
+					y--;	
+					right = false;
+					rechts = 0;
+				} else {
+					y++;
+				}
+
+			}
+			else {
+				rechts++;
+			}
+			if(right == true) {
+				if(rechts >= oAmount * 3) {
+					x--;
+					right=false;
+				}
+			}
+			
+			
+			if (coll.CollUnten() == 1) {
+				/*
+				 * when it moves left there are two possibilites first: move down next:up
+				 * left you can only easily detect the collision down. To see if you have to
+				 * move up you have to check if the now used Collision is over and then move
+				 * one pixel up
+				 */
+				down = true;
+				unten = 0;
+				if (coll.CollRechts() == 1) {
+					y++;
+					x++;
+					down= false;
+					unten= 0;
+				}
+				else {
+					x--;
+				}
+				
+			}
+			else {
+				unten++;
+			}
+			if(down== true) {
+				if(unten >= oAmount*3) {
+					y--;
+					down=false;
+				}
+			}
+			
+			if(coll.CollLinks() == 1) {
+				left = true;
+				links = 0;
+				if(coll.CollUnten() == 1) {
+					links  = 0;
+					left = false;
+					x--;
+					y++;
+				}
+				else {
+					y--;
+				}
+			}
+			else {
+				links++;
+			}
+				if(left == true) {
+					if (links >= oAmount*3) {
+						x++;
+						left = false;
+					}
+				}
+			}
+		}
+
 
 }

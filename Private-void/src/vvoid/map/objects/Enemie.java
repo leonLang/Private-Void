@@ -12,12 +12,10 @@ public class Enemie {
 	public Collision coll, coll1;
 	private SpriteSheet sheet = new SpriteSheet();
 	public static int[] widthA = new int[100];
-	public int x;
+	public int x,y,width,height; // postition and size from the enemy
 	private Image c, d, e, f;
 	public static int zaehler, zaehler1;
-	public int y;
-	private int width;
-	private int height;
+
 	private int IDO;
 	public int zA;
 
@@ -46,10 +44,11 @@ public class Enemie {
 	}
 
 	public void sh(Graphics g, Image a1, Image a2) {
-
-		eo.EnemyR(x, y);
-		y = EOArrey.y1;
-		x = EOArrey.x1;
+		eo.EnemyR(0);
+		x=eo.x;
+		y=eo.y;
+		//y = EOArrey.y1;
+		//x = EOArrey.x1;
 		move.movement(g, a1, a2, x, y, width, height);
 	}
 
