@@ -28,6 +28,7 @@ public class EOArrey {
 	public boolean stop1, stop2, stop3, stop4;
 	public int o1, o2, o3, u1, l1, r1, test1, test2, test3;
 	public int zUnten,zUh,zUnten12;
+	public int oneTime;
 
 	public void EnemyS(int width, int height, int x, int y) {
 		eAmount++;
@@ -61,10 +62,13 @@ public class EOArrey {
 				if (coll.Coll1() == 1) {
 					start = false;
 				}
-				if(zUnten+zUnten12+zUh == 3) {
+				if(zUnten+zUnten12+zUh == 4) {
 					y1 = y1 + 2;
 					x1--;
 					test2 = 0;
+					zUnten = 0 ;
+					zUnten12 = 0;
+					zUh = 0;
 				}
 				if (lR == false) {
 					if (coll.CollLinks() == 1) {
@@ -123,10 +127,18 @@ public class EOArrey {
 								y1--;
 								System.out.println("unten");
 								unten = false;
-								zUnten = 1;
+								zUnten++;
 							}
 							else {
+								if(zUnten == 2) {
+									if(oneTime == 500) {
+								
+								System.out.println("mist");
 								zUnten = 0;
+								oneTime = 0;
+									}
+									oneTime++;
+								}
 							}
 						}
 					}
