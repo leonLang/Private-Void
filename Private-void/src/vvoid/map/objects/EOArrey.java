@@ -9,10 +9,12 @@ public class EOArrey {
 	public static int[] xO = new int[10000]; // x-position (blocks)
 	public static int[] yO = new int[10000]; // y-postion (blocks)
 	public static int oAmount = -1; // number of blocks (-1 is for the array who starts with 0)
-	public int counter, start;
+	public int counter, start, s1, s2;
 	public int width, height, x, y; // get position and size from enemies
-	public boolean up, right,down,left;
-	public int oben, rechts,unten,links;
+	public boolean up, right, down, left;
+	public boolean o, r, u, l; // If the enemy stands on mmore than one block, you have to make that he uses
+								// only 1 block for collisiosn or he will bug
+	public int oben, rechts, unten, links;
 	public Collision coll;
 
 	public void EnemyS(int width, int height, int x, int y) {
@@ -39,6 +41,10 @@ public class EOArrey {
 		 * block in the start Change heightO to +16 to detect the enemy under the block
 		 */
 		counter = oAmount; // for editing oAmount without change it
+		o=false;
+		r=false;
+		u=false;
+		l=false;
 		while (counter >= 0) {
 
 			// Only do this in the beginning
@@ -98,11 +104,14 @@ public class EOArrey {
 					System.out.println("why");
 					y--;
 					up = false;
-					x=x-2;
+					x = x - 2;
 					oben = 0;
 					// Only to check if if it goes up
 				} else {
-					x++;
+					if (o == false) {
+						o= true;
+						x++;
+					}
 				}
 				// the code checks, that he only moves down if the collision is over
 			} else {
@@ -116,7 +125,6 @@ public class EOArrey {
 				}
 			}
 
-			
 			if (coll.CollRechts() == 1) {
 				/*
 				 * when it moves down there are two possibilites first: move right next:move
@@ -128,79 +136,81 @@ public class EOArrey {
 				rechts = 0;
 				if (coll.CollOben() == 1) {
 					x++;
-					y--;	
+					y--;
 					right = false;
 					rechts = 0;
 				} else {
+					if (r == false) {
+						r= true;
 					y++;
+					}
 				}
 
-			}
-			else {
+			} else {
 				rechts++;
 			}
-			if(right == true) {
-				if(rechts >= oAmount * 3) {
+			if (right == true) {
+				if (rechts >= oAmount * 3) {
 					x--;
-					right=false;
+					right = false;
 				}
 			}
-			
-			
+
 			if (coll.CollUnten() == 1) {
 				/*
-				 * when it moves left there are two possibilites first: move down next:up
-				 * left you can only easily detect the collision down. To see if you have to
-				 * move up you have to check if the now used Collision is over and then move
-				 * one pixel up
+				 * when it moves left there are two possibilites first: move down next:up left
+				 * you can only easily detect the collision down. To see if you have to move up
+				 * you have to check if the now used Collision is over and then move one pixel
+				 * up
 				 */
 				down = true;
 				unten = 0;
 				if (coll.CollRechts() == 1) {
 					y++;
 					x++;
-					down= false;
-					unten= 0;
-				}
-				else {
+					down = false;
+					unten = 0;
+				} else {
+					if (o == false) {
+						o= true;
 					x--;
+					}
 				}
-				
-			}
-			else {
+
+			} else {
 				unten++;
 			}
-			if(down== true) {
-				if(unten >= oAmount*3) {
+			if (down == true) {
+				if (unten >= oAmount * 3) {
 					y--;
-					down=false;
+					down = false;
 				}
 			}
-			
-			if(coll.CollLinks() == 1) {
+
+			if (coll.CollLinks() == 1) {
 				left = true;
 				links = 0;
-				if(coll.CollUnten() == 1) {
-					links  = 0;
+				if (coll.CollUnten() == 1) {
+					links = 0;
 					left = false;
 					x--;
 					y++;
+				} else {
+					if (l == false) {
+						l= true;
+						y--;
+					}
 				}
-				else {
-					y--;
-				}
-			}
-			else {
+			} else {
 				links++;
 			}
-				if(left == true) {
-					if (links >= oAmount*3) {
-						x++;
-						left = false;
-					}
+			if (left == true) {
+				if (links >= oAmount * 3) {
+					x++;
+					left = false;
 				}
 			}
 		}
-
+	}
 
 }
