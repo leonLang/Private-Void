@@ -46,9 +46,21 @@ public class Menue {
 
 	public void drawMenue() {
 		if (Main.menu) {
+			try {
 			Main.panel.add(b[1]);
 			Main.panel.add(b[2]);
 			Main.panel.add(b[3]);
+			} catch(Exception e) {
+				e.printStackTrace();
+				try {
+					Thread.sleep(50);
+					Main.panel.add(b[1]);
+					Main.panel.add(b[2]);
+					Main.panel.add(b[3]);
+				} catch (InterruptedException e1) {
+					e1.printStackTrace();
+				}
+			}
 		}
 	}
 

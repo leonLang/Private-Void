@@ -28,7 +28,6 @@ public class Game extends Thread{
          */
         cam = new Camera(0, 0);
         player = new Player();
-        Main.mainframe.addKeyListener(Main.control);
         Main.loading = false;
     } 
 

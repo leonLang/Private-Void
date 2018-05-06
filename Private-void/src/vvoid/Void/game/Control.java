@@ -6,17 +6,16 @@ import java.awt.event.KeyListener;
 import vvoid.init.main.Camera;
 import vvoid.init.main.Main;
 
-public class Control implements KeyListener{
+public class Control implements KeyListener, Runnable {
 	public Control() {
-		System.out.print("hi");
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		//Menue Control
-		if(Main.menu) {
-			if(e.getKeyCode() == KeyEvent.VK_ENTER) {
-				switch(Menue.MenueNumber) {
+		// Menue Control
+		if (Main.menu) {
+			if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+				switch (Menue.MenueNumber) {
 				case 1:
 					Main.menue.loadinto();
 					break;
@@ -27,65 +26,88 @@ public class Control implements KeyListener{
 				default:
 					break;
 				}
-			} else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
-				if(Menue.MenueNumber > 1) {
+			} else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+				if (Menue.MenueNumber > 1) {
 					System.out.println(Menue.MenueNumber);
 					Menue.MenueNumber--;
-					Main.menue.ChangeOption(Menue.MenueNumber,-1);
+					Main.menue.ChangeOption(Menue.MenueNumber, -1);
 				} else {
-					
+
 				}
-			} else if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
-				if(Menue.MenueNumber < 3) {
+			} else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+				if (Menue.MenueNumber < 3) {
 					System.out.println(Menue.MenueNumber);
 					Menue.MenueNumber++;
-					Main.menue.ChangeOption(Menue.MenueNumber,1);
-					
+					Main.menue.ChangeOption(Menue.MenueNumber, 1);
+
 				} else {
 					System.out.println("läuft");
 				}
 			}
-		}else if(Main.running) {
+		} else if (Main.running) {
 			Game.move = true;
-			if(e.getKeyCode() == KeyEvent.VK_LEFT) {
-				Camera.addx(-10);
-				
-			} if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
-				Camera.addx(10);
-				
+			if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+				while (Game.player.l != true) {
+					Game.player.r = false;
+					Game.player.l = true;
+					Game.player.Move("l");
+				}
+
 			}
-			 if(e.getKeyCode() == KeyEvent.VK_UP) {
+			if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+				while (Game.player.r != true) {
+					Game.player.l = false;
+					Game.player.r = true;
+					Game.player.Move("r");
+				}
+			}
+			if (e.getKeyCode() == KeyEvent.VK_UP) {
 				Camera.addy(-10);
-				
+				Game.player.UP();
+
 			}
-			 if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+			if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 				Camera.addy(10);
-	
-			}	
-			 if(e.getKeyCode() == KeyEvent.VK_Y) {
-				 
-			 }
-			 if(e.getKeyCode() == KeyEvent.VK_X) {
-				 
-			 }
-			 if(e.getKeyCode() == KeyEvent.VK_ESCAPE) {
-				 
-			 }
-			 
+				Game.player.DOWN();
+
+			}
+			if (e.getKeyCode() == KeyEvent.VK_Y) {
+
+			}
+			if (e.getKeyCode() == KeyEvent.VK_X) {
+
+			}
+			if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+
+			}
+
 		}
-		
+
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
 		Game.move = false;
-		
+		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+			Game.player.l = false;
+
+		}
+		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+			Game.player.r = false;
+
+		}
+
 	}
 
 	@Override
-	public void keyTyped(KeyEvent arg0) {
+	public void keyTyped(KeyEvent e) {
+
+	}
+
+	@Override
+	public void run() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

@@ -1,5 +1,6 @@
 package vvoid.init.main;
 
+import vvoid.Void.game.BindingControl;
 import vvoid.Void.game.Control;
 import vvoid.Void.game.Game;
 import vvoid.Void.game.Menue;
@@ -15,11 +16,13 @@ public class Main {
 	public static Menue menue;
 	public static Frame mainframe;
 	public static Control control;
+	//public static BindingControl Bcontrol;
 
 	public static void main(String[] args) throws InterruptedException {
 		//Game.setup();
 		control = new Control();
 		mainframe = new Frame(Game.WIDTH, Game.HEIGHT,"titel",true);
+		//Bcontrol = new BindingControl();
 		menue = new Menue();
 		loop();
 
