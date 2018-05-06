@@ -16,6 +16,7 @@ public class EOArrey {
 								// only 1 block for collisiosn or he will bug
 	public int oben, rechts, unten, links;
 	public Collision coll;
+	public int richtung; // reihenfolge ist oben rechts unten links;
 
 	public void EnemyS(int width, int height, int x, int y) {
 		this.width = width;
@@ -41,10 +42,10 @@ public class EOArrey {
 		 * block in the start Change heightO to +16 to detect the enemy under the block
 		 */
 		counter = oAmount; // for editing oAmount without change it
-		o=false;
-		r=false;
-		u=false;
-		l=false;
+		o = false;
+		r = false;
+		u = false;
+		l = false;
 		while (counter >= 0) {
 
 			// Only do this in the beginning
@@ -109,7 +110,8 @@ public class EOArrey {
 					// Only to check if if it goes up
 				} else {
 					if (o == false) {
-						o= true;
+						o = true;
+						richtung = 0;
 						x++;
 					}
 				}
@@ -141,8 +143,9 @@ public class EOArrey {
 					rechts = 0;
 				} else {
 					if (r == false) {
-						r= true;
-					y++;
+						richtung = 1;
+						r = true;
+						y++;
 					}
 				}
 
@@ -172,8 +175,9 @@ public class EOArrey {
 					unten = 0;
 				} else {
 					if (o == false) {
-						o= true;
-					x--;
+						o = true;
+						richtung = 2;
+						x--;
 					}
 				}
 
@@ -197,8 +201,9 @@ public class EOArrey {
 					y++;
 				} else {
 					if (l == false) {
-						l= true;
+						l = true;
 						y--;
+						richtung = 3;
 					}
 				}
 			} else {
