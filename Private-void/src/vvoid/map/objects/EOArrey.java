@@ -41,6 +41,7 @@ public class EOArrey {
 
 	public void EnemyR(int oben1) {
 		System.out.println(pl.getY());
+		
 		/*
 		 * Change widhtO to +3 so you can detect if enemy is right from the block in the
 		 * start Change enemy width to 50 so you can detect if enemy is left from the
