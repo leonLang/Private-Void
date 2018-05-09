@@ -14,11 +14,11 @@ public class Player {
 	public int height;
 	
 	public Player(int x, int y, int width, int height,String facing) {
-		x = this.x;
-		y = this.y;
-		width = this.width;
-		height = this.height;
-		facing = this.facing;
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.height = height;
+		this.facing = facing;
 		new Pgravity();
 	}
 
