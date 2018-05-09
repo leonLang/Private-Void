@@ -1,5 +1,6 @@
 package vvoid.map.objects;
 
+import vvoid.Void.game.Player;
 import vvoid.init.main.Collision;
 
 public class EOArrey {
@@ -16,6 +17,9 @@ public class EOArrey {
 								// only 1 block for collisiosn or he will bug
 	public int oben, rechts, unten, links;
 	public Collision coll;
+	public Player pl;
+	
+
 	public int richtung; // reihenfolge ist oben rechts unten links;
 
 	public void EnemyS(int width, int height, int x, int y) {
@@ -36,6 +40,7 @@ public class EOArrey {
 	}
 
 	public void EnemyR(int oben1) {
+		System.out.println(pl.getY());
 		/*
 		 * Change widhtO to +3 so you can detect if enemy is right from the block in the
 		 * start Change enemy width to 50 so you can detect if enemy is left from the
