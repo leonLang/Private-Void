@@ -28,7 +28,6 @@ public class Control implements KeyListener, Runnable {
 				}
 			} else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 				if (Menue.MenueNumber > 1) {
-					System.out.println(Menue.MenueNumber);
 					Menue.MenueNumber--;
 					Main.menue.ChangeOption(Menue.MenueNumber, -1);
 				} else {
@@ -36,12 +35,10 @@ public class Control implements KeyListener, Runnable {
 				}
 			} else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 				if (Menue.MenueNumber < 3) {
-					System.out.println(Menue.MenueNumber);
 					Menue.MenueNumber++;
 					Main.menue.ChangeOption(Menue.MenueNumber, 1);
 
 				} else {
-					System.out.println("läuft");
 				}
 			}
 		} else if (Main.running) {

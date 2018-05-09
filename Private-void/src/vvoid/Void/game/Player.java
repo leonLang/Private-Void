@@ -23,7 +23,8 @@ public class Player {
 	}
 
 	public void drawPlayer(Graphics g) {
-		g.drawRect(200, 200, 100, 100);
+		g.drawRect(this.x, this.y, 100, 100);
+		System.out.println(x);
 	}
 
 	public void Move(String c) {
