@@ -8,9 +8,17 @@ public class Player {
 	public boolean l;
 	public boolean r;
 	public String facing;
+	public int x;
+	public int y;
+	public int width;
+	public int height;
 	
-	public Player() {
-		facing = "left";
+	public Player(int x, int y, int width, int height,String facing) {
+		x = this.x;
+		y = this.y;
+		width = this.width;
+		height = this.height;
+		facing = this.facing;
 		new Pgravity();
 	}
 
@@ -23,6 +31,18 @@ public class Player {
 	}
 	public String getfacing() {
 		return facing;
+	}
+	public int getX() {
+		return x;
+	}
+	public int getY() {
+		return y;
+	}
+	public int getWidth() {
+		return width;
+	}
+	public int getHeight() {
+		return height;
 	}
 	public void UP() {
 		
