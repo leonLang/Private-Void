@@ -84,6 +84,7 @@ public class Menue {
 			Main.loading = true;
 			Main.menu = false;
 			(new Game()).start();
+			Main.running = true;
 
 	}
 }

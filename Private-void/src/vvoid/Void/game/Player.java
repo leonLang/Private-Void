@@ -20,6 +20,9 @@ public class Player {
 		this.height = height;
 		this.facing = facing;
 		new Pgravity();
+		
+		this.l = false;
+		this.r = false;
 	}
 
 	public void drawPlayer(Graphics g) {

@@ -41,7 +41,7 @@ public class Control implements KeyListener, Runnable {
 				} else {
 				}
 			}
-		} else if (Main.running) {
+		} else if (Main.menu != true) {
 			Game.move = true;
 			if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 				while (Game.player.l != true) {
@@ -84,7 +84,7 @@ public class Control implements KeyListener, Runnable {
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		Game.move = false;
+		if(Main.menu != true) {
 		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 			Game.player.l = false;
 
@@ -92,8 +92,9 @@ public class Control implements KeyListener, Runnable {
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			Game.player.r = false;
 
+			}
 		}
-
+		//Game.move = false;
 	}
 
 	@Override
