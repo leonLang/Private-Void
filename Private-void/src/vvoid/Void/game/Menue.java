@@ -8,7 +8,7 @@ import javax.swing.JProgressBar;
 import vvoid.init.main.Main;
 
 public class Menue {
-	private JButton[] b = new JButton[4];
+	private JButton[] b = new JButton[5];
 	public static JProgressBar bar;
 	public static int MenueNumber;
 
@@ -26,6 +26,7 @@ public class Menue {
 		b[1] = new JButton("Start Game");
 		b[2] = new JButton("Load Game");
 		b[3] = new JButton("Settings");
+		b[4] = new JButton("Editor");
 
 		l1 = new JLabel("Loading...");
 
@@ -50,6 +51,7 @@ public class Menue {
 			Main.panel.add(b[1]);
 			Main.panel.add(b[2]);
 			Main.panel.add(b[3]);
+			Main.panel.add(b[4]);
 			} catch(Exception e) {
 				e.printStackTrace();
 				try {
@@ -57,6 +59,7 @@ public class Menue {
 					Main.panel.add(b[1]);
 					Main.panel.add(b[2]);
 					Main.panel.add(b[3]);
+					Main.panel.add(b[4]);
 				} catch (InterruptedException e1) {
 					e1.printStackTrace();
 				}
@@ -78,6 +81,7 @@ public class Menue {
 			Main.panel.remove(b[1]);
 			Main.panel.remove(b[2]);
 			Main.panel.remove(b[3]);
+			Main.panel.remove(b[4]);
 			bar.setVisible(true);
 			l1.setVisible(true);
 			Main.panel.repaint();

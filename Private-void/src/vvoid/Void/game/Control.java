@@ -23,6 +23,9 @@ public class Control implements KeyListener, Runnable {
 					break;
 				case 3:
 					break;
+				case 4:
+					(new Thread(new Editor())).start();
+					break;
 				default:
 					break;
 				}
@@ -34,7 +37,7 @@ public class Control implements KeyListener, Runnable {
 
 				}
 			} else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-				if (Menue.MenueNumber < 3) {
+				if (Menue.MenueNumber < 4) {
 					Menue.MenueNumber++;
 					Main.menue.ChangeOption(Menue.MenueNumber, 1);
 
@@ -59,12 +62,12 @@ public class Control implements KeyListener, Runnable {
 				}
 			}
 			if (e.getKeyCode() == KeyEvent.VK_UP) {
-				Camera.addy(-10);
+				Camera.addy(-Camera.step);
 				Game.player.UP();
 
 			}
 			if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-				Camera.addy(10);
+				Camera.addy(Camera.step);
 				Game.player.DOWN();
 
 			}

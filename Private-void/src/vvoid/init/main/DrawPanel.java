@@ -19,7 +19,13 @@ public class DrawPanel extends JPanel {
 		Game.draw(g);
 	//	System.out.println("draw");
 		} else {
+			try {
 			Main.menue.drawMenue();
+			} catch(Exception e) {
+				e.printStackTrace();
+				
+			}
+			
 		}
 		Toolkit.getDefaultToolkit();
 	}

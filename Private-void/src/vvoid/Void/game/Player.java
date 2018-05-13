@@ -10,12 +10,16 @@ public class Player {
 	public String facing;
 	public int x;
 	public int y;
+	public int XSolid;
+	public int YSolid;
 	public int width;
 	public int height;
 	
 	public Player(int x, int y, int width, int height,String facing) {
 		this.x = x;
 		this.y = y;
+		this.XSolid = x;
+		this.YSolid = y;
 		this.width = width;
 		this.height = height;
 		this.facing = facing;
@@ -26,7 +30,7 @@ public class Player {
 	}
 
 	public void drawPlayer(Graphics g) {
-		g.drawRect(this.x, this.y, 100, 100);
+		g.drawRect(this.XSolid, this.YSolid, this.width, this.height);
 		System.out.println(x);
 	}
 
@@ -54,6 +58,12 @@ public class Player {
 	public void DOWN() {
 		
 	}
+	public void addX(int i) {
+		this.x -= i;
+	}
+	public void addY(int i) {
+		this.y -= i;
+	}
 
 	private class movment implements Runnable {
 		private String c;
@@ -65,7 +75,8 @@ public class Player {
 		public void MoveLeft() {
 			facing = "left";
 			while (l) {
-				Camera.addx(-10);
+				Camera.addx(- Camera.step);
+				Game.player.addX(-Camera.step);
 				try {
 					Thread.sleep(20);
 				} catch (InterruptedException e) {
@@ -77,7 +88,8 @@ public class Player {
 		public void MoveRight() {
 			facing ="right";
 			while (r) {
-				Camera.addx(10);
+				Camera.addx(Camera.step);
+				Game.player.addX(Camera.step);
 				try {
 					Thread.sleep(20);
 				} catch (InterruptedException e) {
