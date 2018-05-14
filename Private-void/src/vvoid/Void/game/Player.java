@@ -53,10 +53,10 @@ public class Player {
 		return height;
 	}
 	public void UP() {
-		
+		Game.player.addY(-Camera.step);
 	}
 	public void DOWN() {
-		
+		Game.player.addY(Camera.step);
 	}
 	public void addX(int i) {
 		this.x -= i;
