@@ -37,6 +37,7 @@ public class EOArrey {
 		xO[oAmount] = x;
 		yO[oAmount] = y;
 
+		
 	}
 
 	public void EnemyR(int oben1) {
