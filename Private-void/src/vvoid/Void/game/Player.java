@@ -31,7 +31,7 @@ public class Player {
 
 	public void drawPlayer(Graphics g) {
 		g.drawRect(this.XSolid, this.YSolid, this.width, this.height);
-		System.out.println(x);
+		//System.out.println(x);
 	}
 
 	public void Move(String c) {
@@ -53,10 +53,10 @@ public class Player {
 		return height;
 	}
 	public void UP() {
-		Game.player.addY(-Camera.step);
+		Game.player.addY(Camera.step);
 	}
 	public void DOWN() {
-		Game.player.addY(Camera.step);
+		Game.player.addY(-Camera.step);
 	}
 	public void addX(int i) {
 		this.x -= i;
@@ -75,8 +75,8 @@ public class Player {
 		public void MoveLeft() {
 			facing = "left";
 			while (l) {
-				Camera.addx(- Camera.step);
-				Game.player.addX(-Camera.step);
+				Camera.addx(-Camera.step);
+				Game.player.addX(Camera.step);
 				try {
 					Thread.sleep(20);
 				} catch (InterruptedException e) {
@@ -89,7 +89,7 @@ public class Player {
 			facing ="right";
 			while (r) {
 				Camera.addx(Camera.step);
-				Game.player.addX(Camera.step);
+				Game.player.addX(-Camera.step);
 				try {
 					Thread.sleep(20);
 				} catch (InterruptedException e) {
