@@ -17,6 +17,7 @@ public class EOArrey {
 	public boolean o, r, u, l; // If the enemy stands on mmore than one block, you have to make that he uses
 								// only 1 block for collisiosn or he will bug
 	public int oben, rechts, unten, links;
+	public boolean linksP,rechtsP,untenP,obenP;
 	public Collision coll;
 	public Player pl;
 	
@@ -226,13 +227,41 @@ public class EOArrey {
 		//System.out.println(xO[1]);
 	}
 	public void CollPlayer() {
-		System.out.println("dd");
 		counterP = oAmount; // for editing oAmount without change it
 		while (counterP >= 0) {
 			coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height, xO[counterP], yO[counterP], widthO[counterP],
 					heightO[counterP]);
-			if(coll.CollLinks() == 1) {
-				System.out.println("klappt");
+			if(coll.CollLinksP() == 1) {
+				counterP =0;
+				linksP = true;
+				System.out.println("links");
+			}
+			else {
+				linksP = false;
+			}
+			if(coll.CollObenP() == 1) {
+				counterP =0;
+				obenP = true;
+				System.out.println("oben");
+			}
+			else {
+				obenP = false;
+			}
+			if(coll.CollRechtsP() == 1) {
+				counterP =0;
+				rechtsP = true;
+				System.out.println("rechts");
+			}
+			else {
+				rechtsP = false;
+			}
+			if(coll.CollUntenP() == 1) {
+				counterP =0;
+				untenP = true;
+				System.out.println("unten");
+			}
+			else {
+				untenP = false;
 			}
 			counterP--;
 		}

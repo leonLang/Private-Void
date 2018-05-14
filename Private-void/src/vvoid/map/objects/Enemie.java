@@ -33,7 +33,7 @@ public class Enemie {
 	}
 
 	public void drawEnemie(Graphics g) {
-		System.out.println(Game.player.x);
+		//System.out.println(Game.player.x);
 		switch (this.IDO) {
 		case 1:
 			direction(g, a1, a2, a3, a4, a5, a6, a7, a8);
