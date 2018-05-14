@@ -17,7 +17,7 @@ public class EOArrey {
 	public boolean o, r, u, l; // If the enemy stands on mmore than one block, you have to make that he uses
 								// only 1 block for collisiosn or he will bug
 	public int oben, rechts, unten, links;
-	public boolean linksP,rechtsP,untenP,obenP;
+	public static boolean linksP,rechtsP,untenP,obenP;
 	public Collision coll;
 	public Player pl;
 	
