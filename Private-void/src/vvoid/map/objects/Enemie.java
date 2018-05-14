@@ -3,6 +3,7 @@ package vvoid.map.objects;
 import java.awt.Graphics;
 import java.awt.Image;
 
+import vvoid.Void.game.Game;
 import vvoid.Void.game.SpriteSheet;
 import vvoid.init.main.Collision;
 
@@ -32,7 +33,7 @@ public class Enemie {
 	}
 
 	public void drawEnemie(Graphics g) {
-
+		System.out.println(Game.player.x);
 		switch (this.IDO) {
 		case 1:
 			direction(g, a1, a2, a3, a4, a5, a6, a7, a8);
@@ -46,6 +47,7 @@ public class Enemie {
 
 	public void sh(Graphics g, Image a1, Image a2) {
 		eo.EnemyR(0);
+		eo.CollPlayer();
 		x = eo.x;
 		y = eo.y;
 		// y = EOArrey.y1;

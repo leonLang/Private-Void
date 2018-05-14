@@ -11,7 +11,7 @@ public class EOArrey {
 	public static int[] xO = new int[10000]; // x-position (blocks)
 	public static int[] yO = new int[10000]; // y-postion (blocks)
 	public static int oAmount = -1; // number of blocks (-1 is for the array who starts with 0)
-	public int counter, start, s1, s2;
+	public int counter,counterP, start, s1, s2;
 	public int width, height, x, y; // get position and size from enemies
 	public boolean up, right, down, left;
 	public boolean o, r, u, l; // If the enemy stands on mmore than one block, you have to make that he uses
@@ -36,12 +36,11 @@ public class EOArrey {
 		heightO[oAmount] = height;
 		xO[oAmount] = x;
 		yO[oAmount] = y;
-		System.out.println(oAmount);
 
 	}
 
 	public void EnemyR(int oben1) {
-		System.out.println(Game.player.getY());
+		//System.out.println(Game.player.getY());
 		
 		/*
 		 * Change widhtO to +3 so you can detect if enemy is right from the block in the
@@ -222,6 +221,19 @@ public class EOArrey {
 					left = false;
 				}
 			}
+		}
+		//System.out.println(xO[1]);
+	}
+	public void CollPlayer() {
+		System.out.println("dd");
+		counterP = oAmount; // for editing oAmount without change it
+		while (counterP >= 0) {
+			coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height, xO[counterP], yO[counterP], widthO[counterP],
+					heightO[counterP]);
+			if(coll.CollLinks() == 1) {
+				System.out.println("klappt");
+			}
+			counterP--;
 		}
 	}
 
