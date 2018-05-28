@@ -79,9 +79,9 @@ public class Player {
 				if(EOArrey.linksP == true) {
 					System.out.println("links");
 				}
-				else {
-					System.out.println("hi");
-					}
+				if(EOArrey.rechtsP == true) {
+					System.out.println("rechts");
+				}
 				
 				Camera.addx(-Camera.step);
 				Game.player.addX(Camera.step);
@@ -96,6 +96,12 @@ public class Player {
 		public void MoveRight() {
 			facing ="right";
 			while (r) {
+				if(EOArrey.linksP == true) {
+					System.out.println("links");
+				}
+				if(EOArrey.rechtsP == true) {
+					System.out.println("rechts");
+				}
 				Camera.addx(Camera.step);
 				Game.player.addX(-Camera.step);
 				try {
