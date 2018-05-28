@@ -3,12 +3,13 @@ package vvoid.Void.game;
 import java.awt.Graphics;
 
 import vvoid.init.main.Camera;
+import vvoid.map.objects.EOArrey;
 
 public class Player {
 	public boolean l;
 	public boolean r;
 	public String facing;
-	public int x;
+	public int   x;
 	public int y;
 	public int XSolid;
 	public int YSolid;
@@ -67,14 +68,21 @@ public class Player {
 
 	private class movment implements Runnable {
 		private String c;
-
 		public movment(String c) {
 			this.c = c;
 		}
 
 		public void MoveLeft() {
+			
 			facing = "left";
 			while (l) {
+				if(EOArrey.linksP == true) {
+					System.out.println("links");
+				}
+				else {
+					System.out.println("hi");
+					}
+				
 				Camera.addx(-Camera.step);
 				Game.player.addX(Camera.step);
 				try {
@@ -100,6 +108,7 @@ public class Player {
 
 		@Override
 		public void run() {
+			
 			switch (c) {
 			case "l":
 				MoveLeft();

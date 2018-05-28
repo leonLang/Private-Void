@@ -27,7 +27,7 @@ public class Game extends Thread{
          * werden.
          */
         cam = new Camera(0, 0);
-        player = new Player(100,100,100,50,"left");
+        player = new Player(100,100,100,51,"left");
         Main.loading = false;
     } 
 

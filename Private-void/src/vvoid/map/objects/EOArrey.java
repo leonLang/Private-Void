@@ -234,7 +234,7 @@ public class EOArrey {
 			if(coll.CollLinksP() == 1) {
 				counterP =0;
 				linksP = true;
-				System.out.println("links");
+				//System.out.println("links");
 			}
 			else {
 				linksP = false;
@@ -242,7 +242,7 @@ public class EOArrey {
 			if(coll.CollObenP() == 1) {
 				counterP =0;
 				obenP = true;
-				System.out.println("oben");
+				//System.out.println("oben");
 			}
 			else {
 				obenP = false;
@@ -250,7 +250,7 @@ public class EOArrey {
 			if(coll.CollRechtsP() == 1) {
 				counterP =0;
 				rechtsP = true;
-				System.out.println("rechts");
+				//System.out.println("rechts");
 			}
 			else {
 				rechtsP = false;
@@ -258,7 +258,7 @@ public class EOArrey {
 			if(coll.CollUntenP() == 1) {
 				counterP =0;
 				untenP = true;
-				System.out.println("unten");
+				//System.out.println("unten");
 			}
 			else {
 				untenP = false;
