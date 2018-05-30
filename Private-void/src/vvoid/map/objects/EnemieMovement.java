@@ -8,7 +8,7 @@ import vvoid.Void.game.SpriteSheet;
 
 public class EnemieMovement {
 	public int zaehler = 0;
-	static int z1 = 25;
+	static int z1 = 50;
 	private SpriteSheet sheet = new SpriteSheet();
 	public Image c, d;
 

@@ -15,6 +15,7 @@ public class Objekt {
 	private int rotation;
 	private BufferedImage img;
 	public EOArrey eo = new EOArrey();
+
 	public Objekt(int[] data) {
 		this.IDO = data[1];
 		this.x = data[2];
@@ -23,16 +24,16 @@ public class Objekt {
 		this.height = data[5];
 		this.rotation = data[6];
 		this.TextureID = data[7];
-	    img = TextureSystem.textureSystem(TextureID);
-		//EOArrey.Objekt(this.width, this.height, this.x, this.y);
+		img = TextureSystem.textureSystem(TextureID);
+		// EOArrey.Objekt(this.width, this.height, this.x, this.y);
 		eo.Objekt(width, height, x, y);
 	}
-	
+
 	public void drawObjects(Graphics g) {
-		if(IDO == 0) {
-		g.drawRect(x, y, width, height);
-		g.drawImage(img, x, y, width, height, null);
-		} else if(IDO == 1) {
+		if (IDO == 0) {
+			g.drawRect(x, y, width, height);
+			g.drawImage(img, x, y, width, height, null);
+		} else if (IDO == 1) {
 			g.drawRect(x, y, width, height);//
 		}
 
