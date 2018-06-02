@@ -146,17 +146,17 @@ public class Player {
 				Camera.addy(Camera.step);
 				Game.player.addY(-Camera.step);
 				try {
-					Thread.sleep(20);
+					Thread.sleep(5);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			}
 			try {
-				Thread.sleep(20);
+				Thread.sleep(5);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			//gravity();
+			gravity();
 			
 		}
 
