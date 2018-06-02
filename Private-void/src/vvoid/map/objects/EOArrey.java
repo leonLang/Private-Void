@@ -280,6 +280,7 @@ public class EOArrey {
 				// System.out.println("unten");
 			} else {
 				obenP = false;
+				
 			}
 			counterP--;
 		}
