@@ -31,6 +31,7 @@ public class Collision {
 	}
 
 	public int CollUnten() {
+		
 		if (Obj1Y + Obj1Height - 1 >= Obj2Y && Obj2Y + Obj2Height >= Obj1Y && Obj1X + Obj1Width - 1 >= Obj2X
 				&& Obj2X + Obj2Width - 1 >= Obj1X) {
 			z1 = 1;
@@ -91,8 +92,7 @@ public class Collision {
 	}
 
 	public int CollLinksP() {
-		if (Obj1Y + Obj1Height - 1 >= Obj2Y && Obj2Y + Obj2Height - 1 >= Obj1Y && Obj1X + Obj1Width + 2
-				>= Obj2X
+		if (Obj1Y + Obj1Height - 1 >= Obj2Y && Obj2Y + Obj2Height - 1 >= Obj1Y && Obj1X + Obj1Width + 2 >= Obj2X
 				&& Obj2X + Obj2Width - 1 >= Obj1X) {
 			z1 = 1;
 			// System.out.println("klappti");

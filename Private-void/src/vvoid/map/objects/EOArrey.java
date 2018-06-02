@@ -262,10 +262,10 @@ public class EOArrey {
 			}
 			if (coll.CollObenP() == 1) {
 				counterP = 0;
-				obenP = true;
+				untenP = true;
 				// System.out.println("oben");
 			} else {
-				obenP = false;
+				untenP = false;
 			}
 			if (coll.CollRechtsP() == 1) {
 				counterP = 0;
@@ -276,10 +276,10 @@ public class EOArrey {
 			}
 			if (coll.CollUntenP() == 1) {
 				counterP = 0;
-				untenP = true;
+				obenP = true;
 				// System.out.println("unten");
 			} else {
-				untenP = false;
+				obenP = false;
 			}
 			counterP--;
 		}
