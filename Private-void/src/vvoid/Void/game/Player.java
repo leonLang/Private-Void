@@ -101,13 +101,15 @@ public class Player {
 				}
 				if(EOArrey.rechtsP == true) {
 					System.out.println("rechts");
-				}
-				Camera.addx(Camera.step);
-				Game.player.addX(-Camera.step);
-				try {
-					Thread.sleep(20);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
+					r = false;
+				} else {
+					Camera.addx(Camera.step);
+					Game.player.addX(-Camera.step);
+					try {
+						Thread.sleep(20);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
 				}
 			}
 		}

@@ -8,6 +8,11 @@ public class Editor implements Runnable{
 		}
 		public void create() throws Exception {
 			new Main();
+			/*
+			 * Editor wird nicht mehr als externe jar, sondern als neue klasse direckt erstellt.
+			 * Editor kann bei bedarf optimiert werden, ist aber nicht von nöten.
+			 */
+			
 				/*Process ps = Runtime.getRuntime().exec(new String[] {"java", "-jar", "Metroid-editor.jar"});
 					ps.waitFor();
 					*/
