@@ -16,9 +16,9 @@ public class Enemie {
 			d2, d3, d4, d5, d6, d7, d8;
 	private Image e, f, g1, h, i, j1, j2, k1, k2, l1, l2, m1, m2, n1, n2;
 	private Image o1, o2, o3, o4, o5, o6, o7, o8, p1, p2, p3, p4, p5, p6, p7, p8, q1, q2, q3, q4, q5, q6, q7, q8;
-	private Image r1, r2, s1,s2, t1,t2;
+	private Image r1, r2, s1, s2, t1, t2;
 	private Image u1, u2, u3, u4, u5, u6, u7, u8, v1, v2, v3, v4, v5, v6, v7, v8;
-	private Image w1,w2, z, zz;
+	private Image w1, w2, z, zz;
 	public static int zaehler, zaehler1;
 
 	private int IDO;
@@ -36,7 +36,7 @@ public class Enemie {
 	}
 
 	public void drawEnemie(Graphics g) {
-		
+
 		switch (this.IDO) {
 		case 1:
 			direction(g, a1, a2, a3, a4, a5, a6, a7, a8);
