@@ -78,18 +78,20 @@ public class Player {
 			while (l) {
 				if(EOArrey.linksP == true) {
 					System.out.println("links");
+					l = false;
+				} else {
+					Camera.addx(-Camera.step);
+					Game.player.addX(Camera.step);
+					try {
+						Thread.sleep(20);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
 				}
 				if(EOArrey.rechtsP == true) {
 					System.out.println("rechts");
 				}
 				
-				Camera.addx(-Camera.step);
-				Game.player.addX(Camera.step);
-				try {
-					Thread.sleep(20);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
 			}
 		}
 
