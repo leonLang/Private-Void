@@ -28,6 +28,8 @@ public class Player {
 		
 		this.l = false;
 		this.r = false;
+		
+		(new Thread(new Pgravity())).start();
 	}
 
 	public void drawPlayer(Graphics g) {
@@ -77,7 +79,6 @@ public class Player {
 			facing = "left";
 			while (l) {
 				if(EOArrey.linksP == true) {
-					System.out.println("links");
 					l = false;
 				} else {
 					Camera.addx(-Camera.step);
@@ -89,7 +90,6 @@ public class Player {
 					}
 				}
 				if(EOArrey.rechtsP == true) {
-					System.out.println("rechts");
 				}
 				
 			}
@@ -99,10 +99,8 @@ public class Player {
 			facing ="right";
 			while (r) {
 				if(EOArrey.linksP == true) {
-					System.out.println("links");
 				}
 				if(EOArrey.rechtsP == true) {
-					System.out.println("rechts");
 					r = false;
 				} else {
 					Camera.addx(Camera.step);
@@ -130,7 +128,24 @@ public class Player {
 			Thread.currentThread().interrupt();
 		}
 	}
-	private class Pgravity {
-		
+	private class Pgravity implements Runnable{
+
+		private void gravity() {
+			while(EOArrey.untenP != true) {
+				Camera.addy(Camera.step);
+				Game.player.addY(-Camera.step);
+				try {
+					Thread.sleep(20);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		@Override
+		public void run() {
+			System.out.println("hier bin ich");
+			gravity();
+			
+		}
 	}
 }
