@@ -273,6 +273,7 @@ public class EOArrey {
 				// System.out.println("rechts");
 			} else {
 				linksP = false;
+				
 			}
 			if (coll.CollUntenP() == 1) {
 				counterP = 0;
