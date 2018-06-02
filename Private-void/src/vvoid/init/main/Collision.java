@@ -87,7 +87,7 @@ public class Collision {
 		
 		}
 		public int CollLinksP() {
-			if(Obj1Y+Obj1Height-1>=Obj2Y && Obj2Y+Obj2Height-1>=Obj1Y && Obj1X+Obj1Width+2>=Obj2X && Obj2X+Obj2Width-1>=Obj1X) {
+			if(Obj1Y+Obj1Height-1>=Obj2Y && Obj2Y+Obj2Height-1>=Obj1Y && Obj1X+Obj1Width+1>=Obj2X && Obj2X+Obj2Width-1>=Obj1X) {
 					z1=1;
 					//System.out.println("klappti");
 					return 1;
@@ -98,7 +98,8 @@ public class Collision {
 		
 		}
 		public int CollRechtsP() {
-			if(Obj1Y+Obj1Height-1>=Obj2Y && Obj2Y+Obj2Height-1>=Obj1Y && Obj1X+Obj1Width-1>=Obj2X && Obj2X+Obj2Width+20>=Obj1X) {
+			if(Obj1Y+Obj1Height-1>=Obj2Y && Obj2Y+Obj2Height-1>=Obj1Y && Obj1X+Obj1Width-1>=Obj2X && Obj2X+Obj2Width+2
+					>=Obj1X) {
 					z1=1;
 					//System.out.println("klappti");
 					return 1;
