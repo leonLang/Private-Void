@@ -255,10 +255,10 @@ public class EOArrey {
 					yO[counterP], widthO[counterP], heightO[counterP]);
 			if (coll.CollLinksP() == 1) {
 				counterP = 0;
-				linksP = true;
+				rechtsP = true;
 				// System.out.println("links");
 			} else {
-				linksP = false;
+				rechtsP = false;
 			}
 			if (coll.CollObenP() == 1) {
 				counterP = 0;
@@ -269,10 +269,10 @@ public class EOArrey {
 			}
 			if (coll.CollRechtsP() == 1) {
 				counterP = 0;
-				rechtsP = true;
+				linksP = true;
 				// System.out.println("rechts");
 			} else {
-				rechtsP = false;
+				linksP = false;
 			}
 			if (coll.CollUntenP() == 1) {
 				counterP = 0;
