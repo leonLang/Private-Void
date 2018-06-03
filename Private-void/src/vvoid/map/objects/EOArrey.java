@@ -17,7 +17,7 @@ public class EOArrey {
 	private boolean direction = true;
 	public boolean o, r, u, l; // If the enemy stands on mmore than one block, you have to make that he uses
 								// only 1 block for collisiosn or he will bug
-	public int oben, rechts, unten, links;
+	public int oben, rechts, unten, links,test;
 	public static boolean linksP, rechtsP, untenP, obenP;
 	public Collision coll;
 	public Player pl;
@@ -263,9 +263,11 @@ public class EOArrey {
 			if (coll.CollObenP() == 1) {
 				counterP = 0;
 				obenP = true;
+				test=1;
 				// System.out.println("oben");
 			} else {
 				obenP = false;
+				test=0;
 			}
 			if (coll.CollRechtsP() == 1) {
 				counterP = 0;
@@ -277,13 +279,19 @@ public class EOArrey {
 			}
 			if (coll.CollUntenP() == 1) {
 				counterP = 0;
-				untenP = true;
+				//test = 1;
 				// System.out.println("unten");
 			} else {
-				untenP= false;
+				//test=0;
 				
 			}
 			counterP--;
+		}
+		if(test == 1) {
+			untenP = true;
+		}
+		else {
+			untenP = false;
 		}
 	}
 
