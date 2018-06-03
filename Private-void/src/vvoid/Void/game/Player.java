@@ -88,7 +88,9 @@ public class Player {
 
 			facing = "left";
 			while (l) {
-				if (EOArrey.linksP == true) {
+				if (EOArrey.leftP == true) {
+					//namen sind jetzt auf englisch
+					//früher linksP jetzt leftP
 					l = false;
 				} else {
 					Camera.addx(-Camera.step);
@@ -99,7 +101,7 @@ public class Player {
 						e.printStackTrace();
 					}
 				}
-				if (EOArrey.rechtsP == true) {
+				if (EOArrey.rightP == true) {
 				}
 
 			}
@@ -108,9 +110,9 @@ public class Player {
 		public void MoveRight() {
 			facing = "right";
 			while (r) {
-				if (EOArrey.linksP == true) {
+				if (EOArrey.leftP == true) {
 				}
-				if (EOArrey.rechtsP == true) {
+				if (EOArrey.leftP == true) {
 					r = false;
 				} else {
 					Camera.addx(Camera.step);
@@ -142,7 +144,7 @@ public class Player {
 	private class Pgravity implements Runnable {
 
 		private void gravity() {
-			while (EOArrey.untenP != true) {
+			while (EOArrey.downP != true) {
 				Camera.addy(Camera.step);
 				Game.player.addY(-Camera.step);
 				try {
