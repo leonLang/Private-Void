@@ -62,12 +62,10 @@ public class Control implements KeyListener, Runnable {
 				}
 			}
 			if (e.getKeyCode() == KeyEvent.VK_UP) {
-				Camera.addy(-Camera.step);
 				Game.player.UP();
 
 			}
 			if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-				Camera.addy(Camera.step);
 				Game.player.DOWN();
 
 			}
@@ -75,6 +73,7 @@ public class Control implements KeyListener, Runnable {
 
 			}
 			if (e.getKeyCode() == KeyEvent.VK_X) {
+				Game.player.shoot();
 
 			}
 			if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {

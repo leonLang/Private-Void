@@ -15,6 +15,8 @@ public class Player {
 	public int YSolid;
 	public int width;
 	public int height;
+	public Shot[] shots;
+	public static int ashots;
 
 	public Player(int x, int y, int width, int height, String facing) {
 		this.x = x;
@@ -24,10 +26,12 @@ public class Player {
 		this.width = width;
 		this.height = height;
 		this.facing = facing;
-		new Pgravity();
 
 		this.l = false;
 		this.r = false;
+		
+		this.ashots = 0;
+		this.shots = new Shot[64];
 
 		(new Thread(new Pgravity())).start();
 	}
@@ -62,11 +66,16 @@ public class Player {
 	}
 
 	public void UP() {
-		Game.player.addY(Camera.step);
+
 	}
 
 	public void DOWN() {
-		Game.player.addY(-Camera.step);
+
+	}
+	public void shoot() {
+		if(Player.ashots < shots.length) {
+		shots[Player.ashots] = new Shot(getfacing());
+		}
 	}
 
 	public void addX(int i) {
@@ -89,8 +98,8 @@ public class Player {
 			facing = "left";
 			while (l) {
 				if (EOArrey.leftP == true) {
-					//namen sind jetzt auf englisch
-					//früher linksP jetzt leftP
+					// namen sind jetzt auf englisch
+					// früher linksP jetzt leftP
 					l = false;
 				} else {
 					Camera.addx(-Camera.step);
@@ -110,11 +119,11 @@ public class Player {
 		public void MoveRight() {
 			facing = "right";
 			while (r) {
-				if (EOArrey.leftP == true) {
-				}
-				if (EOArrey.leftP == true) {
+				if (EOArrey.rightP == true) {
+					System.out.println("rechter");
 					r = false;
 				} else {
+					System.out.println(EOArrey.rightP);
 					Camera.addx(Camera.step);
 					Game.player.addX(-Camera.step);
 					try {
@@ -124,6 +133,9 @@ public class Player {
 					}
 				}
 			}
+		}
+		public void jump() {
+			
 		}
 
 		@Override
@@ -147,6 +159,7 @@ public class Player {
 			while (EOArrey.downP != true) {
 				Camera.addy(Camera.step);
 				Game.player.addY(-Camera.step);
+				
 				try {
 					Thread.sleep(5);
 				} catch (InterruptedException e) {
@@ -159,12 +172,11 @@ public class Player {
 				e.printStackTrace();
 			}
 			gravity();
-			
+
 		}
 
 		@Override
 		public void run() {
-			System.out.println("hier bin ich");
 			gravity();
 
 		}
