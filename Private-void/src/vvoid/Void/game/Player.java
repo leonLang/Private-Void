@@ -6,8 +6,8 @@ import vvoid.init.main.Camera;
 import vvoid.map.objects.EOArrey;
 
 public class Player {
-	public boolean l;
-	public boolean r;
+	public boolean l,r;
+	public boolean u,d;
 	public String facing;
 	public int x;
 	public int y;
@@ -33,7 +33,7 @@ public class Player {
 		this.ashots = 0;
 		this.shots = new Shot[64];
 
-		(new Thread(new Pgravity())).start();
+		//(new Thread(new Pgravity())).start();
 	}
 
 	public void drawPlayer(Graphics g) {
@@ -120,12 +120,42 @@ public class Player {
 			facing = "right";
 			while (r) {
 				if (EOArrey.rightP == true) {
-					System.out.println("rechter");
 					r = false;
 				} else {
-					System.out.println(EOArrey.rightP);
 					Camera.addx(Camera.step);
 					Game.player.addX(-Camera.step);
+					try {
+						Thread.sleep(20);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}
+		public void MoveUp() {
+			facing = "up";
+			while (u) {
+				if (EOArrey.upP == true) {
+					u = false;
+				} else {
+					Camera.addy(-Camera.step);
+					Game.player.addY(Camera.step);
+					try {
+						Thread.sleep(20);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}
+		public void MoveDown() {
+			facing = "down";
+			while (d) {
+				if (EOArrey.downP == true) {
+					d = false;
+				} else {
+					Camera.addy(Camera.step);
+					Game.player.addY(-Camera.step);
 					try {
 						Thread.sleep(20);
 					} catch (InterruptedException e) {
@@ -147,6 +177,12 @@ public class Player {
 				break;
 			case "r":
 				MoveRight();
+				break;
+			case "u":
+				MoveUp();
+				break;
+			case "d":
+				MoveDown();
 				break;
 			}
 			Thread.currentThread().interrupt();

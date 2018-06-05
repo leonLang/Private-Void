@@ -3,7 +3,7 @@ package vvoid.init.main;
 public class Camera {
 	static int x;
 	static int y;
-	public static final int step = 1;
+	public static final int step = 4;
 
 	public Camera(int x, int y) {
 		this.x = x;

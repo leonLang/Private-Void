@@ -62,11 +62,19 @@ public class Control implements KeyListener, Runnable {
 				}
 			}
 			if (e.getKeyCode() == KeyEvent.VK_UP) {
-				Game.player.UP();
+				while (Game.player.u != true) {
+					Game.player.d = false;
+					Game.player.u = true;
+					Game.player.Move("u");
+				}
 
 			}
 			if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-				Game.player.DOWN();
+				while (Game.player.d != true) {
+					Game.player.u = false;
+					Game.player.d = true;
+					Game.player.Move("d");
+				}
 
 			}
 			if (e.getKeyCode() == KeyEvent.VK_Y) {
@@ -93,6 +101,14 @@ public class Control implements KeyListener, Runnable {
 		}
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			Game.player.r = false;
+
+			}
+		if (e.getKeyCode() == KeyEvent.VK_UP) {
+			Game.player.u = false;
+
+			}
+		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+			Game.player.d = false;
 
 			}
 		}
