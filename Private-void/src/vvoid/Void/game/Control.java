@@ -97,18 +97,25 @@ public class Control implements KeyListener, Runnable {
 		if(Main.menu != true) {
 		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 			Game.player.l = false;
+			Game.player.waitl = false;
 
 		}
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			Game.player.r = false;
+			Game.player.waitr = false;
+
 
 			}
 		if (e.getKeyCode() == KeyEvent.VK_UP) {
 			Game.player.u = false;
+			Game.player.waitu = false;
+
 
 			}
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 			Game.player.d = false;
+			Game.player.waitd = false;
+
 
 			}
 		}

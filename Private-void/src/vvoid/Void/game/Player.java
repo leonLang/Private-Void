@@ -6,8 +6,9 @@ import vvoid.init.main.Camera;
 import vvoid.map.objects.EOArrey;
 
 public class Player {
-	public boolean l,r;
-	public boolean u,d;
+	public boolean l, r;
+	public boolean u, d;
+	public boolean waitl, waitr, waitu, waitd;
 	public String facing;
 	public int x;
 	public int y;
@@ -17,6 +18,7 @@ public class Player {
 	public int height;
 	public Shot[] shots;
 	public static int ashots;
+	public int sleep;
 
 	public Player(int x, int y, int width, int height, String facing) {
 		this.x = x;
@@ -26,14 +28,15 @@ public class Player {
 		this.width = width;
 		this.height = height;
 		this.facing = facing;
+		this.sleep = 1;
 
 		this.l = false;
 		this.r = false;
-		
+
 		this.ashots = 0;
 		this.shots = new Shot[64];
 
-		//(new Thread(new Pgravity())).start();
+		 (new Thread(new Pgravity())).start();
 	}
 
 	public void drawPlayer(Graphics g) {
@@ -72,9 +75,10 @@ public class Player {
 	public void DOWN() {
 
 	}
+
 	public void shoot() {
-		if(Player.ashots < shots.length) {
-		shots[Player.ashots] = new Shot(getfacing());
+		if (Player.ashots < shots.length) {
+			//shots[Player.ashots] = new Shot(getfacing());
 		}
 	}
 
@@ -98,21 +102,22 @@ public class Player {
 			facing = "left";
 			while (l) {
 				if (EOArrey.leftP == true) {
-					// namen sind jetzt auf englisch
-					// früher linksP jetzt leftP
-					l = false;
-				} else {
+					waitl = true;
+				} else if (waitl != true) {
 					Camera.addx(-Camera.step);
 					Game.player.addX(Camera.step);
 					try {
-						Thread.sleep(20);
+						Thread.sleep(sleep);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
 				}
-				if (EOArrey.rightP == true) {
+				waitl = false;
+				try {
+					Thread.sleep(sleep);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
 				}
-
 			}
 		}
 
@@ -120,52 +125,73 @@ public class Player {
 			facing = "right";
 			while (r) {
 				if (EOArrey.rightP == true) {
-					r = false;
-				} else {
+					waitr = true;
+				} else if (waitr != true) {
 					Camera.addx(Camera.step);
 					Game.player.addX(-Camera.step);
 					try {
-						Thread.sleep(20);
+						Thread.sleep(sleep);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
 				}
+				waitr = false;
+				try {
+					Thread.sleep(sleep);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
 		}
+
 		public void MoveUp() {
 			facing = "up";
 			while (u) {
 				if (EOArrey.upP == true) {
-					u = false;
-				} else {
+					waitu = true;
+				} else if (waitu != true) {
 					Camera.addy(-Camera.step);
 					Game.player.addY(Camera.step);
 					try {
-						Thread.sleep(20);
+						Thread.sleep(sleep);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
 				}
+				waitu = false;
+				try {
+					Thread.sleep(sleep);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
 		}
+
 		public void MoveDown() {
 			facing = "down";
 			while (d) {
 				if (EOArrey.downP == true) {
-					d = false;
-				} else {
+					waitd = true;
+				} else if (waitd != true) {
 					Camera.addy(Camera.step);
 					Game.player.addY(-Camera.step);
 					try {
-						Thread.sleep(20);
+						Thread.sleep(sleep);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
 				}
+				waitd = false;
+				try {
+					Thread.sleep(sleep);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
 		}
+
 		public void jump() {
-			
+
 		}
 
 		@Override
@@ -190,20 +216,23 @@ public class Player {
 	}
 
 	private class Pgravity implements Runnable {
+		int a = 0;
+		int v = 0;
+		int g = 1;
 
 		private void gravity() {
 			while (EOArrey.downP != true) {
 				Camera.addy(Camera.step);
 				Game.player.addY(-Camera.step);
-				
+
 				try {
-					Thread.sleep(5);
+					Thread.sleep(sleep);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			}
 			try {
-				Thread.sleep(5);
+				Thread.sleep(sleep);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

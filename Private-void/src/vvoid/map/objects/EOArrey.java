@@ -261,6 +261,12 @@ public class EOArrey {
 			} else {
 				linksP = 0;
 			}
+			counterP--;
+		}
+		counterP = oAmount; // for editing oAmount without change it
+		while (counterP >= 0) {
+			coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height, xO[counterP],
+					yO[counterP], widthO[counterP], heightO[counterP]);
 			if (coll.CollObenP() == 1) {
 				counterP = 0;
 				obenP = 1;
@@ -268,24 +274,35 @@ public class EOArrey {
 			} else {
 				obenP = 0;
 			}
+			counterP--;
+		}
+		counterP = oAmount; // for editing oAmount without change it
+		while (counterP >= 0) {
+			coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height, xO[counterP],
+					yO[counterP], widthO[counterP], heightO[counterP]);
 			if (coll.CollRechtsP() == 1) {
 				counterP = 0;
 				rechtsP = 1;
 				// System.out.println("rechts");
 			} else {
 				rechtsP = 0;
-
 			}
+			counterP--;
+		}
+		counterP = oAmount; // for editing oAmount without change it
+		while (counterP >= 0) {
+			coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height, xO[counterP],
+					yO[counterP], widthO[counterP], heightO[counterP]);
 			if (coll.CollUntenP() == 1) {
 				counterP = 0;
 				untenP = 1;
 				// System.out.println("unten");
 			} else {
 				untenP = 0;
-
 			}
 			counterP--;
 		}
+
 		if (linksP == 1) {
 			leftP = true;
 		} else {
