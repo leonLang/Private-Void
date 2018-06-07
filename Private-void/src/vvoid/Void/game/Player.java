@@ -278,7 +278,6 @@ public class Player {
 		private void gravity() {
 			while (true) {
 				if (EOArrey.downP != true) {
-					if (j != true) {
 						for (int i = 0; i < v; i++) {
 							if (EOArrey.downP != true) {
 								Camera.addy(1);
@@ -297,13 +296,14 @@ public class Player {
 						} catch (InterruptedException e) {
 							e.printStackTrace();
 						}
-					}
+					
 					try {
 						Thread.sleep(sleep);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
 				}
+				//System.out.println("kaka");
 			}
 		}
 
