@@ -8,17 +8,15 @@ import javax.imageio.ImageIO;
 
 public class SpriteSheet {
 	private  BufferedImage metroid, br_column, br_grass,br_grass1,br_recolor,br,industrial;
-	private SpriteSheet sheet = new SpriteSheet();
-	
 	public SpriteSheet() {
 		try {
 			metroid = ImageIO.read(getClass().getResourceAsStream("textures/metroid.png"));
-			br_column = ImageIO.read(getClass().getResourceAsStream("textures/.png"));
-			br_grass = ImageIO.read(getClass().getResourceAsStream("textures/.png"));
-			br_grass1 = ImageIO.read(getClass().getResourceAsStream("textures/.png"));
-			br_recolor = ImageIO.read(getClass().getResourceAsStream("textures/.png"));
-			br = ImageIO.read(getClass().getResourceAsStream("textures/.png"));
-			industrial = ImageIO.read(getClass().getResourceAsStream("textures/.png"));
+			br_column = ImageIO.read(getClass().getResourceAsStream("textures/br_column.png"));
+			br_grass = ImageIO.read(getClass().getResourceAsStream("textures/br_grass.png"));
+			br_grass1 = ImageIO.read(getClass().getResourceAsStream("textures/br_grass1.png"));
+			br_recolor = ImageIO.read(getClass().getResourceAsStream("textures/br_recolor.png"));
+			br = ImageIO.read(getClass().getResourceAsStream("textures/br.png"));
+			industrial = ImageIO.read(getClass().getResourceAsStream("textures/industrial.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
