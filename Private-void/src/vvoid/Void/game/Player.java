@@ -215,7 +215,7 @@ public class Player {
 		public void jump() {
 			System.out.println("einmal");
 			while (j) {
-				if (count < 150) {
+				if (count < 80) {
 					Player.c = 0;
 					count++;
 					for (int i = 0; i < 5; i++) {

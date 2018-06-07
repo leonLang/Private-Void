@@ -5,6 +5,7 @@ import java.awt.event.KeyListener;
 
 import vvoid.init.main.Camera;
 import vvoid.init.main.Main;
+import vvoid.map.objects.EOArrey;
 
 public class Control implements KeyListener, Runnable {
 	public Control() {
@@ -59,25 +60,21 @@ public class Control implements KeyListener, Runnable {
 					Game.player.l = false;
 					Game.player.r = true;
 					Game.player.Move("r");
-					
+
 				}
 			}
 			if (e.getKeyCode() == KeyEvent.VK_UP) {
-				/*while (Game.player.u != true) {
-					Game.player.d = false;
-					Game.player.u = true;
-					Game.player.Move("u");
-				}
-				*/				
+				/*
+				 * while (Game.player.u != true) { Game.player.d = false; Game.player.u = true;
+				 * Game.player.Move("u"); }
+				 */
 
 			}
 			if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-				/*while (Game.player.d != true) {
-					Game.player.u = false;
-					Game.player.d = true;
-					Game.player.Move("d");
-				}
-				*/
+				/*
+				 * while (Game.player.d != true) { Game.player.u = false; Game.player.d = true;
+				 * Game.player.Move("d"); }
+				 */
 
 			}
 			if (e.getKeyCode() == KeyEvent.VK_Y) {
@@ -87,10 +84,12 @@ public class Control implements KeyListener, Runnable {
 				Game.player.shoot();
 
 			}
-			if ( e.getKeyCode() == KeyEvent.VK_SPACE) {
-				if(Game.player.j != true) {
-					Game.player.Move("j");
-					Game.player.j = true;
+			if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+				if (Game.player.j != true) {
+					if (EOArrey.downP) {
+						Game.player.Move("j");
+						Game.player.j = true;
+					}
 				}
 			}
 			if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
@@ -103,31 +102,31 @@ public class Control implements KeyListener, Runnable {
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		if(Main.menu != true) {
-		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-			Game.player.l = false;
-			Game.player.waitl = false;
+		if (Main.menu != true) {
+			if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+				Game.player.l = false;
+				Game.player.waitl = false;
 			}
-		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-			Game.player.r = false;
-			Game.player.waitr = false;
+			if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+				Game.player.r = false;
+				Game.player.waitr = false;
 			}
-		if (e.getKeyCode() == KeyEvent.VK_UP) {
-			/*Game.player.u = false;
-			Game.player.waitu = false;
-			*/
+			if (e.getKeyCode() == KeyEvent.VK_UP) {
+				/*
+				 * Game.player.u = false; Game.player.waitu = false;
+				 */
 			}
-		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-			/*Game.player.d = false;
-			Game.player.waitd = false;
-			*/
+			if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+				/*
+				 * Game.player.d = false; Game.player.waitd = false;
+				 */
 			}
-		if ( e.getKeyCode() == KeyEvent.VK_SPACE) {
-			Game.player.j = false;
-		}
+			if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+				Game.player.j = false;
+			}
 
 		}
-		//Game.move = false;
+		// Game.move = false;
 	}
 
 	@Override
