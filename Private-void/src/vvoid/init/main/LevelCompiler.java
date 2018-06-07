@@ -61,7 +61,6 @@ public class LevelCompiler {
 			lenght++;
 			count = 0;
 		}
-		System.out.println(1/count);
 		Menue.bar.setValue(lenght);
 		Main.panel.repaint();
 	}
