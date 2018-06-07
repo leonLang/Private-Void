@@ -6,7 +6,7 @@ import vvoid.init.main.Camera;
 import vvoid.map.objects.EOArrey;
 
 public class Player {
-	public static int c;
+	public int cp;
 	public int count;
 	public boolean l, r;
 	public boolean u, d;
@@ -34,6 +34,7 @@ public class Player {
 		this.sleep = 5;
 		this.count = 0;
 		this.count = 0;
+		this.cp = 0;
 
 		this.l = false;
 		this.r = false;
@@ -216,7 +217,7 @@ public class Player {
 			System.out.println("einmal");
 			while (j) {
 				if (count < 80) {
-					Player.c = 0;
+					cp = 0;
 					count++;
 					for (int i = 0; i < 5; i++) {
 						if (EOArrey.upP != true) {
@@ -225,7 +226,7 @@ public class Player {
 						}
 					}
 				} else {
-					if(EOArrey.downP) {
+					if (EOArrey.downP) {
 						j = false;
 						count = 0;
 					}
@@ -242,7 +243,7 @@ public class Player {
 					Game.player.addY(1);
 				}
 			}
-			
+
 		}
 
 		@Override
@@ -275,32 +276,35 @@ public class Player {
 		int i = 0;
 
 		private void gravity() {
-			while (EOArrey.downP != true) {
-				for (int i = 0; i < v; i++) {
-					if (EOArrey.downP != true) {
-						Camera.addy(1);
-						Game.player.addY(-1);
+			while (true) {
+				if (EOArrey.downP != true) {
+					if (j != true) {
+						for (int i = 0; i < v; i++) {
+							if (EOArrey.downP != true) {
+								Camera.addy(1);
+								Game.player.addY(-1);
+							}
+						}
+						i++;
+
+						if (v < 10 && i <= 50 && cp < 5) {
+							v += g;
+							i = 0;
+							cp++;
+						}
+						try {
+							Thread.sleep(sleep);
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
+					}
+					try {
+						Thread.sleep(sleep);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
 					}
 				}
-				i++;
-
-				if (v < 10 && i >= 50 && c < Player.c) {
-					v += g;
-					i = 0;
-				}
-				try {
-					Thread.sleep(sleep);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
 			}
-			try {
-				Thread.sleep(sleep);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			gravity();
-
 		}
 
 		@Override
