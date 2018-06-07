@@ -12,7 +12,7 @@ public class SpriteSheet {
 	
 	public SpriteSheet() {
 		try {
-			metroid = ImageIO.read(getClass().getResourceAsStream("metroid.png"));
+			metroid = ImageIO.read(getClass().getResourceAsStream("textures/metroid.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

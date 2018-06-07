@@ -30,11 +30,15 @@ public class Objekt {
 	}
 
 	public void drawObjects(Graphics g) {
-		if (IDO == 0) {
+		switch (this.IDO) {
+		case 1:
 			g.drawRect(x, y, width, height);
 			g.drawImage(img, x, y, width, height, null);
-		} else if (IDO == 1) {
-			g.drawRect(x, y, width, height);//
+			break;
+
+		case 2:
+			g.drawRect(x, y, width, height);
+			break;
 		}
 
 	}
