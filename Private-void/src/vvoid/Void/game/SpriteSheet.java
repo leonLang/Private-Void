@@ -8,7 +8,7 @@ import javax.imageio.ImageIO;
 
 public class SpriteSheet {
 	private  BufferedImage metroid;
-
+	private SpriteSheet sheet = new SpriteSheet();
 	
 	public SpriteSheet() {
 		try {
