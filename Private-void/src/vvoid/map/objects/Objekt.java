@@ -29,6 +29,7 @@ public class Objekt {
 		eo.Objekt(width, height, x, y);
 	}
 
+	
 	public void drawObjects(Graphics g) {
 		switch (this.IDO) {
 		case 1:
