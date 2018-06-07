@@ -28,15 +28,16 @@ public class Objekt {
 		// EOArrey.Objekt(this.width, this.height, this.x, this.y);
 		eo.Objekt(width, height, x, y);
 	}
-	
+
 	public void drawObjects(Graphics g) {
+		
 		switch (this.IDO) {
-		case 1:
+		case 0:
 			g.drawRect(x, y, width, height);
 			g.drawImage(img, x, y, width, height, null);
 			break;
 
-		case 2:
+		case 1:
 			g.drawRect(x, y, width, height);
 			break;
 		}
