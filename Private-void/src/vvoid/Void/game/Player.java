@@ -6,8 +6,11 @@ import vvoid.init.main.Camera;
 import vvoid.map.objects.EOArrey;
 
 public class Player {
+	public static int c;
+	public int count;
 	public boolean l, r;
 	public boolean u, d;
+	public boolean j;
 	public boolean waitl, waitr, waitu, waitd;
 	public String facing;
 	public int x;
@@ -28,15 +31,18 @@ public class Player {
 		this.width = width;
 		this.height = height;
 		this.facing = facing;
-		this.sleep = 1;
+		this.sleep = 5;
+		this.count = 0;
+		this.count = 0;
 
 		this.l = false;
 		this.r = false;
+		this.j = false;
 
 		this.ashots = 0;
 		this.shots = new Shot[64];
 
-		 (new Thread(new Pgravity())).start();
+		(new Thread(new Pgravity())).start();
 	}
 
 	public void drawPlayer(Graphics g) {
@@ -78,7 +84,7 @@ public class Player {
 
 	public void shoot() {
 		if (Player.ashots < shots.length) {
-			//shots[Player.ashots] = new Shot(getfacing());
+			// shots[Player.ashots] = new Shot(getfacing());
 		}
 	}
 
@@ -104,8 +110,12 @@ public class Player {
 				if (EOArrey.leftP == true) {
 					waitl = true;
 				} else if (waitl != true) {
-					Camera.addx(-Camera.step);
-					Game.player.addX(Camera.step);
+					for (int i = 0; i < Camera.step; i++) {
+						if (EOArrey.leftP != true) {
+							Camera.addx(-1);
+							Game.player.addX(1);
+						}
+					}
 					try {
 						Thread.sleep(sleep);
 					} catch (InterruptedException e) {
@@ -127,8 +137,12 @@ public class Player {
 				if (EOArrey.rightP == true) {
 					waitr = true;
 				} else if (waitr != true) {
-					Camera.addx(Camera.step);
-					Game.player.addX(-Camera.step);
+					for (int i = 0; i < Camera.step; i++) {
+						if (EOArrey.rightP != true) {
+							Camera.addx(1);
+							Game.player.addX(-1);
+						}
+					}
 					try {
 						Thread.sleep(sleep);
 					} catch (InterruptedException e) {
@@ -150,8 +164,12 @@ public class Player {
 				if (EOArrey.upP == true) {
 					waitu = true;
 				} else if (waitu != true) {
-					Camera.addy(-Camera.step);
-					Game.player.addY(Camera.step);
+					for (int i = 0; i < Camera.step; i++) {
+						if (EOArrey.upP != true) {
+							Camera.addy(-1);
+							Game.player.addY(1);
+						}
+					}
 					try {
 						Thread.sleep(sleep);
 					} catch (InterruptedException e) {
@@ -173,8 +191,12 @@ public class Player {
 				if (EOArrey.downP == true) {
 					waitd = true;
 				} else if (waitd != true) {
-					Camera.addy(Camera.step);
-					Game.player.addY(-Camera.step);
+					for (int i = 0; i < Camera.step; i++) {
+						if (EOArrey.downP != true) {
+							Camera.addy(1);
+							Game.player.addY(-1);
+						}
+					}
 					try {
 						Thread.sleep(sleep);
 					} catch (InterruptedException e) {
@@ -191,7 +213,36 @@ public class Player {
 		}
 
 		public void jump() {
-
+			System.out.println("einmal");
+			while (j) {
+				if (count < 150) {
+					Player.c = 0;
+					count++;
+					for (int i = 0; i < 5; i++) {
+						if (EOArrey.upP != true) {
+							Camera.addy(-1);
+							Game.player.addY(1);
+						}
+					}
+				} else {
+					if(EOArrey.downP) {
+						j = false;
+						count = 0;
+					}
+				}
+				try {
+					Thread.sleep(sleep);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			for (int i = 0; i < 2; i++) {
+				if (EOArrey.upP != true) {
+					Camera.addy(-1);
+					Game.player.addY(1);
+				}
+			}
+			
 		}
 
 		@Override
@@ -210,21 +261,33 @@ public class Player {
 			case "d":
 				MoveDown();
 				break;
+			case "j":
+				jump();
+				break;
 			}
 			Thread.currentThread().interrupt();
 		}
 	}
 
 	private class Pgravity implements Runnable {
-		int a = 0;
-		int v = 0;
+		int v = 1;
 		int g = 1;
+		int i = 0;
 
 		private void gravity() {
 			while (EOArrey.downP != true) {
-				Camera.addy(Camera.step);
-				Game.player.addY(-Camera.step);
+				for (int i = 0; i < v; i++) {
+					if (EOArrey.downP != true) {
+						Camera.addy(1);
+						Game.player.addY(-1);
+					}
+				}
+				i++;
 
+				if (v < 10 && i >= 50 && c < Player.c) {
+					v += g;
+					i = 0;
+				}
 				try {
 					Thread.sleep(sleep);
 				} catch (InterruptedException e) {

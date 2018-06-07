@@ -47,7 +47,7 @@ public class Control implements KeyListener, Runnable {
 		} else if (Main.menu != true) {
 			Game.move = true;
 			if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-				while (Game.player.l != true) {
+				if (Game.player.l != true) {
 					Game.player.r = false;
 					Game.player.l = true;
 					Game.player.Move("l");
@@ -55,26 +55,29 @@ public class Control implements KeyListener, Runnable {
 
 			}
 			if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-				while (Game.player.r != true) {
+				if (Game.player.r != true) {
 					Game.player.l = false;
 					Game.player.r = true;
 					Game.player.Move("r");
+					
 				}
 			}
 			if (e.getKeyCode() == KeyEvent.VK_UP) {
-				while (Game.player.u != true) {
+				/*while (Game.player.u != true) {
 					Game.player.d = false;
 					Game.player.u = true;
 					Game.player.Move("u");
 				}
+				*/				
 
 			}
 			if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-				while (Game.player.d != true) {
+				/*while (Game.player.d != true) {
 					Game.player.u = false;
 					Game.player.d = true;
 					Game.player.Move("d");
 				}
+				*/
 
 			}
 			if (e.getKeyCode() == KeyEvent.VK_Y) {
@@ -83,6 +86,12 @@ public class Control implements KeyListener, Runnable {
 			if (e.getKeyCode() == KeyEvent.VK_X) {
 				Game.player.shoot();
 
+			}
+			if ( e.getKeyCode() == KeyEvent.VK_SPACE) {
+				if(Game.player.j != true) {
+					Game.player.Move("j");
+					Game.player.j = true;
+				}
 			}
 			if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
 
@@ -98,26 +107,25 @@ public class Control implements KeyListener, Runnable {
 		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 			Game.player.l = false;
 			Game.player.waitl = false;
-
-		}
+			}
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			Game.player.r = false;
 			Game.player.waitr = false;
-
-
 			}
 		if (e.getKeyCode() == KeyEvent.VK_UP) {
-			Game.player.u = false;
+			/*Game.player.u = false;
 			Game.player.waitu = false;
-
-
+			*/
 			}
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-			Game.player.d = false;
+			/*Game.player.d = false;
 			Game.player.waitd = false;
-
-
+			*/
 			}
+		if ( e.getKeyCode() == KeyEvent.VK_SPACE) {
+			Game.player.j = false;
+		}
+
 		}
 		//Game.move = false;
 	}
