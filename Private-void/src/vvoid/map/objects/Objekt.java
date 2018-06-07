@@ -28,7 +28,6 @@ public class Objekt {
 		// EOArrey.Objekt(this.width, this.height, this.x, this.y);
 		eo.Objekt(width, height, x, y);
 	}
-
 	
 	public void drawObjects(Graphics g) {
 		switch (this.IDO) {
