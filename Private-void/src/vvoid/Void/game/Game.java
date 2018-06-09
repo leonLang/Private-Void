@@ -36,6 +36,9 @@ public class Game extends Thread{
         player.drawPlayer(g);
         Graphics g2d = (Graphics2D) g;
         g2d.translate(cam.getX(), cam.getY());
+		for(int i = 0; i < Player.ashots;i++) {
+			player.shots[i].draw(g);
+		}
 
         
         for (int i = 0; i < LevelCompiler.EnemieLenght; i++) {

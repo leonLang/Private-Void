@@ -86,7 +86,11 @@ public class Player {
 
 	public void shoot() {
 		if (Player.ashots < shots.length) {
-			// shots[Player.ashots] = new Shot(getfacing());
+			shots[ashots] = shots[Player.ashots] = new Shot(getfacing(),this.x,this.y);
+			ashots++;
+		} else {
+			System.arraycopy(shots, 1, shots, 0, shots.length - 1);
+			shots[63] =  new Shot(getfacing(),this.x,this.y);
 		}
 	}
 

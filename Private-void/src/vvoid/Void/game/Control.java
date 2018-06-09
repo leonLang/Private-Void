@@ -85,6 +85,7 @@ public class Control implements KeyListener, Runnable {
 
 			}
 			if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+				System.out.println(Game.player.j);
 				if (Game.player.j != true) {
 					if (EOArrey.downP) {
 						Game.player.Move("j");
