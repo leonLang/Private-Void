@@ -23,6 +23,7 @@ public class Player {
 	public static int ashots;
 	public int sleep;
 	int test =0,test1;
+	public Gravity grav = new Gravity();
 	public Player(int x, int y, int width, int height, String facing) {
 		this.x = x;
 		this.y = y;
@@ -309,22 +310,8 @@ public class Player {
 
 		@Override
 		public void run() {
-			while (test == 0) {
-				try {
-					Thread.sleep(10);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				if(EOArrey.downP == true) {
-					
-				}
-				else {
-				Camera.addy(1);
-				Game.player.addY(-1);
-				System.out.println("hi12");
-			}
-			}
+			grav.Grav();
+			
 			//gravity();
 
 		}
