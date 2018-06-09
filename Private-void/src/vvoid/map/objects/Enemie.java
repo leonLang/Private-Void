@@ -40,7 +40,7 @@ public class Enemie {
 	}
 
 	public void drawEnemie(Graphics g) {
-		if(testi == 20 ) {
+		/*if(testi == 3 ) {
 		Camera.addy(1);
 		Game.player.addY(-1);
 		testi=0;
@@ -48,6 +48,7 @@ public class Enemie {
 		else {
 			testi++;
 		}
+		*/
 		switch (this.IDO) {
 		case 1:
 			direction(g, a1, a2, a3, a4, a5, a6, a7, a8);
