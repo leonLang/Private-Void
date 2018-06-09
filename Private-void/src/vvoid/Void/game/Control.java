@@ -64,17 +64,16 @@ public class Control implements KeyListener, Runnable {
 				}
 			}
 			if (e.getKeyCode() == KeyEvent.VK_UP) {
-				/*
-				 * while (Game.player.u != true) { Game.player.d = false; Game.player.u = true;
-				 * Game.player.Move("u"); }
-				 */
+				
+				 // while (Game.player.u != true) { Game.player.d = false; Game.player.u = true;
+				  Game.player.Move("u"); 
+				 
 
 			}
 			if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-				/*
-				 * while (Game.player.d != true) { Game.player.u = false; Game.player.d = true;
-				 * Game.player.Move("d"); }
-				 */
+				
+				//  while (Game.player.d != true) { Game.player.u = false; Game.player.d = true;
+				  Game.player.Move("d"); 
 
 			}
 			if (e.getKeyCode() == KeyEvent.VK_Y) {

@@ -19,5 +19,22 @@ public class Shot {
 	}
 	public void draw(Graphics g) {
 		g.drawRect(x, y, width, height);
+		calc();
+	}
+	public void calc() {
+		switch(this.direction) {
+		case "right":
+			x += 10;
+			break;
+		case "left":
+			x -= 10;
+			break;
+		case "up":
+			y -= 10;
+			break;
+		case "down":
+			y += 10;
+			break;
+		}
 	}
 }
