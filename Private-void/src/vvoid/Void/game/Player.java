@@ -309,7 +309,7 @@ public class Player {
 
 		@Override
 		public void run() {
-			gravity();
+			//gravity();
 
 		}
 	}

@@ -2,7 +2,10 @@ package vvoid.map.objects;
 
 import java.awt.Graphics;
 import java.awt.Image;
+
+import vvoid.Void.game.Game;
 import vvoid.Void.game.SpriteSheet;
+import vvoid.init.main.Camera;
 import vvoid.init.main.Collision;
 
 public class Enemie {
@@ -19,7 +22,7 @@ public class Enemie {
 	private Image r1, r2, s1, s2, t1, t2;
 	private Image u1, u2, u3, u4, u5, u6, u7, u8, v1, v2, v3, v4, v5, v6, v7, v8;
 	private Image w1, w2, z, zz;
-	public static int zaehler, zaehler1;
+	private int testi;
 
 	private int IDO;
 	public int zA;
@@ -32,11 +35,19 @@ public class Enemie {
 		this.width = data[4] - 16;
 		this.height = data[5] - 16;
 		eo.EnemyS(width, height, x, y, IDO);
+		System.out.println("hi");
 		move.test();
 	}
 
 	public void drawEnemie(Graphics g) {
-
+		if(testi == 20 ) {
+		Camera.addy(1);
+		Game.player.addY(-1);
+		testi=0;
+		}
+		else {
+			testi++;
+		}
 		switch (this.IDO) {
 		case 1:
 			direction(g, a1, a2, a3, a4, a5, a6, a7, a8);

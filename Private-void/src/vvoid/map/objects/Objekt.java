@@ -1,8 +1,10 @@
 package vvoid.map.objects;
 
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 
+import vvoid.Void.game.SpriteSheet;
 import vvoid.init.main.TextureSystem;
 
 public class Objekt {
@@ -13,6 +15,9 @@ public class Objekt {
 	private int TextureID;
 	private int IDO;
 	private int rotation;
+	private Image o1,o2,o3,o4,o5,o6,o7,o8,e;
+	public EnemieMovement move = new EnemieMovement();
+	private SpriteSheet sheet = new SpriteSheet();
 	private BufferedImage img;
 	public EOArrey eo = new EOArrey();
 
@@ -24,6 +29,7 @@ public class Objekt {
 		this.height = data[5];
 		this.rotation = data[6];
 		this.TextureID = data[7];
+		objectPos();
 		img = TextureSystem.textureSystem(TextureID);
 		// EOArrey.Objekt(this.width, this.height, this.x, this.y);
 		eo.Objekt(width, height, x, y);
@@ -43,4 +49,17 @@ public class Objekt {
 		}
 
 	}
+	private void objectPos(){
+		e = sheet.crop(13, 25, 18, 28);
+	}
+	public void sh(Graphics g, Image a1, Image a2) {
+		eo.EnemyR();
+		eo.CollPlayer();
+		x = eo.x;
+		y = eo.y;
+		// y = EOArrey.y1;
+		// x = EOArrey.x1;
+		move.movement(g, a1, a2, x, y, width, height);
+	}
+
 }
