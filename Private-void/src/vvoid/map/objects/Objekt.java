@@ -39,6 +39,7 @@ public class Objekt {
 
 	public void drawObjects(Graphics g) {
 		
+		
 		for (int i = 1; i < 61; i++) {
 			if(this.TextureID == i) {
 				if(this.TextureID <= 20) {
