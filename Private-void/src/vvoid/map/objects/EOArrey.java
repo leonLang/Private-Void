@@ -325,5 +325,16 @@ public class EOArrey {
 			upP = false;
 		}
 	}
+	public boolean  EventColl(int x, int y, int width, int height) {
+		coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height, x,
+				y, width, height);
+		if(coll.Coll1() == 1) {
+			return true;
+		}
+		else {
+		return false;
+		}
+		
+	}
 
 }
