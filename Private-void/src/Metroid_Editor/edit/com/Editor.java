@@ -32,7 +32,8 @@ public class Editor implements ActionListener{
 	public static int ProjectHeight;
 	public static JFrame Openingframe;
 	public static String LevelID;
-	public static String LevelIDR;
+	public static int LevelIDR;
+	public static int LID;
 	
 	private JPanel editor;
 	private JSplitPane splitPane;
@@ -45,6 +46,8 @@ public class Editor implements ActionListener{
 	private JMenu help;
 	
 	private JMenuItem save;
+	private JMenuItem addID;
+	private JMenuItem removeID;
 	
 	private Dimension screenSize;
 	
@@ -54,7 +57,7 @@ public class Editor implements ActionListener{
 
 	
 	//JLabel options
-	public static int BackgroundLenght = 8;
+	public static int BackgroundLenght = 2;
 	public static int ObjectSolidLenght = 60;
 	public static int ObjectSoftLenght = 1;
 	public static int EnemieLenght = 25;
@@ -93,6 +96,10 @@ public class Editor implements ActionListener{
 		solid[1] = new ObjectSolid("SObject+2",1,2);
 		soft[0] = new ObjectSoft("SObject+1",2,1);
 		*/
+		for(int i = 0;i < EventLenght;i++) {
+			event[i] = new EventObject("Event+" + (int) (i + 1),4,i + 2);
+			
+		}
 		for(int i = 0; i < EnemieLenght;i++) {
 			enemie[i] = new Enemie("e+" + (int) (i+1),3,i+1);
 		}
@@ -105,10 +112,6 @@ public class Editor implements ActionListener{
 		for(int i = 0; i < BackgroundLenght;i++) {
 			background[i] = new Background("background+" + (int) (i+1),0,i+1);
 		}
-		for(int i = 0;i < EventLenght;i++) {
-			event[i] = new EventObject("Event+" + (int) (i + 1),4,i + 2);
-			
-		}
 		
 		
 		///////////////////////////////
@@ -119,6 +122,10 @@ public class Editor implements ActionListener{
 		help = new JMenu("help");
 		
 		save = new JMenuItem("save");
+		addID = new JMenuItem("addID");
+		removeID = new JMenuItem("removeID");
+		addID.addActionListener(this);
+		removeID.addActionListener(this);
 		save.addActionListener(this);
 
 		createoptionPanel();
@@ -128,6 +135,8 @@ public class Editor implements ActionListener{
 		Menue.add(help);
 		
 		file.add(save);
+		file.add(addID);
+		file.add(removeID);
 		
 		splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
 		splitPane.setDividerLocation((int)width/4);
@@ -158,6 +167,9 @@ public class Editor implements ActionListener{
 			optionPanel.add(solid[i]);
 			optionPanel.add(background[i]);
 		}
+		for(int i = 0;i < event.length;i++) {
+			optionPanel.add(event[i]);
+		}
 		for(int i = 0; i < solid.length;i++) {
 			optionPanel.add(solid[i]);
 		}
@@ -166,9 +178,6 @@ public class Editor implements ActionListener{
 		}
 		for(int i = 0; i < enemie.length;i++) {
 			optionPanel.add(enemie[i]);
-		}
-		for(int i = 0;i < event.length;i++) {
-			optionPanel.add(event[i]);
 		}
 
 	}
@@ -201,7 +210,7 @@ public class Editor implements ActionListener{
 			displayPanel.repaint();
 			try {
 				System.out.println("hi");
-				File Level1 = new File("D:/lvl1.pll");
+				File Level1 = new File("D:/lvl" + LID + ".pll");
 				BufferedWriter w = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(Level1)));
 				w.write("!pllDOCUMENT");
 				w.newLine();
@@ -235,6 +244,15 @@ public class Editor implements ActionListener{
 				e1.printStackTrace();
 			}
 			saveState = 100;
+		}
+		if(e.getSource() == addID) {
+			LevelIDR++;
+			Grid.JID.setText(Integer.toString(Editor.LevelIDR));
+			
+		}
+		if(e.getSource() == removeID) {
+			LevelIDR--;
+			Grid.JID.setText(Integer.toString(LevelIDR));
 		}
 		
 	}

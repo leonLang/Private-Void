@@ -31,17 +31,18 @@ public class LevelCompiler {
 	private float zahl = 0;
 	private int lenght = 0;
 	private int liness;
+	public int nr;
 
 
-	public LevelCompiler() {
-
+	public LevelCompiler(int nr) {
+		this.nr = nr;
 		liness = lines();
 		zahl = liness/100;
 		read();
 	}
 	public int lines() {
 		try {
-			InputStream file = ResourceLoader.load("/Level/level.pll");
+			InputStream file = ResourceLoader.load("/Level/lvl" + nr + ".pll");
 				BufferedReader fr = new BufferedReader(new InputStreamReader(file));
 				LineNumberReader lnr = new LineNumberReader(fr);
 				int lines = 0;
@@ -70,7 +71,7 @@ public class LevelCompiler {
 
 	public void read() {
 		try {
-			InputStream file = ResourceLoader.load(("/Level/level.pll"));
+			InputStream file = ResourceLoader.load(("/Level/lvl" + nr + ".pll"));
 			BufferedReader br = new BufferedReader(new InputStreamReader(file));
 			String st = br.readLine();
 			if (st.contains("!pllDOCUMENT")) {

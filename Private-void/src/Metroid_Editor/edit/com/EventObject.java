@@ -14,7 +14,7 @@ public class EventObject extends JLabel implements MouseListener{
 	public String s;
 	public int IDO;
 	public int ID = 1;
-	public int TextureID;
+	public int TextureID = 0;
 
 	public EventObject(String text, int IDO, int ID) {
 		this.setText(text);
@@ -28,7 +28,6 @@ public class EventObject extends JLabel implements MouseListener{
 	public void setObject() {
 		Editor.IDO = this.IDO;
 		Editor.ID = ID;
-		this.TextureID = 0;
 		try {
 			Editor.SelectedObject = ImageIO.read(ResourceLoader.load("/textures/Objects/Event.png"));
 		} catch (IOException e) {
@@ -39,10 +38,10 @@ public class EventObject extends JLabel implements MouseListener{
 	}
 
 	@Override
-	public void mouseClicked(MouseEvent arg0) {
+	public void mouseClicked(MouseEvent e) {
 		Editor.clicked = true;	
 		setObject();
-		
+		Editor.LID = this.TextureID;
 	}
 	@Override
 	public void mouseEntered(MouseEvent arg0) {

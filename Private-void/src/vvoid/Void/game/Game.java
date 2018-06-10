@@ -19,7 +19,7 @@ public class Game extends Thread{
     
     public void run() {
     	sheet = new SpriteSheet();
-        compiler = new LevelCompiler();
+        compiler = new LevelCompiler(1);
         cam = new Camera(0, 0);
         player = new Player(WIDTH/2,HEIGHT/2-200,40,80,"left");
     }
@@ -43,10 +43,12 @@ public class Game extends Thread{
 		for(int i = 0; i < Player.ashots;i++) {
 			player.shots[i].draw(g);
 		}
-
+		for(int i = 0;i < LevelCompiler.EventLenght;i++) {
+			LevelCompiler.event[i].drawEvent(g);
+			
+		}
         
         for (int i = 0; i < LevelCompiler.EnemieLenght; i++) {
-            LevelCompiler.enemie[i].drawEnemie(g);
             LevelCompiler.enemie[i].drawEnemie(g);
         }
 
