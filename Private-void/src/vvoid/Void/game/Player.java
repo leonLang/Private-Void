@@ -24,6 +24,7 @@ public class Player {
 	public int sleep;
 	int test =0,test1;
 	public Gravity grav = new Gravity();
+	public EOArrey eo = new EOArrey();
 	public Player(int x, int y, int width, int height, String facing) {
 		this.x = x;
 		this.y = y;
@@ -112,7 +113,7 @@ public class Player {
 		}
 
 		public void MoveLeft() {
-
+			eo.CollPlayer();
 			facing = "left";
 			while (l) {
 				if (EOArrey.leftP == true) {
@@ -140,6 +141,8 @@ public class Player {
 		}
 
 		public void MoveRight() {
+			eo.CollPlayer();
+			
 			facing = "right";
 			while (r) {
 				if (EOArrey.rightP == true) {
@@ -167,6 +170,7 @@ public class Player {
 		}
 
 		public void MoveUp() {
+			eo.CollPlayer();
 			facing = "up";
 			while (u) {
 				if (EOArrey.upP == true) {
@@ -194,6 +198,7 @@ public class Player {
 		}
 
 		public void MoveDown() {
+			eo.CollPlayer();
 			facing = "down";
 			while (d) {
 				if (EOArrey.downP == true) {
@@ -221,9 +226,11 @@ public class Player {
 		}
 
 		public void jump() {
+			eo.CollPlayer();
 			System.out.println("einmal");
 			while (j) {
 				if (count < 80) {
+					eo.CollPlayer();
 					cp = 0;
 					count++;
 					for (int i = 0; i < 5; i++) {
@@ -255,7 +262,7 @@ public class Player {
 
 		@Override
 		public void run() {
-
+			//grav.Grav();
 			switch (c) {
 			case "l":
 				MoveLeft();
@@ -317,6 +324,7 @@ public class Player {
 		@Override
 		public void run() {
 			grav.Grav();
+			
 			
 			//gravity();
 
