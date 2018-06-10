@@ -15,7 +15,7 @@ public class Gravity {
 		while (test == 0) {
 			eo.CollPlayer();
 			try {
-				Thread.sleep(2);
+				Thread.sleep(1);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
