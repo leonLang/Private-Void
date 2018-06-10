@@ -71,11 +71,14 @@ public class LevelCompiler {
 			BufferedReader br = new BufferedReader(new InputStreamReader(file));
 			String st = br.readLine();
 			if (st.contains("!pllDOCUMENT")) {
-				System.out.println(lines());
+				System.out.println("lines" + lines());
+				st = br.readLine();
+				System.out.println("ID: " + st.substring(st.lastIndexOf(":") + 1, st.lastIndexOf(";")));
 				while ((st = br.readLine()) != null) {
 					if (st.contains("//") != true) {
 
-						int[] Object = { convertD(st.substring(0, st.lastIndexOf("x"))), // ID
+						int[] Object = { 
+								convertD(st.substring(0, st.lastIndexOf("x"))), // ID
 								convertH(st.substring(st.lastIndexOf("x") + 1, st.lastIndexOf("-"))), // IDO IDO means
 																										// IDObject
 								convertH(st.substring(st.lastIndexOf("-") + 1, st.lastIndexOf("y"))), // X-Coordinate

@@ -84,7 +84,8 @@ public class Editor implements ActionListener{
 		background[1] = new Background("background+2",0,2);
 		solid[0] = new ObjectSolid("SObject+1",1,1);
 		solid[1] = new ObjectSolid("SObject+2",1,2);
-		soft[0] = new ObjectSoft("SObject+1",2,1);*/
+		soft[0] = new ObjectSoft("SObject+1",2,1);
+		*/
 		for(int i = 0; i < EnemieLenght;i++) {
 			enemie[i] = new Enemie("e+" + (int) (i+1),3,i+1);
 		}
@@ -180,6 +181,7 @@ public class Editor implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		//save the created map
 		if(e.getSource() == save) {
 			displayPanel.scale = 1;
 			displayPanel.repaint();
@@ -189,7 +191,7 @@ public class Editor implements ActionListener{
 				BufferedWriter w = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(Level1)));
 				w.write("!pllDOCUMENT");
 				w.newLine();
-				w.write("ID:" + LevelID);
+				w.write("ID:" + LevelID + ";");
 				w.newLine();
 				w.write("00x" + displayPanel.backgroundID + "-0y0w0h0r0t0;");
 				w.newLine();

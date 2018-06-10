@@ -52,7 +52,7 @@ public class Panel extends JPanel implements ActionListener  {
 				JOptionPane.showMessageDialog(null, "Bitte gültige Werte eingeben", "Warning", JOptionPane.ERROR_MESSAGE);
 			}else {
 			/*sehr unschön wie ich finde aber geht leider nicht anders
-			 *	Java veigert sich JPanel.remove(Component) zu benutzen selbes mit JFrame
+			 *	Java weigert sich JPanel.remove(Component) zu benutzen selbes mit JFrame
 			 *Auch repaint hat nicht funktioniert 
 			 *--> Lösung:
 			 *Neues JFrame mit gewünschten optionen erstellen altes Löschen
