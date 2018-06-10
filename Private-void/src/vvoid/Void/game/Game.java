@@ -15,7 +15,6 @@ public class Game extends Thread{
     public static LevelCompiler compiler;
     public static int x = 0;
     public static boolean move = false;
-    public static SpriteSheet sheet;
 
     public void run() {
         compiler = new LevelCompiler();
@@ -29,8 +28,7 @@ public class Game extends Thread{
          * diese klasse suckt
          * werden.
          */
-    	
-        sheet = new SpriteSheet();
+    	System.out.println("jo");
         Main.loading = false;
 
     } 

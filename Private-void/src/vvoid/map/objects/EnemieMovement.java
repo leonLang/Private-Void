@@ -5,16 +5,16 @@ import java.awt.Graphics;
 import java.awt.Image;
 
 import vvoid.Void.game.SpriteSheet;
+import vvoid.init.main.Main;
 
 public class EnemieMovement {
 	public int zaehler = 0;
 	static int z1 = 50;
-	private SpriteSheet sheet = new SpriteSheet();
 	public Image c, d;
 
 	public void test() {
-		c = sheet.crop(9, 7, 17, 14);
-		d = sheet.crop(27, 7, 16, 14);
+		c = Main.sheet.crop(9, 7, 17, 14);
+		d = Main.sheet.crop(27, 7, 16, 14);
 	}
 
 	public void movement(Graphics g, Image a1, Image a2, int x, int y, int width, int height) {

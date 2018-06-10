@@ -6,6 +6,7 @@ import vvoid.Void.game.BindingControl;
 import vvoid.Void.game.Control;
 import vvoid.Void.game.Game;
 import vvoid.Void.game.Menue;
+import vvoid.Void.game.SpriteSheet;
 
 public class Main {
 	public static boolean running = true;
@@ -18,9 +19,11 @@ public class Main {
 	public static Menue menue;
 	public static Frame mainframe;
 	public static Control control;
+	public static SpriteSheet sheet;
 	//public static BindingControl Bcontrol;
 
 	public static void main(String[] args) throws InterruptedException {
+		sheet = new SpriteSheet();
 		//Game.setup();
 		control = new Control();
 		mainframe = new Frame(Game.WIDTH, Game.HEIGHT,"titel",true);

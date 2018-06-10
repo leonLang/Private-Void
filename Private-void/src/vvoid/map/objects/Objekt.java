@@ -6,6 +6,7 @@ import java.awt.image.BufferedImage;
 
 import vvoid.Void.game.Game;
 import vvoid.Void.game.SpriteSheet;
+import vvoid.init.main.Main;
 import vvoid.init.main.TextureSystem;
 
 public class Objekt {
@@ -43,11 +44,11 @@ public class Objekt {
 		case 1:
 			//g.drawImage(sheet.crop(9, 7, 15, 14), x, y, width, height, null);
 			//g.drawRect(x, y, width, height);
-			g.drawImage(Game.sheet.e, x, y, width, height, null);
+			g.drawImage(Main.sheet.e, x, y, width, height, null);
 			break;
 			
 		case 2:
-			g.drawImage(Game.sheet.e, x, y, width, height, null);
+			g.drawImage(Main.sheet.e, x, y, width, height, null);
 		}
 
 	}

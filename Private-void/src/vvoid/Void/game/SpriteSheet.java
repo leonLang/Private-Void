@@ -28,6 +28,7 @@ public BufferedImage w1, w2, z, zz;
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println("hi");
 		a1 = crop(9, 7, 15, 14);
 		a2 = crop(27, 7, 16, 14);
 		a3 = crop(45, 7, 16, 14);
