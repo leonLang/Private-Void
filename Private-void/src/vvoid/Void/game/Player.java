@@ -32,7 +32,7 @@ public class Player {
 		this.width = width;
 		this.height = height;
 		this.facing = facing;
-		this.sleep = 2;
+		this.sleep = 1;
 		this.count = 0;
 		this.count = 0;
 		this.cp = 0;
