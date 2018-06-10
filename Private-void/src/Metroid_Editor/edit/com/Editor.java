@@ -49,6 +49,7 @@ public class Editor implements ActionListener{
 	private Dimension screenSize;
 	
 	
+	
 	public static boolean clicked = false;
 
 	
