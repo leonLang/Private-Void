@@ -3,6 +3,7 @@ package vvoid.Void.game;
 import java.awt.Graphics;
 
 import vvoid.init.main.Camera;
+import vvoid.init.main.LevelCompiler;
 import vvoid.map.objects.EOArrey;
 
 public class Player {
@@ -38,6 +39,9 @@ public class Player {
 		this.count = 0;
 		this.count = 0;
 		this.cp = 0;
+		
+		setX(LevelCompiler.PX);
+		setY(LevelCompiler.PY);
 
 		this.l = false;
 		this.r = false;
@@ -107,14 +111,14 @@ public class Player {
 	public void setX(int c) {
 		for (int i = 0; i < c; i++) {
 			Camera.addx(1);
-			Game.player.addX(-1);
+			addX(-1);
 		}
 	}
 
 	public void setY(int c) {
 		for (int i = 0; i < c; i++) {
 			Camera.addy(1);
-			Game.player.addY(-1);
+			addY(-1);
 		}
 	}
 

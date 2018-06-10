@@ -17,6 +17,9 @@ import vvoid.map.objects.Objekt;
 public class LevelCompiler {
 	private String path;
 	public static BufferedImage img;
+	
+	public static int PX;
+	public static int PY;
 
 	public static Enemie[] enemie = new Enemie[(int) Math.pow(2, 15)];
 	public static int EnemieLenght = 0;
@@ -75,9 +78,8 @@ public class LevelCompiler {
 				st = br.readLine();
 				System.out.println("ID: " + st.substring(st.lastIndexOf(":") + 1, st.lastIndexOf(";")));
 				st = br.readLine();
-				Game.player.setX(Integer.parseInt(st.substring(st.lastIndexOf("X" + 1),st.lastIndexOf("Q"))));
-				st = br.readLine();
-				Game.player.setY(Integer.parseInt(st.substring(st.lastIndexOf("Y" + 1),st.lastIndexOf(";"))));
+				PX = (Integer.parseInt(st.substring(1,st.lastIndexOf("Y"))));
+				PY = (Integer.parseInt(st.substring(st.lastIndexOf("Y") + 1,st.lastIndexOf(";"))));
 				
 				
 				while ((st = br.readLine()) != null) {

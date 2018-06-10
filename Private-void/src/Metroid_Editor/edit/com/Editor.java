@@ -205,7 +205,7 @@ public class Editor implements ActionListener{
 				w.newLine();
 				w.write("ID:" + LevelID + ";");
 				w.newLine();
-				w.write("PX" + 100 + "QY" + 100 + ";");
+				w.write("X" + 100 + "Y" + 100 + ";");
 				w.newLine();
 				w.write("00x" + displayPanel.backgroundID + "-0y0w0h0r0t0;");
 				w.newLine();
