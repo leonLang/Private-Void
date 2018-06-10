@@ -244,7 +244,6 @@ public class Player {
 
 		public void jump() {
 			eo.CollPlayer();
-			System.out.println("einmal");
 			while (j) {
 				if (count < 80) {
 					eo.CollPlayer();
