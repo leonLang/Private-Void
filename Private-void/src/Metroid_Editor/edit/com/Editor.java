@@ -147,9 +147,13 @@ public class Editor implements ActionListener{
 	}
 	
 	public void createoptionPanel() {
+		scroll = new JScrollPane(optionPanel,
+				ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS,
+				ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER
+				);
         BoxLayout boxLayout = new BoxLayout(optionPanel, BoxLayout.Y_AXIS);
         optionPanel.setLayout(boxLayout);
-	    optionPanel.setPreferredSize( new Dimension((int) (width/1.2),(int) height) );
+	    scroll.setPreferredSize( new Dimension((int) (width/1.2),(int) height) );
 		for(int i = 0;i < background.length; i++) {
 			optionPanel.add(solid[i]);
 			optionPanel.add(background[i]);
@@ -166,10 +170,6 @@ public class Editor implements ActionListener{
 		for(int i = 0;i < event.length;i++) {
 			optionPanel.add(event[i]);
 		}
-		scroll = new JScrollPane(optionPanel,
-				ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS,
-				ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER
-				);
 
 	}
 	public void createDisplayPanel() {
