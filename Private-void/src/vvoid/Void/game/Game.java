@@ -30,11 +30,8 @@ public class Game extends Thread{
          * werden.
          */
         sheet = new SpriteSheet();
-<<<<<<< HEAD
-        System.out.println("times");
-=======
         Main.loading = false;
->>>>>>> branch 'master' of https://github.com/leonLang/Private-Void.git
+
     } 
 
     public static void draw(Graphics g) {
