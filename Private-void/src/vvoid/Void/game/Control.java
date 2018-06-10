@@ -88,6 +88,7 @@ public class Control implements KeyListener, Runnable {
 					if (EOArrey.downP) {
 						Game.player.Move("j");
 						Game.player.j = true;
+						
 					}
 				}
 			}
