@@ -130,14 +130,8 @@ public BufferedImage w1, w2, z, zz;
 	public BufferedImage crop(int x, int y, int width, int height) {
 		return metroid.getSubimage(x, y, width, height);
 	}
-	public BufferedImage column(int x, int y, int width, int height) {
-		return br_column.getSubimage(x, y, width, height);
-	}
 	public BufferedImage grass(int x, int y, int width, int height) {
 		return br_grass.getSubimage(x, y, width, height);
-	}
-	public BufferedImage grass1(int x, int y, int width, int height) {
-		return br_grass1.getSubimage(x, y, width, height);
 	}
 	public BufferedImage recolor(int x, int y, int width, int height) {
 		return br_recolor.getSubimage(x, y, width, height);
