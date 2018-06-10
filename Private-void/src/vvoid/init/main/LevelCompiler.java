@@ -74,6 +74,12 @@ public class LevelCompiler {
 				System.out.println("lines" + lines());
 				st = br.readLine();
 				System.out.println("ID: " + st.substring(st.lastIndexOf(":") + 1, st.lastIndexOf(";")));
+				st = br.readLine();
+				Game.player.setX(Integer.parseInt(st.substring(st.lastIndexOf("X" + 1),st.lastIndexOf("Q"))));
+				st = br.readLine();
+				Game.player.setY(Integer.parseInt(st.substring(st.lastIndexOf("Y" + 1),st.lastIndexOf(";"))));
+				
+				
 				while ((st = br.readLine()) != null) {
 					if (st.contains("//") != true) {
 
@@ -132,6 +138,7 @@ public class LevelCompiler {
 			break;
 		case 4:
 			createEvent(Object);
+			break;
 		default:
 			throw new Exception("The id of the Object is not avalible:" + Object[0]);
 		}

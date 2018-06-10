@@ -70,6 +70,9 @@ public class Editor implements ActionListener{
 	public static int TextureID;
 	public static int saveState;
 	
+	public static int PX;
+	public static int PY;
+	
 
 	
 	
@@ -101,7 +104,7 @@ public class Editor implements ActionListener{
 			background[i] = new Background("background+" + (int) (i+1),0,i+1);
 		}
 		for(int i = 0;i < EventLenght;i++) {
-			event[i] = new EventObject("Event+" + (int) (i + 1),4,0);
+			event[i] = new EventObject("Event+" + (int) (i + 1),4,i + 2);
 			
 		}
 		
@@ -201,6 +204,8 @@ public class Editor implements ActionListener{
 				w.write("!pllDOCUMENT");
 				w.newLine();
 				w.write("ID:" + LevelID + ";");
+				w.newLine();
+				w.write("PX" + 100 + "QY" + 100 + ";");
 				w.newLine();
 				w.write("00x" + displayPanel.backgroundID + "-0y0w0h0r0t0;");
 				w.newLine();
