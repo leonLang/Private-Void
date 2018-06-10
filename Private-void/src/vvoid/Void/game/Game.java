@@ -15,7 +15,7 @@ public class Game extends Thread{
     public static LevelCompiler compiler;
     public static int x = 0;
     public static boolean move = false;
-    public static SpriteSheet sheet = new SpriteSheet();
+    public static SpriteSheet sheet;
 
     public void run() {
         compiler = new LevelCompiler();
@@ -30,6 +30,7 @@ public class Game extends Thread{
         cam = new Camera(0, 0);
         player = new Player(WIDTH/2,HEIGHT/2-200,40,80,"left");
         Main.loading = false;
+        sheet = new SpriteSheet();
     } 
 
     public static void draw(Graphics g) {
