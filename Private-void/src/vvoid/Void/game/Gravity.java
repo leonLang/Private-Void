@@ -4,6 +4,7 @@ import vvoid.init.main.Camera;
 import vvoid.map.objects.EOArrey;
 
 public class Gravity {
+	public EOArrey eo = new EOArrey();
 	int test = 0;
 
 	public Gravity() {
@@ -11,8 +12,9 @@ public class Gravity {
 
 	public void Grav() {
 		while (test == 0) {
+			eo.CollPlayer();
 			try {
-				Thread.sleep(3);
+				Thread.sleep(2);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

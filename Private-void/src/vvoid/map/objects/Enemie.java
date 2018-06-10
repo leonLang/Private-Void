@@ -161,7 +161,7 @@ public class Enemie {
 
 	public void sh(Graphics g, Image a1, Image a2) {
 		eo.EnemyR();
-		eo.CollPlayer();
+		//eo.CollPlayer();
 		x = eo.x;
 		y = eo.y;
 		// y = EOArrey.y1;

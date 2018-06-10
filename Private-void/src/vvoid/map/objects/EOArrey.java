@@ -249,7 +249,7 @@ public class EOArrey {
 		// System.out.println(xO[1]);
 	}
 
-	public synchronized void CollPlayer() {
+	public void CollPlayer() {
 		counterP = oAmount; // for editing oAmount without change it
 		while (counterP >= 0) {
 			coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height, xO[counterP],
