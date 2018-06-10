@@ -12,7 +12,7 @@ public class Gravity {
 	public void Grav() {
 		while (test == 0) {
 			try {
-				Thread.sleep(2);
+				Thread.sleep(3);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
