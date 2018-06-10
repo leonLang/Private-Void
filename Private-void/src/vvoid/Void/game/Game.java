@@ -19,6 +19,8 @@ public class Game extends Thread{
 
     public void run() {
         compiler = new LevelCompiler();
+        cam = new Camera(0, 0);
+        player = new Player(WIDTH/2,HEIGHT/2-200,40,80,"left");
     }
     public static void setup() {
         /*
@@ -27,11 +29,12 @@ public class Game extends Thread{
          * diese klasse suckt
          * werden.
          */
-        cam = new Camera(0, 0);
-        player = new Player(WIDTH/2,HEIGHT/2-200,40,80,"left");
-        Main.loading = false;
         sheet = new SpriteSheet();
+<<<<<<< HEAD
         System.out.println("times");
+=======
+        Main.loading = false;
+>>>>>>> branch 'master' of https://github.com/leonLang/Private-Void.git
     } 
 
     public static void draw(Graphics g) {

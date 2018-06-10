@@ -17,6 +17,9 @@ import vvoid.map.objects.Objekt;
 public class LevelCompiler {
 	private String path;
 	public static BufferedImage img;
+	
+	public static int PX;
+	public static int PY;
 
 	public static Enemie[] enemie = new Enemie[(int) Math.pow(2, 15)];
 	public static int EnemieLenght = 0;
@@ -74,6 +77,11 @@ public class LevelCompiler {
 				System.out.println("lines" + lines());
 				st = br.readLine();
 				System.out.println("ID: " + st.substring(st.lastIndexOf(":") + 1, st.lastIndexOf(";")));
+				st = br.readLine();
+				PX = (Integer.parseInt(st.substring(1,st.lastIndexOf("Y"))));
+				PY = (Integer.parseInt(st.substring(st.lastIndexOf("Y") + 1,st.lastIndexOf(";"))));
+				
+				
 				while ((st = br.readLine()) != null) {
 					if (st.contains("//") != true) {
 
@@ -132,6 +140,7 @@ public class LevelCompiler {
 			break;
 		case 4:
 			createEvent(Object);
+			break;
 		default:
 			throw new Exception("The id of the Object is not avalible:" + Object[0]);
 		}

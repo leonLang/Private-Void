@@ -3,7 +3,9 @@ package Metroid_Editor.edit.com;
 import java.awt.Cursor;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JLabel;
 
 public class EventObject extends JLabel implements MouseListener{
@@ -14,19 +16,24 @@ public class EventObject extends JLabel implements MouseListener{
 	public int ID = 1;
 	public int TextureID;
 
-	public EventObject(String text, int IDO, int TextureID) {
+	public EventObject(String text, int IDO, int ID) {
 		this.setText(text);
 		addMouseListener(this);
 		this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		this.s = text;
 		this.IDO = IDO;
-		this.TextureID = TextureID;
+		this.ID = ID;
 		
 	}
 	public void setObject() {
 		Editor.IDO = this.IDO;
 		Editor.ID = ID;
-		Editor.SelectedObject = null;
+		this.TextureID = 0;
+		try {
+			Editor.SelectedObject = ImageIO.read(ResourceLoader.load("/textures/Objects/Event.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 		
 	}

@@ -3,6 +3,7 @@ package vvoid.Void.game;
 import java.awt.Graphics;
 
 import vvoid.init.main.Camera;
+import vvoid.init.main.LevelCompiler;
 import vvoid.map.objects.EOArrey;
 
 public class Player {
@@ -22,9 +23,10 @@ public class Player {
 	public Shot[] shots;
 	public static int ashots;
 	public int sleep;
-	int test =0,test1;
+	int test = 0, test1;
 	public Gravity grav = new Gravity();
 	public EOArrey eo = new EOArrey();
+
 	public Player(int x, int y, int width, int height, String facing) {
 		this.x = x;
 		this.y = y;
@@ -37,13 +39,14 @@ public class Player {
 		this.count = 0;
 		this.count = 0;
 		this.cp = 0;
+		
+		setX(LevelCompiler.PX);
+		setY(LevelCompiler.PY);
 
 		this.l = false;
 		this.r = false;
 		this.j = false;
 
-		
-		
 		this.ashots = 0;
 		this.shots = new Shot[64];
 
@@ -89,11 +92,11 @@ public class Player {
 
 	public void shoot() {
 		if (Player.ashots < shots.length) {
-			shots[ashots] = shots[Player.ashots] = new Shot(getfacing(),this.x,this.y);
+			shots[ashots] = shots[Player.ashots] = new Shot(getfacing(), this.x, this.y);
 			ashots++;
 		} else {
 			System.arraycopy(shots, 1, shots, 0, shots.length - 1);
-			shots[63] =  new Shot(getfacing(),this.x,this.y);
+			shots[63] = new Shot(getfacing(), this.x, this.y);
 		}
 	}
 
@@ -103,6 +106,20 @@ public class Player {
 
 	public void addY(int i) {
 		this.y -= i;
+	}
+
+	public void setX(int c) {
+		for (int i = 0; i < c; i++) {
+			Camera.addx(1);
+			addX(-1);
+		}
+	}
+
+	public void setY(int c) {
+		for (int i = 0; i < c; i++) {
+			Camera.addy(1);
+			addY(-1);
+		}
 	}
 
 	private class movment implements Runnable {
@@ -142,7 +159,7 @@ public class Player {
 
 		public void MoveRight() {
 			eo.CollPlayer();
-			
+
 			facing = "right";
 			while (r) {
 				if (EOArrey.rightP == true) {
@@ -258,12 +275,12 @@ public class Player {
 					Game.player.addY(1);
 				}
 			}
-			count  = 0;
+			count = 0;
 		}
 
 		@Override
 		public void run() {
-			//grav.Grav();
+			// grav.Grav();
 			switch (c) {
 			case "l":
 				MoveLeft();
@@ -293,41 +310,40 @@ public class Player {
 		private void gravity() {
 			while (true) {
 				if (EOArrey.downP != true) {
-						for (int i = 0; i < v; i++) {
-							if (EOArrey.downP != true) {
-								Camera.addy(1);
-								Game.player.addY(-1);
-							}
+					for (int i = 0; i < v; i++) {
+						if (EOArrey.downP != true) {
+							Camera.addy(1);
+							Game.player.addY(-1);
 						}
-						i++;
+					}
+					i++;
 
-						if (v < 10 && i <= 50 && cp < 5) {
-							v += g;
-							i = 0;
-							cp++;
-						}
-						try {
-							Thread.sleep(sleep);
-						} catch (InterruptedException e) {
-							e.printStackTrace();
-						}
-					
+					if (v < 10 && i <= 50 && cp < 5) {
+						v += g;
+						i = 0;
+						cp++;
+					}
+					try {
+						Thread.sleep(sleep);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+
 					try {
 						Thread.sleep(sleep);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
 				}
-				//System.out.println("kaka");
+				// System.out.println("kaka");
 			}
 		}
 
 		@Override
 		public void run() {
 			grav.Grav();
-			
-			
-			//gravity();
+
+			// gravity();
 
 		}
 	}

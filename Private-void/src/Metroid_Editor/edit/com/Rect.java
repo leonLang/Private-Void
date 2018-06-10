@@ -34,11 +34,6 @@ public class Rect {
 		rectangle = new Rectangle(width, height, x, y);
 		if (src != null) {
 			g.drawImage(src, x, y, width, height, null);
-		} else if(IDO == 4){
-			Color c = new Color(255,0,0,127);
-			g.setColor(c);
-			g.drawRect(x, y, width, height);
-			g.setColor(null);
 		}
 	}
 
@@ -46,13 +41,6 @@ public class Rect {
 		this.src = s;
 		this.IDO = IDO;
 		this.TextureID = TID;
-		this.ArrayNumberx = i;
-		this.ArrayNumberY = o;
-	}
-	public void setEvent(int  IDO, int ID,int i, int o) {
-		this.src = null;
-		this.IDO = IDO;
-		this.ID = ID;
 		this.ArrayNumberx = i;
 		this.ArrayNumberY = o;
 	}
