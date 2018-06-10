@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 
+import vvoid.Void.game.Game;
 import vvoid.Void.game.SpriteSheet;
 import vvoid.init.main.TextureSystem;
 
@@ -17,11 +18,12 @@ public class Objekt {
 	private int rotation;
 	private Image o1,o2,o3,o4,o5,o6,o7,o8,e;
 	public EnemieMovement move = new EnemieMovement();
-	private SpriteSheet sheet = new SpriteSheet();
+	//private SpriteSheet sheet = new SpriteSheet();
 	private BufferedImage img;
 	public EOArrey eo = new EOArrey();
-
+	
 	public Objekt(int[] data) {
+			//sth = new Game();
 		this.IDO = data[1];
 		this.x = data[2];
 		this.y = data[3];
@@ -29,7 +31,7 @@ public class Objekt {
 		this.height = data[5];
 		this.rotation = data[6];
 		this.TextureID = data[7];
-		objectPos();
+		//objectPos();
 		img = TextureSystem.textureSystem(TextureID);
 		// EOArrey.Objekt(this.width, this.height, this.x, this.y);
 		eo.Objekt(width, height, x, y);
@@ -51,13 +53,11 @@ public class Objekt {
 			break;
 			
 		case 2:
-			g.drawImage(e, x, y, width, height, null);
+			g.drawImage(Game.sheet.e, x, y, width, height, null);
 		}
 
 	}
-	private void objectPos(){
-		e = sheet.crop(13, 25, 18, 28);
-	}
+
 	public void sh(Graphics g, Image a1, Image a2) {
 		eo.EnemyR();
 		eo.CollPlayer();
