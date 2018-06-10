@@ -55,7 +55,7 @@ public class Editor implements ActionListener{
 	
 	//JLabel options
 	public static int BackgroundLenght = 2;
-	public static int ObjectSolidLenght = 40;
+	public static int ObjectSolidLenght = 60;
 	public static int ObjectSoftLenght = 1;
 	public static int EnemieLenght = 25;
 	public static int  EventLenght = 1;
