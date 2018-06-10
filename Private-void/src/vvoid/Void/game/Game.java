@@ -15,6 +15,7 @@ public class Game extends Thread{
     public static LevelCompiler compiler;
     public static int x = 0;
     public static boolean move = false;
+    public static SpriteSheet sheet = new SpriteSheet();
 
     public void run() {
         compiler = new LevelCompiler();

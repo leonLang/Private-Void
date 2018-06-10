@@ -11,12 +11,12 @@ public class SpriteSheet {
 	public SpriteSheet() {
 		try {
 			metroid = ImageIO.read(getClass().getResourceAsStream("textures/metroid.png"));
-		//	br_column = ImageIO.read(getClass().getResourceAsStream("textures/br_column.png"));
-		//	br_grass = ImageIO.read(getClass().getResourceAsStream("textures/br_grass.png"));
-		//	br_grass1 = ImageIO.read(getClass().getResourceAsStream("textures/br_grass1.png"));
-		//	br_recolor = ImageIO.read(getClass().getResourceAsStream("textures/br_recolor.png"));
-		//	br = ImageIO.read(getClass().getResourceAsStream("textures/br.png"));
-		//	industrial = ImageIO.read(getClass().getResourceAsStream("textures/industrial.png"));
+			br_column = ImageIO.read(getClass().getResourceAsStream("textures/br_column.png"));
+			br_grass = ImageIO.read(getClass().getResourceAsStream("textures/br_grass.png"));
+			br_grass1 = ImageIO.read(getClass().getResourceAsStream("textures/br_grass1.png"));
+			br_recolor = ImageIO.read(getClass().getResourceAsStream("textures/br_recolor.png"));
+			br = ImageIO.read(getClass().getResourceAsStream("textures/br.png"));
+			industrial = ImageIO.read(getClass().getResourceAsStream("textures/industrial.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -26,7 +26,7 @@ public class SpriteSheet {
 	public Image crop(int x, int y, int width, int height) {
 		return metroid.getSubimage(x, y, width, height);
 	}
-	/*public Image column(int x, int y, int width, int height) {
+	public Image column(int x, int y, int width, int height) {
 		return br_column.getSubimage(x, y, width, height);
 	}
 	public Image grass(int x, int y, int width, int height) {
@@ -44,5 +44,5 @@ public class SpriteSheet {
 	public Image industria(int x, int y, int width, int height) {
 		return industrial.getSubimage(x, y, width, height);
 	}
-	*/
+	
 }
