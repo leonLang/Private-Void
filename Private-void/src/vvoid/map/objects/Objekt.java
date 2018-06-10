@@ -39,7 +39,7 @@ public class Objekt {
 
 	public void drawObjects(Graphics g) {
 		
-		for (int i = 1; i < 21; i++) {
+		for (int i = 1; i < 61; i++) {
 			if(this.TextureID == i) {
 				if(this.TextureID <= 20) {
 					ft(Game.sheet.brD[i-1], g);
@@ -48,7 +48,7 @@ public class Objekt {
 						ft(Game.sheet.brG[i-21], g);
 					}
 					else if (this.TextureID <= 60) {
-						ft(Game.sheet.brR[i-1], g);
+						ft(Game.sheet.brR[i-41], g);
 					}
 				
 			}
