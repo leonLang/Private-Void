@@ -29,6 +29,7 @@ public class Game extends Thread{
          * diese klasse suckt
          * werden.
          */
+    	
         sheet = new SpriteSheet();
         Main.loading = false;
 
