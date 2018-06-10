@@ -31,6 +31,7 @@ public class Game extends Thread{
         player = new Player(WIDTH/2,HEIGHT/2-200,40,80,"left");
         Main.loading = false;
         sheet = new SpriteSheet();
+        System.out.println("times");
     } 
 
     public static void draw(Graphics g) {

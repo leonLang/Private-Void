@@ -16,7 +16,6 @@ public class Objekt {
 	private int TextureID;
 	private int IDO;
 	private int rotation;
-	private Image o1,o2,o3,o4,o5,o6,o7,o8,e;
 	public EnemieMovement move = new EnemieMovement();
 	//private SpriteSheet sheet = new SpriteSheet();
 	private BufferedImage img;
@@ -32,7 +31,7 @@ public class Objekt {
 		this.rotation = data[6];
 		this.TextureID = data[7];
 		//objectPos();
-		img = TextureSystem.textureSystem(TextureID);
+		//img = TextureSystem.textureSystem(TextureID);
 		// EOArrey.Objekt(this.width, this.height, this.x, this.y);
 		eo.Objekt(width, height, x, y);
 	}
@@ -40,16 +39,11 @@ public class Objekt {
 	public void drawObjects(Graphics g) {
 		
 		switch (this.TextureID) {
-		case 0:
-			g.drawImage(e, x, y, width, height, null);
-			//g.drawRect(x, y, width, height);
-			//g.drawImage(img, x, y, width, height, null);
-			break;
 
 		case 1:
-			System.out.println("hi13");
 			//g.drawImage(sheet.crop(9, 7, 15, 14), x, y, width, height, null);
-			g.drawRect(x, y, width, height);
+			//g.drawRect(x, y, width, height);
+			g.drawImage(Game.sheet.e, x, y, width, height, null);
 			break;
 			
 		case 2:

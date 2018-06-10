@@ -36,7 +36,6 @@ public class Enemie {
 		this.width = data[4] - 16;
 		this.height = data[5] - 16;
 		eo.EnemyS(width, height, x, y, IDO);
-		System.out.println("hi");
 		move.test();
 	}
 

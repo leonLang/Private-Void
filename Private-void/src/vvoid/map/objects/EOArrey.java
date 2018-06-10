@@ -125,7 +125,6 @@ public class EOArrey {
 					up = true;
 					oben = 0;
 					if (coll.CollLinks() == 1) {
-						System.out.println("why");
 						y--;
 						up = false;
 						x = x - 2;
