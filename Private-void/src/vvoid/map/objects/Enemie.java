@@ -24,6 +24,7 @@ public class Enemie {
 	private Image w1, w2, z, zz;
 	private int testi;
 
+	
 	private int IDO;
 	public int zA;
 

@@ -10,6 +10,7 @@ public class Gravity {
 	public Gravity() {
 	}
 
+	
 	public void Grav() {
 		while (test == 0) {
 			eo.CollPlayer();

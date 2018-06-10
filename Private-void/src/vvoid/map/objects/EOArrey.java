@@ -23,6 +23,7 @@ public class EOArrey {
 	public Collision coll;
 	public Player pl;
 
+	
 	public int richtung; // reihenfolge ist oben rechts unten links;
 
 	public void EnemyS(int width, int height, int x, int y, int id) {
