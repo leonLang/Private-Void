@@ -15,7 +15,7 @@ public BufferedImage o1, o2, o3, o4, o5, o6, o7, o8, p1, p2, p3, p4, p5, p6, p7,
 public BufferedImage r1, r2, s1, s2, t1, t2;
 public BufferedImage u1, u2, u3, u4, u5, u6, u7, u8, v1, v2, v3, v4, v5, v6, v7, v8;
 public BufferedImage w1, w2, z, zz;
-public BufferedImage[] brD = new BufferedImage[10000];
+public BufferedImage[] brD = new BufferedImage[100], brG = new BufferedImage[100],brR = new BufferedImage[100];
 private int x,y;
 	public SpriteSheet() {
 		try {
@@ -33,6 +33,8 @@ private int x,y;
 		System.out.println("hi");
 		for (int i = 0; i < 20; i++) {
 			brD[i] = brdefault(x, y, 50, 50);
+			brG[i] = grass(x, y, 50, 50);
+			brR[i] = recolor(x,y,50,50);
 			if(x == 200) {
 				x= 0;
 				y=y+50;

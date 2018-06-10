@@ -1,4 +1,6 @@
 package Metroid_Editor.edit.com;
+import java.awt.Toolkit;
+
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -11,6 +13,7 @@ public class Main {
 	Panel panel;
 	public Main() {
 		sheet = new SpriteSheet();
+		Toolkit.getDefaultToolkit();
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
