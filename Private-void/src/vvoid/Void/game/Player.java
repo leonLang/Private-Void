@@ -30,8 +30,8 @@ public class Player {
 	public Player(int x, int y, int width, int height, String facing) {
 		this.x = x;
 		this.y = y;
-		this.XSolid = x;
-		this.YSolid = y;
+		this.XSolid = x;// Game.WIDTH/2;
+		this.YSolid = y;// Game.HEIGHT/2;
 		this.width = width;
 		this.height = height;
 		this.facing = facing;
@@ -39,7 +39,7 @@ public class Player {
 		this.count = 0;
 		this.count = 0;
 		this.cp = 0;
-		
+
 		setX(LevelCompiler.PX);
 		setY(LevelCompiler.PY);
 
@@ -109,17 +109,35 @@ public class Player {
 	}
 
 	public void setX(int c) {
-		for (int i = 0; i < c; i++) {
-			Camera.addx(1);
-			addX(-1);
+		System.out.println(c);
+		if (c < 0) {
+			for (int i = 0; i < Math.abs(c); i++) {
+				Camera.addx(-1);
+				addX(1);
+			}
+		} else {
+			for (int i = 0; i < Math.abs(c); i++) {
+				Camera.addx(1);
+				addX(-1);
+			}
 		}
+		System.out.println(getX());
 	}
 
 	public void setY(int c) {
-		for (int i = 0; i < c; i++) {
-			Camera.addy(1);
-			addY(-1);
+		System.out.println(c);
+		if (c < 0) {
+			for (int i = 0; i < Math.abs(c); i++) {
+				Camera.addy(-1);
+				addY(1);
+			}
+		} else {
+			for (int i = 0; i < Math.abs(c); i++) {
+				Camera.addx(1);
+				addX(-1);
+			}
 		}
+		System.out.println(getY());
 	}
 
 	private class movment implements Runnable {
