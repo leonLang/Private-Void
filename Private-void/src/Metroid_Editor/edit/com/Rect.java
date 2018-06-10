@@ -38,6 +38,7 @@ public class Rect {
 			Color c = new Color(255,0,0,127);
 			g.setColor(c);
 			g.drawRect(x, y, width, height);
+			g.setColor(null);
 		}
 	}
 

@@ -26,6 +26,7 @@ public class EventObject extends JLabel implements MouseListener{
 	public void setObject() {
 		Editor.IDO = this.IDO;
 		Editor.ID = ID;
+		Editor.SelectedObject = null;
 		
 		
 	}
