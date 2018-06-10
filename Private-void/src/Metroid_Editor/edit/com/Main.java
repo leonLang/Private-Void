@@ -3,10 +3,14 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import vvoid.Void.game.SpriteSheet;
+
 public class Main {
 	public static JFrame frame;
+	public static SpriteSheet sheet;
 	Panel panel;
 	public Main() {
+		sheet = new SpriteSheet();
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException

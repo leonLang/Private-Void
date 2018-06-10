@@ -6,6 +6,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -53,7 +54,7 @@ public class Editor implements ActionListener{
 	
 	//JLabel options
 	public static int BackgroundLenght = 2;
-	public static int ObjectSolidLenght = 2;
+	public static int ObjectSolidLenght = 20;
 	public static int ObjectSoftLenght = 1;
 	public static int EnemieLenght = 25;
 	public static int  EventLenght = 1;
@@ -64,7 +65,7 @@ public class Editor implements ActionListener{
 	private Enemie[] enemie = new Enemie[EnemieLenght];
 	private EventObject[] event = new EventObject[EventLenght];
 	
-	public static Image SelectedObject;
+	public static BufferedImage SelectedObject;
 	public static int IDO;
 	public static int ID;
 	public static int TextureID;

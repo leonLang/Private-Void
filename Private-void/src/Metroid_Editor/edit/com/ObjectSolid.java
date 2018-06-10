@@ -8,6 +8,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JLabel;
 
+import vvoid.Void.game.Game;
+
 public class ObjectSolid extends JLabel implements MouseListener{
 
 	private static final long serialVersionUID = 1L;
@@ -30,6 +32,11 @@ public class ObjectSolid extends JLabel implements MouseListener{
 		Editor.ID = ID;
 		Editor.TextureID = TextureID;
 		try {
+			for (int i = 0; i < 21; i++) {
+				if(Editor.TextureID == i) {
+					Editor.SelectedObject = Main.sheet.brD[i];
+				}
+			}
 			Editor.SelectedObject = ImageIO.read(ResourceLoader.load(Path));
 		} catch (IOException e) {
 			e.printStackTrace();

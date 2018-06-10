@@ -20,7 +20,6 @@ public class Main {
 	public static Frame mainframe;
 	public static Control control;
 	//public static BindingControl Bcontrol;
-
 	public static void main(String[] args) throws InterruptedException {
 		//Game.setup();
 		control = new Control();
