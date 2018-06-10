@@ -41,6 +41,7 @@ public class Player {
 		this.r = false;
 		this.j = false;
 
+		
 		this.ashots = 0;
 		this.shots = new Shot[64];
 
