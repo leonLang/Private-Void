@@ -16,6 +16,7 @@ public class Game extends Thread{
     public static int x = 0;
     public static boolean move = false;
 
+    
     public void run() {
         compiler = new LevelCompiler();
         cam = new Camera(0, 0);
