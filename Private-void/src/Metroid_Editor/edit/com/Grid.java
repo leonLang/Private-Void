@@ -23,6 +23,7 @@ public class Grid extends JPanel implements KeyListener, MouseWheelListener, Mou
 	public int backgroundID = 0;
 	public Rect[][] rect = new Rect[Editor.ProjectHeight][Editor.ProjectWidth];
 	JLabel Scale;
+	public static JLabel JID;
 	JProgressBar progress;
 
 	private static final long serialVersionUID = 1L;
@@ -34,10 +35,12 @@ public class Grid extends JPanel implements KeyListener, MouseWheelListener, Mou
 		progress.setVisible(false);
 		Editor.saveState = 0;
 		Scale = new JLabel();
+		JID = new JLabel();
 		this.setFocusable(true);
 		addMouseWheelListener(this);
 		addMouseListener(this);
 		addKeyListener(this);
+		this.add(JID);
 		this.add(Scale);
 		this.add(progress);
 
