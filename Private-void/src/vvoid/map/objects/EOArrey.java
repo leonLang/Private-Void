@@ -33,6 +33,7 @@ public class EOArrey {
 		this.y = y;
 		this.id = id;
 	}
+	
 
 	public void Objekt(int width, int height, int x, int y) {
 		oAmount++;
