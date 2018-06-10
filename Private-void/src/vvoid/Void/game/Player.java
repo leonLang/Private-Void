@@ -246,7 +246,7 @@ public class Player {
 					}
 				}
 				try {
-					Thread.sleep(sleep);
+					Thread.sleep(2);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
