@@ -234,6 +234,7 @@ public class Player {
 					cp = 0;
 					count++;
 					for (int i = 0; i < 5; i++) {
+						eo.CollPlayer();
 						if (EOArrey.upP != true) {
 							Camera.addy(-1);
 							Game.player.addY(1);
@@ -257,7 +258,7 @@ public class Player {
 					Game.player.addY(1);
 				}
 			}
-
+			count  = 0;
 		}
 
 		@Override
