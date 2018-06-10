@@ -37,15 +37,21 @@ public class Objekt {
 
 	public void drawObjects(Graphics g) {
 		
-		switch (this.IDO) {
+		switch (this.TextureID) {
 		case 0:
-			g.drawRect(x, y, width, height);
-			g.drawImage(img, x, y, width, height, null);
+			g.drawImage(e, x, y, width, height, null);
+			//g.drawRect(x, y, width, height);
+			//g.drawImage(img, x, y, width, height, null);
 			break;
 
 		case 1:
+			System.out.println("hi13");
+			//g.drawImage(sheet.crop(9, 7, 15, 14), x, y, width, height, null);
 			g.drawRect(x, y, width, height);
 			break;
+			
+		case 2:
+			g.drawImage(e, x, y, width, height, null);
 		}
 
 	}

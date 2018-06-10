@@ -1,5 +1,7 @@
 package vvoid.init.main;
 
+import java.awt.Toolkit;
+
 import vvoid.Void.game.BindingControl;
 import vvoid.Void.game.Control;
 import vvoid.Void.game.Game;

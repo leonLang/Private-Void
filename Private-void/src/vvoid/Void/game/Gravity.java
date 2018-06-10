@@ -4,9 +4,11 @@ import vvoid.init.main.Camera;
 import vvoid.map.objects.EOArrey;
 
 public class Gravity {
-	int test=0;
+	int test = 0;
+
 	public Gravity() {
 	}
+
 	public void Grav() {
 		while (test == 0) {
 			try {
@@ -15,14 +17,12 @@ public class Gravity {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			if(EOArrey.downP == true) {
-				
+			if (EOArrey.downP == true) {
+
+			} else {
+				Camera.addy(1);
+				Game.player.addY(-1);
 			}
-			else {
-			Camera.addy(1);
-			Game.player.addY(-1);
-			System.out.println("hi12");
-		}
 		}
 	}
 }

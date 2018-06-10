@@ -14,6 +14,7 @@ public class DrawPanel extends JPanel {
 
 	@Override
 	public void paintComponent(Graphics g) {
+		Toolkit.getDefaultToolkit();
 		super.paintComponent(g);
 		if(Main.menu != true && Main.loading != true) {
 		Game.draw(g);
@@ -27,7 +28,7 @@ public class DrawPanel extends JPanel {
 			}
 			
 		}
-		Toolkit.getDefaultToolkit();
+		
 	}
 
 }
