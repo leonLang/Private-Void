@@ -195,7 +195,7 @@ public class Grid extends JPanel implements KeyListener,MouseWheelListener, Mous
 					if(Editor.SelectedObject != null) {
 						rect[i][o].setObject(Editor.SelectedObject,Editor.IDO, Editor.TextureID,i,o);
 					} else {
-						rect[i][o].setObject(null, Editor.IDO, Editor.TextureID, i, o);
+						rect[i][o].setEvent(Editor.IDO, Editor.ID,i,o);
 					}
 						Editor.clicked = false;
 					}

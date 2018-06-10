@@ -56,11 +56,13 @@ public class Editor implements ActionListener{
 	public static int ObjectSolidLenght = 2;
 	public static int ObjectSoftLenght = 1;
 	public static int EnemieLenght = 25;
+	public static int  EventLenght = 1;
 	
 	private Background[] background = new Background[BackgroundLenght];
 	private ObjectSolid[] solid = new ObjectSolid[ObjectSolidLenght];
 	private ObjectSoft[] soft = new ObjectSoft[ObjectSoftLenght];
 	private Enemie[] enemie = new Enemie[EnemieLenght];
+	private EventObject[] event = new EventObject[EventLenght];
 	
 	public static Image SelectedObject;
 	public static int IDO;
@@ -97,6 +99,10 @@ public class Editor implements ActionListener{
 		}
 		for(int i = 0; i < BackgroundLenght;i++) {
 			background[i] = new Background("background+" + (int) (i+1),0,i+1);
+		}
+		for(int i = 0;i < EventLenght;i++) {
+			event[i] = new EventObject("Event+" + (int) (i + 1),4,0);
+			
 		}
 		
 		
@@ -151,6 +157,9 @@ public class Editor implements ActionListener{
 		}
 		for(int i = 0; i < enemie.length;i++) {
 			optionPanel.add(enemie[i]);
+		}
+		for(int i = 0;i < event.length;i++) {
+			optionPanel.add(event[i]);
 		}
 		scroll = new JScrollPane(optionPanel,
 				ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS,
