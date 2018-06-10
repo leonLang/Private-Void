@@ -17,6 +17,8 @@ public class Game extends Thread{
     public static boolean move = false;
 
     public void run() {
+        cam = new Camera(0, 0);
+        player = new Player(WIDTH/2,HEIGHT/2-200,40,80,"left");
         compiler = new LevelCompiler();
     }
     public static void setup() {
@@ -26,8 +28,6 @@ public class Game extends Thread{
          * diese klasse suckt
          * werden.
          */
-        cam = new Camera(0, 0);
-        player = new Player(WIDTH/2,HEIGHT/2-200,40,80,"left");
         Main.loading = false;
     } 
 
