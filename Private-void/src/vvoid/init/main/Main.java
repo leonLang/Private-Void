@@ -19,11 +19,9 @@ public class Main {
 	public static Menue menue;
 	public static Frame mainframe;
 	public static Control control;
-	public static SpriteSheet sheet;
 	//public static BindingControl Bcontrol;
 
 	public static void main(String[] args) throws InterruptedException {
-		sheet = new SpriteSheet();
 		//Game.setup();
 		control = new Control();
 		mainframe = new Frame(Game.WIDTH, Game.HEIGHT,"titel",true);

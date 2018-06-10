@@ -44,11 +44,11 @@ public class Objekt {
 		case 1:
 			//g.drawImage(sheet.crop(9, 7, 15, 14), x, y, width, height, null);
 			//g.drawRect(x, y, width, height);
-			g.drawImage(Main.sheet.e, x, y, width, height, null);
+			g.drawImage(Game.sheet.e, x, y, width, height, null);
 			break;
 			
 		case 2:
-			g.drawImage(Main.sheet.e, x, y, width, height, null);
+			g.drawImage(Game.sheet.e, x, y, width, height, null);
 		}
 
 	}
