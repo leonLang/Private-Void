@@ -2,27 +2,33 @@ package vvoid.Void.game;
 
 import java.awt.Graphics;
 
+import vvoid.map.objects.EOArrey;
+
 public class Shot {
 	public String direction;
 	public int x;
 	public int y;
 	public int width;
 	public int height;
+	public EOArrey eo = new EOArrey();
 
-	public Shot(String getfacing,int x, int y) {
+	public Shot(String getfacing, int x, int y) {
 		this.direction = getfacing;
 		this.x = x;
 		this.y = y;
 		width = 30;
 		height = 30;
+		eo.Shot(width, height, x, y);
 		System.out.println("hi");
 	}
+
 	public void draw(Graphics g) {
 		g.drawRect(x, y, width, height);
 		calc();
 	}
+
 	public void calc() {
-		switch(this.direction) {
+		switch (this.direction) {
 		case "right":
 			x += 10;
 			break;
