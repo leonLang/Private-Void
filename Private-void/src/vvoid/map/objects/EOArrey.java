@@ -71,7 +71,7 @@ public class EOArrey {
 	public void destroyE(int idE) {
 		if (destroy < 9000) {
 			if (idE == destroy) {
-				x = 0;
+				x = 100000;
 				System.out.println(idE);
 			}
 		}
