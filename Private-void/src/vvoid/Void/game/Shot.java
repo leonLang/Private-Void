@@ -23,7 +23,7 @@ public class Shot {
 	}
 
 	public void draw(Graphics g) {
-		//eo.Shot(width, height, x, y);
+		eo.Shot(width, height, x, y);
 		g.drawRect(x, y, width, height);
 		calc();
 	}

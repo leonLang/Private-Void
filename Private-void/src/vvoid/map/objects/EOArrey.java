@@ -14,7 +14,7 @@ public class EOArrey {
 	public static int[] heightS = new int[10000];// height (blocks)
 	public static int[] xS = new int[10000]; // x-position (blocks)
 	public static int[] yS = new int[10000]; // y-postion (blocks)
-	public static int oAmount = -1,sAmount; // number of blocks (-1 is for the array who starts with 0)
+	public static int oAmount = -1,sAmount,counterTs; // number of blocks (-1 is for the array who starts with 0)
 	public int counter, counterP,counterS, start, s1, s2;
 	public int width, height, x, y, id; // get position and size from enemies
 	public boolean up, right, down, left;
@@ -48,18 +48,22 @@ public class EOArrey {
 
 	}
 	public void Shot(int width, int height, int x, int y) {
-		System.out.println(width);
+		//System.out.println(width);
+		if(counterTs >= Player.ashots) {
+			counterTs = 0;
+		}
+		//counterTs;
+		
 		widthS[sAmount] = width;
 		heightS[sAmount] = height;
 		xS[sAmount] = x;
 		yS[sAmount] = y;
-		sAmount++;
+		counterTs++;
 
 	}
 	public void collShot() {
-		counterS = sAmount;
-		
 		System.out.println(xS[0]);
+		counterS = Player.ashots;
 		while (counterS >=0) {
 			try {
 				coll = new Collision(this.x, this.y, this.width, this.height, xS[counterS], yS[counterS], widthS[counterS],

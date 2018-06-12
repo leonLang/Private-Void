@@ -4,13 +4,14 @@ import java.awt.Graphics;
 import java.awt.Image;
 
 import vvoid.Void.game.Game;
+import vvoid.Void.game.Player;
 import vvoid.Void.game.SpriteSheet;
 import vvoid.init.main.Collision;
 
 public class Enemie {
 	public EnemieMovement move = new EnemieMovement();
 	public EOArrey eo = new EOArrey();
-	public Collision coll, coll1;
+	public static Collision coll, coll1;
 	public static int[] widthA = new int[100];
 	public int x, y, width, height; // postition and size from the enemy
 	/*
