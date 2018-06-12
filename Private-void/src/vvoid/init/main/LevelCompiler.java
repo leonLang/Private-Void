@@ -172,7 +172,6 @@ public class LevelCompiler {
 	}
 
 	private void createEvent(int[] data) {
-		System.out.println(data[7]);
 		event[EventLenght] = new Event(data);
 		EventLenght++;
 	};
