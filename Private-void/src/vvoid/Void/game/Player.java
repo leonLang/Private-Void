@@ -26,6 +26,7 @@ public class Player {
 	int test = 0, test1;
 	public Gravity grav = new Gravity();
 	public EOArrey eo = new EOArrey();
+	public Thread gt;
 
 	public Player(int x, int y, int width, int height, String facing) {
 		this.x = x;
@@ -49,8 +50,11 @@ public class Player {
 
 		this.ashots = 0;
 		this.shots = new Shot[64];
+		
+		this.gt = new Thread(new Gravity());
+		this.gt.start();
 
-		(new Thread(new Pgravity())).start();
+		
 	}
 
 	public void drawPlayer(Graphics g) {
@@ -315,52 +319,6 @@ public class Player {
 				break;
 			}
 			Thread.currentThread().interrupt();
-		}
-	}
-
-	private class Pgravity implements Runnable {
-		int v = 1;
-		int g = 1;
-		int i = 0;
-
-		private void gravity() {
-			while (true) {
-				if (EOArrey.downP != true) {
-					for (int i = 0; i < v; i++) {
-						if (EOArrey.downP != true) {
-							Camera.addy(1);
-							Game.player.addY(-1);
-						}
-					}
-					i++;
-
-					if (v < 10 && i <= 50 && cp < 5) {
-						v += g;
-						i = 0;
-						cp++;
-					}
-					try {
-						Thread.sleep(sleep);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-
-					try {
-						Thread.sleep(sleep);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
-				// System.out.println("kaka");
-			}
-		}
-
-		@Override
-		public void run() {
-			grav.Grav();
-
-			// gravity();
-
 		}
 	}
 }

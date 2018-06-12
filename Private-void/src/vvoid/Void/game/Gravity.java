@@ -3,7 +3,7 @@ package vvoid.Void.game;
 import vvoid.init.main.Camera;
 import vvoid.map.objects.EOArrey;
 
-public class Gravity {
+public class Gravity implements Runnable{
 	public EOArrey eo = new EOArrey();
 	int test = 0;
 
@@ -27,5 +27,12 @@ public class Gravity {
 				Game.player.addY(-1);
 			}
 		}
+	}
+
+
+	@Override
+	public void run() {
+		Grav();
+		
 	}
 }

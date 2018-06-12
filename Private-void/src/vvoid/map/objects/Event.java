@@ -3,6 +3,7 @@ package vvoid.map.objects;
 import java.awt.Graphics;
 
 import vvoid.Void.game.Game;
+import vvoid.Void.game.Gravity;
 import vvoid.Void.game.Player;
 import vvoid.init.main.Camera;
 import vvoid.init.main.LevelCompiler;
@@ -32,6 +33,7 @@ public class Event {
 		}
 		
 	}
+	@SuppressWarnings("deprecation")
 	public void executeEvent() {
 		switch(ID) {
 		case 1:
