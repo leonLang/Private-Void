@@ -2,6 +2,7 @@ package vvoid.map.objects;
 
 import java.awt.Graphics;
 
+import vvoid.Void.game.Player;
 import vvoid.init.main.LevelCompiler;
 
 public class Event {
@@ -32,7 +33,21 @@ public class Event {
 		switch(ID) {
 		case 1:
 			System.out.println("ich bin hier");
-			new LevelCompiler(TPID);
+			for(int i = 0;i < LevelCompiler.Objectlenght;i++) {
+				LevelCompiler.objects[i] = null;
+			}
+			for(int i = 0;i < LevelCompiler.EventLenght;i++) {
+				LevelCompiler.event[i] = null;
+				
+			}
+			for(int i = 0;i < LevelCompiler.EventLenght;i++) {
+				LevelCompiler.event[i] = null;
+				
+			}
+			LevelCompiler.EnemieLenght = 0;
+			LevelCompiler.EventLenght = 0;
+			LevelCompiler.Objectlenght = 0;
+			new LevelCompiler(2);
 			break;
 		case 2:
 			break;

@@ -41,6 +41,7 @@ public class LevelCompiler {
 		read();
 	}
 	public int lines() {
+		System.out.println("/Level/lvl" + nr + ".pll");
 		try {
 			InputStream file = ResourceLoader.load("/Level/lvl" + nr + ".pll");
 				BufferedReader fr = new BufferedReader(new InputStreamReader(file));
