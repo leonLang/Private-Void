@@ -2,6 +2,9 @@ package vvoid.map.objects;
 
 import java.awt.Graphics;
 
+import vvoid.Void.game.Game;
+import vvoid.Void.game.Player;
+import vvoid.init.main.Camera;
 import vvoid.init.main.LevelCompiler;
 
 public class Event {
@@ -43,10 +46,14 @@ public class Event {
 				LevelCompiler.event[i] = null;
 				
 			}
+			Game.player.j = false;
+			Game.player.r = false;
 			LevelCompiler.EnemieLenght = 0;
 			LevelCompiler.EventLenght = 0;
 			LevelCompiler.Objectlenght = 0;
 			new LevelCompiler(TPID);
+	        Game.cam = new Camera(0, 0);
+			Game.player = new Player(Game.WIDTH/2,Game.HEIGHT/2-200,40,80,"left");
 			break;
 		case 2:
 			break;
