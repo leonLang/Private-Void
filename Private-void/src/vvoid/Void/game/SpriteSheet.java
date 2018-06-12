@@ -1,13 +1,11 @@
 package vvoid.Void.game;
-
-import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
 public class SpriteSheet {
-	private  BufferedImage metroid,  br_grass,br_recolor,br,industrial;
+	private  BufferedImage metroid,  br_grass,br_recolor,br,character;
 	public BufferedImage a1, a2, a3, a4, a5, a6, a7, a8, b1, b2, b3, b4, b5, b6, b7, b8, c1, c2, c3, c4, c5, c6, c7, c8, d1,
 	d2, d3, d4, d5, d6, d7, d8;
 public BufferedImage e, f, g1, h, i, j1, j2, k1, k2, l1, l2, m1, m2, n1, n2;
@@ -25,7 +23,7 @@ private int x,y;
 			//br_grass1 = ImageIO.read(getClass().getResourceAsStream("textures/br_grass1.png"));
 			br_recolor = ImageIO.read(getClass().getResourceAsStream("textures/br_recolor.png"));
 			br = ImageIO.read(getClass().getResourceAsStream("textures/br.png"));
-			industrial = ImageIO.read(getClass().getResourceAsStream("textures/industrial.png"));
+			character = ImageIO.read(getClass().getResourceAsStream("textures/character.jpg"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -349,8 +347,8 @@ private int x,y;
 	public BufferedImage brdefault(int x, int y, int width, int height) {
 		return br.getSubimage(x, y, width, height);
 	}
-	public BufferedImage industria(int x, int y, int width, int height) {
-		return industrial.getSubimage(x, y, width, height);
+	public BufferedImage chare(int x, int y, int width, int height) {
+		return character.getSubimage(x, y, width, height);
 	}
 	
 	

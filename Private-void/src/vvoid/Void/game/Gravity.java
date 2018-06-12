@@ -11,9 +11,9 @@ public class Gravity implements Runnable{
 	}
 
 	
-	public void Grav() {
+	public void grav() {
 		while (test == 0) {
-			eo.CollPlayer();
+			eo.collPlayer();
 			try {
 				Thread.sleep(1);
 			} catch (InterruptedException e) {
@@ -32,7 +32,7 @@ public class Gravity implements Runnable{
 
 	@Override
 	public void run() {
-		Grav();
+		grav();
 		
 	}
 }

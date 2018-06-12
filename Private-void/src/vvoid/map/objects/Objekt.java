@@ -34,7 +34,7 @@ public class Objekt {
 		//objectPos();
 		//img = TextureSystem.textureSystem(TextureID);
 		// EOArrey.Objekt(this.width, this.height, this.x, this.y);
-		eo.Objekt(width, height, x, y);
+		eo.objekt(width, height, x, y);
 	}
 
 	public void drawObjects(Graphics g) {

@@ -28,7 +28,7 @@ public class Event {
 	}
 	public void drawEvent(Graphics g) {
 		g.drawRect(this.x, this.y, this.width, this.height);
-		if(eo.EventColl(this.x, this.y, this.width, this.height)) {
+		if(eo.eventColl(this.x, this.y, this.width, this.height)) {
 			executeEvent();
 		}
 		

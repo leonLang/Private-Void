@@ -20,7 +20,7 @@ public class EOArrey {
 	public boolean up, right, down, left;
 	private int time;
 	private boolean direction = true;
-	private boolean o, r, u, l; // If the enemy stands on mmore than one block, you have to make that he uses
+	private boolean o, r, l; // If the enemy stands on mmore than one block, you have to make that he uses
 								// only 1 block for collisiosn or he will bug
 	public int oben, rechts, unten, links, test;
 	public boolean shutdown;
@@ -32,7 +32,7 @@ public class EOArrey {
 
 	public int richtung; // reihenfolge ist oben rechts unten links;
 
-	public void EnemyS(int width, int height, int x, int y, int id) {
+	public void enemyS(int width, int height, int x, int y, int id) {
 		eAmount++;
 		widthE[eAmount] = width;
 		heightE[eAmount] = height;
@@ -54,7 +54,7 @@ public class EOArrey {
 		counterE = eAmount;
 		while (counterE >= 0) {
 			coll = new Collision(x, y, width, height, xE[counterE], yE[counterE], widthE[counterE], heightE[counterE]);
-			if (coll.Coll1() == 1) {
+			if (coll.Coll1() == true) {
 				destroy = counterE;
 				System.out.println(counterE);
 				shutdown = true;
@@ -78,7 +78,7 @@ public class EOArrey {
 		}
 	}
 
-	public void Objekt(int width, int height, int x, int y) {
+	public void objekt(int width, int height, int x, int y) {
 		oAmount++;
 		widthO[oAmount] = width;
 		heightO[oAmount] = height;
@@ -87,7 +87,7 @@ public class EOArrey {
 
 	}
 
-	public void EnemyR() {
+	public void enemyR() {
 		// System.out.println(Game.player.getY());
 
 		/*
@@ -98,17 +98,16 @@ public class EOArrey {
 		counter = oAmount; // for editing oAmount without change it
 		o = false;
 		r = false;
-		u = false;
 		l = false;
 		while (counter >= 0) {
 			if (id >= 5 && id <= 14 || id >= 18 && id <= 20 || id >= 23 && id <= 25) {
 				coll = new Collision(this.x, this.y, this.width, this.height, xO[counter], yO[counter], widthO[counter],
 						heightO[counter]);
-				if (coll.CollRechts() == 1) {
+				if (coll.CollRechts() == true) {
 					direction = false;
 					counter = -1;
 				}
-				if (coll.CollLinks() == 1) {
+				if (coll.CollLinks() == true) {
 					direction = true;
 					counter = -1;
 				}
@@ -119,20 +118,20 @@ public class EOArrey {
 					coll = new Collision(this.x, this.y, this.width, this.height, xO[counter], yO[counter],
 							widthO[counter], heightO[counter]);
 
-					if (coll.Coll1() == 1) {
+					if (coll.Coll1() == true) {
 						// Check if block has collision from above
 						start = 1;
 					} else {
 						coll = new Collision(this.x, this.y, this.width, this.height, xO[counter], yO[counter],
 								widthO[counter], heightO[counter] + 16);
-						if (coll.Coll1() == 1) {
+						if (coll.Coll1() == true) {
 							// Check if block has collision from below
 							y = y - 16;
 							start = 1;
 						} else {
 							coll = new Collision(this.x, this.y, 50, this.height, xO[counter], yO[counter],
 									widthO[counter], heightO[counter]);
-							if (coll.Coll1() == 1) {
+							if (coll.Coll1() == true) {
 								// Check if block has collision from left
 								x = x + 13;
 								start = 1;
@@ -140,7 +139,7 @@ public class EOArrey {
 							} else {
 								coll = new Collision(this.x, this.y, this.width, this.height, xO[counter], yO[counter],
 										widthO[counter] + 3, heightO[counter]);
-								if (coll.Coll1() == 1) {
+								if (coll.Coll1() == true) {
 
 									x = x - 3;
 									start = 1;
@@ -158,7 +157,7 @@ public class EOArrey {
 						heightO[counter]);
 				counter--;
 
-				if (coll.CollOben() == 1) {
+				if (coll.CollOben() == true) {
 					/*
 					 * when it moves right there are two possibilites first: move up next:move down
 					 * you can only easily detect the collision up. To see if you have to move up
@@ -167,7 +166,7 @@ public class EOArrey {
 					 */
 					up = true;
 					oben = 0;
-					if (coll.CollLinks() == 1) {
+					if (coll.CollLinks() == true) {
 						y--;
 						up = false;
 						x = x - 2;
@@ -192,7 +191,7 @@ public class EOArrey {
 					}
 				}
 
-				if (coll.CollRechts() == 1) {
+				if (coll.CollRechts() == true) {
 					/*
 					 * when it moves down there are two possibilites first: move right next:move
 					 * left you can only easily detect the collision right. To see if you have to
@@ -201,7 +200,7 @@ public class EOArrey {
 					 */
 					right = true;
 					rechts = 0;
-					if (coll.CollOben() == 1) {
+					if (coll.CollOben() == true) {
 						x++;
 						y--;
 						right = false;
@@ -224,7 +223,7 @@ public class EOArrey {
 					}
 				}
 
-				if (coll.CollUnten() == 1) {
+				if (coll.CollUnten() == true) {
 					/*
 					 * when it moves left there are two possibilites first: move down next:up left
 					 * you can only easily detect the collision down. To see if you have to move up
@@ -233,7 +232,7 @@ public class EOArrey {
 					 */
 					down = true;
 					unten = 0;
-					if (coll.CollRechts() == 1) {
+					if (coll.CollRechts() == true) {
 						y++;
 						x++;
 						down = false;
@@ -256,10 +255,10 @@ public class EOArrey {
 					}
 				}
 
-				if (coll.CollLinks() == 1) {
+				if (coll.CollLinks() == true) {
 					left = true;
 					links = 0;
-					if (coll.CollUnten() == 1) {
+					if (coll.CollUnten() == true) {
 						links = 0;
 						left = false;
 						x--;
@@ -290,14 +289,12 @@ public class EOArrey {
 			}
 			counter = -1;
 		}
-		// System.out.println(xO[1]);
 	}
 
 	public void tBack() {
-		if(time <=0) {
-			
-		}
-		else {
+		if (time <= 0) {
+
+		} else {
 			time--;
 		}
 	}
@@ -306,22 +303,21 @@ public class EOArrey {
 		if (time <= 0) {
 			coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height, x, y, width,
 					height);
-			if (coll.Coll1() == 1) {
+			if (coll.Coll1() == true) {
 				Game.leben--;
 				time = 120;
 			}
 		}
 	}
 
-	public void CollPlayer() {
+	public void collPlayer() {
 		counterP = oAmount; // for editing oAmount without change it
 		while (counterP >= 0) {
 			coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height, xO[counterP],
 					yO[counterP], widthO[counterP], heightO[counterP]);
-			if (coll.CollLinksP() == 1) {
+			if (coll.CollLinksP() == true) {
 				counterP = 0;
 				linksP = 1;
-				// System.out.println("links");
 			} else {
 				linksP = 0;
 			}
@@ -331,10 +327,9 @@ public class EOArrey {
 		while (counterP >= 0) {
 			coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height, xO[counterP],
 					yO[counterP], widthO[counterP], heightO[counterP]);
-			if (coll.CollObenP() == 1) {
+			if (coll.CollObenP() == true) {
 				counterP = 0;
 				obenP = 1;
-				// System.out.println("oben");
 			} else {
 				obenP = 0;
 			}
@@ -344,10 +339,9 @@ public class EOArrey {
 		while (counterP >= 0) {
 			coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height, xO[counterP],
 					yO[counterP], widthO[counterP], heightO[counterP]);
-			if (coll.CollRechtsP() == 1) {
+			if (coll.CollRechtsP() == true) {
 				counterP = 0;
 				rechtsP = 1;
-				// System.out.println("rechts");
 			} else {
 				rechtsP = 0;
 			}
@@ -357,10 +351,9 @@ public class EOArrey {
 		while (counterP >= 0) {
 			coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height, xO[counterP],
 					yO[counterP], widthO[counterP], heightO[counterP]);
-			if (coll.CollUntenP() == 1) {
+			if (coll.CollUntenP() == true) {
 				counterP = 0;
 				untenP = 1;
-				// System.out.println("unten");
 			} else {
 				untenP = 0;
 			}
@@ -389,9 +382,9 @@ public class EOArrey {
 		}
 	}
 
-	public boolean EventColl(int x, int y, int width, int height) {
+	public boolean eventColl(int x, int y, int width, int height) {
 		coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height, x, y, width, height);
-		if (coll.Coll1() == 1) {
+		if (coll.Coll1() == true) {
 			return true;
 		} else {
 			return false;

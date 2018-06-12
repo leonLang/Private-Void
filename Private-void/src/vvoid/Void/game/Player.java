@@ -151,7 +151,7 @@ public class Player {
 		}
 
 		public void MoveLeft() {
-			eo.CollPlayer();
+			eo.collPlayer();
 			facing = "left";
 			while (l) {
 				if (EOArrey.leftP == true) {
@@ -179,7 +179,7 @@ public class Player {
 		}
 
 		public void MoveRight() {
-			eo.CollPlayer();
+			eo.collPlayer();
 
 			facing = "right";
 			while (r) {
@@ -208,7 +208,7 @@ public class Player {
 		}
 
 		public void MoveUp() {
-			eo.CollPlayer();
+			eo.collPlayer();
 			facing = "up";
 			while (u) {
 				if (EOArrey.upP == true) {
@@ -236,7 +236,7 @@ public class Player {
 		}
 
 		public void MoveDown() {
-			eo.CollPlayer();
+			eo.collPlayer();
 			facing = "down";
 			while (d) {
 				if (EOArrey.downP == true) {
@@ -264,14 +264,14 @@ public class Player {
 		}
 
 		public void jump() {
-			eo.CollPlayer();
+			eo.collPlayer();
 			while (j) {
 				if (count < 80) {
-					eo.CollPlayer();
+					eo.collPlayer();
 					cp = 0;
 					count++;
 					for (int i = 0; i < 5; i++) {
-						eo.CollPlayer();
+						eo.collPlayer();
 						if (EOArrey.upP != true) {
 							Camera.addy(-1);
 							Game.player.addY(1);

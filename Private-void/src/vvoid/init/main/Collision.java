@@ -3,7 +3,6 @@ package vvoid.init.main;
 public class Collision {
 
 	private int Obj1Y, Obj1X, Obj1Width, Obj1Height, Obj2X, Obj2Y, Obj2Width, Obj2Height = 0;
-	private int z1, z2, z3, z4;
 
 	public Collision(int Obj1X, int Obj1Y, int Obj1Width, int Obj1Height, int Obj2X, int Obj2Y, int Obj2Width,
 			int Obj2Height) {
@@ -18,147 +17,94 @@ public class Collision {
 
 	}
 
-	public int CollOben() {
+	public boolean CollOben() {
 		if (Obj1Y + Obj1Height >= Obj2Y && Obj2Y + Obj2Height - 1 >= Obj1Y && Obj1X + Obj1Width - 1 >= Obj2X
 				&& Obj2X + Obj2Width - 1 >= Obj1X) {
-			z1 = 1;
-			// System.out.println("klappti");
-			return 1;
+			return true;
 		} else {
-			return 0;
+			return false;
 		}
 
 	}
 
-	public int CollUnten() {
-		
+	public boolean CollUnten() {
+
 		if (Obj1Y + Obj1Height - 1 >= Obj2Y && Obj2Y + Obj2Height >= Obj1Y && Obj1X + Obj1Width - 1 >= Obj2X
 				&& Obj2X + Obj2Width - 1 >= Obj1X) {
-			z1 = 1;
-			// System.out.println("klappti");
-			return 1;
+			return true;
 		} else {
-			return 0;
+			return false;
 		}
 
 	}
 
-	public int CollLinks() {
+	public boolean CollLinks() {
 		if (Obj1Y + Obj1Height - 1 >= Obj2Y && Obj2Y + Obj2Height - 1 >= Obj1Y && Obj1X + Obj1Width >= Obj2X
 				&& Obj2X + Obj2Width - 1 >= Obj1X) {
-			z1 = 1;
-			// System.out.println("klappti");
-			return 1;
+			return true;
 		} else {
-			return 0;
+			return false;
 		}
 
 	}
 
-	public int CollRechts() {
+	public boolean CollRechts() {
 		if (Obj1Y + Obj1Height - 1 >= Obj2Y && Obj2Y + Obj2Height - 1 >= Obj1Y && Obj1X + Obj1Width - 1 >= Obj2X
 				&& Obj2X + Obj2Width >= Obj1X) {
-			z1 = 1;
-			// System.out.println("klappti");
-			return 1;
+			return true;
 		} else {
-			return 0;
+			return false;
 		}
 
 	}
 
-	public int CollUntenP() {
+	public boolean CollUntenP() {
 		if (Obj1Y + Obj1Height + 5 >= Obj2Y && Obj2Y + Obj2Height - 1 >= Obj1Y && Obj1X + Obj1Width - 1 >= Obj2X
 				&& Obj2X + Obj2Width - 1 >= Obj1X) {
-			z1 = 1;
-			// System.out.println("klappti");
-			return 1;
+			return true;
 		} else {
-			return 0;
+			return false;
 		}
 
 	}
 
-	public int CollObenP() {
+	public boolean CollObenP() {
 		if (Obj1Y + Obj1Height - 1 >= Obj2Y && Obj2Y + Obj2Height + 5 >= Obj1Y && Obj1X + Obj1Width - 1 >= Obj2X
 				&& Obj2X + Obj2Width - 1 >= Obj1X) {
-			z1 = 1;
-			// System.out.println("klappti");
-			return 1;
+			return true;
 		} else {
-			return 0;
+			return false;
 		}
 
 	}
 
-	public int CollRechtsP() {
+	public boolean CollRechtsP() {
 		if (Obj1Y + Obj1Height - 1 >= Obj2Y && Obj2Y + Obj2Height - 1 >= Obj1Y && Obj1X + Obj1Width + 2 >= Obj2X
 				&& Obj2X + Obj2Width - 1 >= Obj1X) {
-			z1 = 1;
-			// System.out.println("klappti");
-			return 1;
+			return true;
 		} else {
-			return 0;
+			return false;
 		}
 
 	}
 
-	public int CollLinksP() {
+	public boolean CollLinksP() {
 		if (Obj1Y + Obj1Height - 1 >= Obj2Y && Obj2Y + Obj2Height - 1 >= Obj1Y && Obj1X + Obj1Width - 1 >= Obj2X
 				&& Obj2X + Obj2Width + 2 >= Obj1X) {
-			z1 = 1;
-			// System.out.println("klappti");
-			return 1;
+			return true;
 		} else {
-			return 0;
+			return false;
 		}
 
 	}
 
-	public int Coll1() {
+	public boolean Coll1() {
 		if (this.Obj1Y + Obj1Height >= Obj2Y && Obj2Y + Obj2Height >= Obj1Y && Obj1X + Obj1Width >= Obj2X
 				&& Obj2X + Obj2Width >= Obj1X) {
-			z1 = 1;
-			// System.out.println("klappti");
-			return 1;
+			return true;
 		} else {
-			return 0;
+			return false;
 		}
-	}
-
-	public int Coll2() {
-		if (Obj1Y + Obj1Height >= Obj2Y && Obj2Y + Obj2Height >= Obj1Y && Obj1X + Obj1Width >= Obj2X
-				&& Obj2X + Obj2Width + 1 >= Obj1X) {
-			z1 = 1;
-			// System.out.println("links");
-			return 1;
-		} else {
-			return 0;
-		}
-	}
-
-	public int Coll3() {
-		if (Obj1Y + Obj1Height >= Obj2Y && Obj2Y + Obj2Height + 1 >= Obj1Y && Obj1X + Obj1Width >= Obj2X
-				&& Obj2X + Obj2Width >= Obj1X) {
-			z1 = 1;
-			// System.out.println("unten");
-			return 1;
-		} else {
-			return 0;
-		}
-
-	}
-
-	public int Coll4() {
-		if (Obj1Y + Obj1Height >= Obj2Y && Obj2Y + Obj2Height - 1 >= Obj1Y && Obj1X + Obj1Width - 1 >= Obj2X
-				&& Obj2X + Obj2Width - 1 >= Obj1X) {
-			z1 = 1;
-			// System.out.println("klappti");
-			return 1;
-		} else {
-			return 0;
-		}
-
 	}
 
 }
