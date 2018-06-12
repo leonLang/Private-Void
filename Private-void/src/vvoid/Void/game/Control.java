@@ -3,9 +3,9 @@ package vvoid.Void.game;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import vvoid.Void.collision.EOArrey;
 import vvoid.init.main.Camera;
 import vvoid.init.main.Main;
-import vvoid.map.objects.EOArrey;
 
 public class Control implements KeyListener, Runnable {
 	public Control() {

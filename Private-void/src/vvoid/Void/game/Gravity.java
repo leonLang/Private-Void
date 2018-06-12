@@ -1,7 +1,7 @@
 package vvoid.Void.game;
 
+import vvoid.Void.collision.EOArrey;
 import vvoid.init.main.Camera;
-import vvoid.map.objects.EOArrey;
 
 public class Gravity implements Runnable{
 	public EOArrey eo = new EOArrey();

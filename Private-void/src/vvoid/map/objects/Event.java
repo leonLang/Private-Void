@@ -2,6 +2,7 @@ package vvoid.map.objects;
 
 import java.awt.Graphics;
 
+import vvoid.Void.collision.EOArrey;
 import vvoid.Void.game.Game;
 import vvoid.Void.game.Gravity;
 import vvoid.Void.game.Player;

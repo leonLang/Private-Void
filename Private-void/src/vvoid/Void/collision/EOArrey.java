@@ -1,4 +1,4 @@
-package vvoid.map.objects;
+package vvoid.Void.collision;
 
 import vvoid.Void.game.Game;
 import vvoid.Void.game.Player;

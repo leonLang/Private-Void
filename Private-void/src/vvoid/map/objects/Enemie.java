@@ -3,6 +3,7 @@ package vvoid.map.objects;
 import java.awt.Graphics;
 import java.awt.Image;
 
+import vvoid.Void.collision.EOArrey;
 import vvoid.Void.game.Game;
 import vvoid.init.main.Collision;
 

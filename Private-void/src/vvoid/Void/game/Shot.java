@@ -2,7 +2,7 @@ package vvoid.Void.game;
 
 import java.awt.Graphics;
 
-import vvoid.map.objects.EOArrey;
+import vvoid.Void.collision.EOArrey;
 
 public class Shot {
 	public String direction;

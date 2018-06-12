@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 
+import vvoid.Void.collision.EOArrey;
 import vvoid.Void.game.Game;
 import vvoid.Void.game.SpriteSheet;
 import vvoid.init.main.Main;

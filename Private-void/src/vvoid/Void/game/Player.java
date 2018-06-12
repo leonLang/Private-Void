@@ -2,9 +2,9 @@ package vvoid.Void.game;
 
 import java.awt.Graphics;
 
+import vvoid.Void.collision.EOArrey;
 import vvoid.init.main.Camera;
 import vvoid.init.main.LevelCompiler;
-import vvoid.map.objects.EOArrey;
 
 public class Player {
 	public int cp;
