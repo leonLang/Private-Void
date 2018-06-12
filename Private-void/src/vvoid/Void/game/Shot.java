@@ -18,14 +18,15 @@ public class Shot {
 		this.y = y;
 		width = 30;
 		height = 30;
-		eo.Shot(width, height, x, y);
-		System.out.println("hi");
 	}
 
 	public void draw(Graphics g) {
-		eo.Shot(width, height, x, y);
-		g.drawRect(x, y, width, height);
-		calc();
+		// eo.Shot(width, height, x, y);
+		if (eo.shotColl(x, y, width, height) == false) {
+			eo.shotColl(x, y, width, height);
+			g.drawRect(x, y, width, height);
+			calc();
+		}
 	}
 
 	public void calc() {

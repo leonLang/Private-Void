@@ -11,8 +11,10 @@ import vvoid.init.main.Collision;
 public class Enemie {
 	public EnemieMovement move = new EnemieMovement();
 	public EOArrey eo = new EOArrey();
-	public static Collision coll, coll1;
+	public  Collision coll, coll1;
+	public int idE;
 	public static int[] widthA = new int[100];
+	public static int id=-1;
 	public int x, y, width, height; // postition and size from the enemy
 	/*
 	 * private Image a1, a2, a3, a4, a5, a6, a7, a8, b1, b2, b3, b4, b5, b6, b7, b8,
@@ -30,6 +32,8 @@ public class Enemie {
 
 	public Enemie(int[] data) {
 		// spritePos();
+		id++;
+		idE = id;
 		this.IDO = data[7];
 		this.x = data[2] + 3;
 		this.y = data[3] + 16;
@@ -165,16 +169,23 @@ public class Enemie {
 
 	public void sh(Graphics g, Image a1, Image a2) {
 		eo.EnemyR();
-		eo.collShot();
+		eo.destroyE(idE);
+		/*if(idE == 68) {
+			eo.x=0;
+			//System.out.println("jo");
+		}*/
+		//System.out.println(idE);
 		// eo.CollPlayer();
 		x = eo.x;
 		y = eo.y;
+		eo.updateE(idE, x, y);
 		// y = EOArrey.y1;
 		// x = EOArrey.x1;
 		move.movement(g, a1, a2, x, y, width, height);
 	}
 
 	private void direction(Graphics g, Image e1, Image e2, Image e3, Image e4, Image e5, Image e6, Image e7, Image e8) {
+		eo.destroyE(idE);
 		if (eo.richtung == 0) {
 			sh(g, e1, e2);
 		}
