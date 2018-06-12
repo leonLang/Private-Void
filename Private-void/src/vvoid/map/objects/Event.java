@@ -27,6 +27,7 @@ public class Event {
 		if(eo.EventColl(this.x, this.y, this.width, this.height)) {
 			executeEvent();
 		}
+		
 	}
 	public void executeEvent() {
 		switch(ID) {
