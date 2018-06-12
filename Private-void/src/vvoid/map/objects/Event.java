@@ -2,7 +2,6 @@ package vvoid.map.objects;
 
 import java.awt.Graphics;
 
-import vvoid.Void.game.Player;
 import vvoid.init.main.LevelCompiler;
 
 public class Event {

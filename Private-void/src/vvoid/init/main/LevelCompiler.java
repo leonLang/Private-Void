@@ -149,7 +149,6 @@ public class LevelCompiler {
 	}
 
 	private void createBackground(int id) {
-		System.out.println("testest");
 		this.path = "/Background/background+" + Integer.toString(id) + ".jpg";
 		try {
 			img = ImageIO.read(ResourceLoader.load((this.path)));

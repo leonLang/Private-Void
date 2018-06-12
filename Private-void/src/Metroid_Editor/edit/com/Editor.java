@@ -57,7 +57,7 @@ public class Editor implements ActionListener{
 
 	
 	//JLabel options
-	public static int BackgroundLenght = 2;
+	public static int BackgroundLenght = 10;
 	public static int ObjectSolidLenght = 60;
 	public static int ObjectSoftLenght = 1;
 	public static int EnemieLenght = 25;
@@ -188,7 +188,7 @@ public class Editor implements ActionListener{
 	}
 	public void createFrame() {
 		
-		Openingframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Openingframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		Openingframe.setSize(new Dimension((int) width/2, (int) height/2));
 		Openingframe.setVisible(true);
         
