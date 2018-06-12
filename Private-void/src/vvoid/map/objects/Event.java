@@ -3,6 +3,7 @@ package vvoid.map.objects;
 import java.awt.Graphics;
 
 import vvoid.Void.collision.EOArrey;
+import vvoid.Void.collision.EventColl;
 import vvoid.Void.game.Game;
 import vvoid.Void.game.Gravity;
 import vvoid.Void.game.Player;
@@ -16,7 +17,7 @@ public class Event {
 	public int width;
 	public int height;
 	public int TPID;
-	public EOArrey eo;
+	public EventColl eC;
 
 	public Event(int[] data) {
 		this.ID = data[1];
@@ -25,11 +26,12 @@ public class Event {
 		this.width = data[4];
 		this.height = data[5];
 		this.TPID = data[7];
-		this.eo = new EOArrey();
+		this.eC = new EventColl(width,height,x,y);
 	}
 	public void drawEvent(Graphics g) {
 		g.drawRect(this.x, this.y, this.width, this.height);
-		if(eo.eventColl(this.x, this.y, this.width, this.height)) {
+		eC = new EventColl(width,height,x,y);
+		if(eC.eventColl()) {
 			executeEvent();
 		}
 		

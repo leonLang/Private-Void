@@ -24,11 +24,9 @@ public class EOArrey {
 								// only 1 block for collisiosn or he will bug
 	public int oben, rechts, unten, links, test;
 	public boolean shutdown;
-	public static boolean leftP, rightP, downP, upP;
 	public int linksP, rechtsP, untenP, obenP;
 	public Collision coll;
 	public Player pl;
-	public static int destroy = 10000;
 
 	public int richtung; // reihenfolge ist oben rechts unten links;
 
@@ -50,29 +48,10 @@ public class EOArrey {
 		yE[idE] = y;
 	}
 
-	public boolean shotColl(int x, int y, int width, int height) {
-		counterE = eAmount;
-		while (counterE >= 0) {
-			coll = new Collision(x, y, width, height, xE[counterE], yE[counterE], widthE[counterE], heightE[counterE]);
-			if (coll.Coll1() == true) {
-				destroy = counterE;
-				System.out.println(counterE);
-				shutdown = true;
-				counterE = -1;
-
-			}
-			counterE--;
-		}
-		if (shutdown == true) {
-			return true;
-		} else {
-			return false;
-		}
-	}
 
 	public void destroyE(int idE) {
-		if (destroy < 9000) {
-			if (idE == destroy) {
+		if (ShotColl.destroy < 9000) {
+			if (idE == ShotColl.destroy) {
 				x = 100000;
 			}
 		}
@@ -310,86 +289,6 @@ public class EOArrey {
 		}
 	}
 
-	public void collPlayer() {
-		counterP = oAmount; // for editing oAmount without change it
-		while (counterP >= 0) {
-			coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height, xO[counterP],
-					yO[counterP], widthO[counterP], heightO[counterP]);
-			if (coll.CollLinksP() == true) {
-				counterP = 0;
-				linksP = 1;
-			} else {
-				linksP = 0;
-			}
-			counterP--;
-		}
-		counterP = oAmount; // for editing oAmount without change it
-		while (counterP >= 0) {
-			coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height, xO[counterP],
-					yO[counterP], widthO[counterP], heightO[counterP]);
-			if (coll.CollObenP() == true) {
-				counterP = 0;
-				obenP = 1;
-			} else {
-				obenP = 0;
-			}
-			counterP--;
-		}
-		counterP = oAmount; // for editing oAmount without change it
-		while (counterP >= 0) {
-			coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height, xO[counterP],
-					yO[counterP], widthO[counterP], heightO[counterP]);
-			if (coll.CollRechtsP() == true) {
-				counterP = 0;
-				rechtsP = 1;
-			} else {
-				rechtsP = 0;
-			}
-			counterP--;
-		}
-		counterP = oAmount; // for editing oAmount without change it
-		while (counterP >= 0) {
-			coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height, xO[counterP],
-					yO[counterP], widthO[counterP], heightO[counterP]);
-			if (coll.CollUntenP() == true) {
-				counterP = 0;
-				untenP = 1;
-			} else {
-				untenP = 0;
-			}
-			counterP--;
-		}
-
-		if (linksP == 1) {
-			leftP = true;
-		} else {
-			leftP = false;
-		}
-		if (rechtsP == 1) {
-			rightP = true;
-		} else {
-			rightP = false;
-		}
-		if (untenP == 1) {
-			downP = true;
-		} else {
-			downP = false;
-		}
-		if (obenP == 1) {
-			upP = true;
-		} else {
-			upP = false;
-		}
-	}
-
-	public boolean eventColl(int x, int y, int width, int height) {
-		coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height, x, y, width, height);
-		if (coll.Coll1() == true) {
-			return true;
-		} else {
-			return false;
-		}
-
-	}
+	
 
 }

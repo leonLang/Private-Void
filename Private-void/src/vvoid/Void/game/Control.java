@@ -4,6 +4,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import vvoid.Void.collision.EOArrey;
+import vvoid.Void.collision.PlayerColl;
 import vvoid.init.main.Camera;
 import vvoid.init.main.Main;
 
@@ -85,7 +86,7 @@ public class Control implements KeyListener, Runnable {
 			}
 			if (e.getKeyCode() == KeyEvent.VK_SPACE) {
 				if (Game.player.j != true) {
-					if (EOArrey.downP) {
+					if (PlayerColl.downP) {
 						Game.player.Move("j");
 						Game.player.j = true;
 						

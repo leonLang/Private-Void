@@ -1,8 +1,7 @@
 package vvoid.Void.game;
 
 import java.awt.Graphics;
-
-import vvoid.Void.collision.EOArrey;
+import vvoid.Void.collision.ShotColl;
 
 public class Shot {
 	public String direction;
@@ -10,7 +9,7 @@ public class Shot {
 	public int y;
 	public int width;
 	public int height;
-	public EOArrey eo = new EOArrey();
+	public ShotColl sC;
 
 	public Shot(String getfacing, int x, int y) {
 		this.direction = getfacing;
@@ -22,8 +21,9 @@ public class Shot {
 
 	public void draw(Graphics g) {
 		// eo.Shot(width, height, x, y);
-		if (eo.shotColl(x, y, width, height) == false) {
-			eo.shotColl(x, y, width, height);
+		sC = new ShotColl(width, height, x, y);
+		if (sC.shotColl() == false) {
+			sC.shotColl();
 			g.drawRect(x, y, width, height);
 			calc();
 		}

@@ -2,7 +2,7 @@ package vvoid.Void.game;
 
 import java.awt.Graphics;
 
-import vvoid.Void.collision.EOArrey;
+import vvoid.Void.collision.PlayerColl;
 import vvoid.init.main.Camera;
 import vvoid.init.main.LevelCompiler;
 
@@ -25,7 +25,7 @@ public class Player {
 	public int sleep;
 	int test = 0, test1;
 	public Gravity grav = new Gravity();
-	public EOArrey eo = new EOArrey();
+	public PlayerColl pC = new PlayerColl();
 	public Thread gt;
 
 	public Player(int x, int y, int width, int height, String facing) {
@@ -151,14 +151,14 @@ public class Player {
 		}
 
 		public void MoveLeft() {
-			eo.collPlayer();
+			pC.collPlayer();
 			facing = "left";
 			while (l) {
-				if (EOArrey.leftP == true) {
+				if (PlayerColl.leftP == true) {
 					waitl = true;
 				} else if (waitl != true) {
 					for (int i = 0; i < Camera.step; i++) {
-						if (EOArrey.leftP != true) {
+						if (PlayerColl.leftP != true) {
 							Camera.addx(-1);
 							Game.player.addX(1);
 						}
@@ -179,15 +179,15 @@ public class Player {
 		}
 
 		public void MoveRight() {
-			eo.collPlayer();
+			pC.collPlayer();
 
 			facing = "right";
 			while (r) {
-				if (EOArrey.rightP == true) {
+				if (PlayerColl.rightP == true) {
 					waitr = true;
 				} else if (waitr != true) {
 					for (int i = 0; i < Camera.step; i++) {
-						if (EOArrey.rightP != true) {
+						if (PlayerColl.rightP != true) {
 							Camera.addx(1);
 							Game.player.addX(-1);
 						}
@@ -208,14 +208,14 @@ public class Player {
 		}
 
 		public void MoveUp() {
-			eo.collPlayer();
+			pC.collPlayer();
 			facing = "up";
 			while (u) {
-				if (EOArrey.upP == true) {
+				if (PlayerColl.upP == true) {
 					waitu = true;
 				} else if (waitu != true) {
 					for (int i = 0; i < Camera.step; i++) {
-						if (EOArrey.upP != true) {
+						if (PlayerColl.upP != true) {
 							Camera.addy(-1);
 							Game.player.addY(1);
 						}
@@ -236,14 +236,14 @@ public class Player {
 		}
 
 		public void MoveDown() {
-			eo.collPlayer();
+			pC.collPlayer();
 			facing = "down";
 			while (d) {
-				if (EOArrey.downP == true) {
+				if (PlayerColl.downP == true) {
 					waitd = true;
 				} else if (waitd != true) {
 					for (int i = 0; i < Camera.step; i++) {
-						if (EOArrey.downP != true) {
+						if (PlayerColl.downP != true) {
 							Camera.addy(1);
 							Game.player.addY(-1);
 						}
@@ -264,21 +264,21 @@ public class Player {
 		}
 
 		public void jump() {
-			eo.collPlayer();
+			pC.collPlayer();
 			while (j) {
 				if (count < 80) {
-					eo.collPlayer();
+					pC.collPlayer();
 					cp = 0;
 					count++;
 					for (int i = 0; i < 5; i++) {
-						eo.collPlayer();
-						if (EOArrey.upP != true) {
+						pC.collPlayer();
+						if (PlayerColl.upP != true) {
 							Camera.addy(-1);
 							Game.player.addY(1);
 						}
 					}
 				} else {
-					if (EOArrey.downP) {
+					if (PlayerColl.downP) {
 						j = false;
 						count = 0;
 					}
@@ -290,7 +290,7 @@ public class Player {
 				}
 			}
 			for (int i = 0; i < 2; i++) {
-				if (EOArrey.upP != true) {
+				if (PlayerColl.upP != true) {
 					Camera.addy(-1);
 					Game.player.addY(1);
 				}
