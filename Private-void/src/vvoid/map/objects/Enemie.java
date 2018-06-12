@@ -45,6 +45,7 @@ public class Enemie {
 	}
 
 	public void drawEnemie(Graphics g) {
+		eo.tBack();
 		eo.eVSPl();
 		/*
 		 * if(testi == 3 ) { Camera.addy(1); Game.player.addY(-1); testi=0; } else {

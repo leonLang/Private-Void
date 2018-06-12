@@ -293,12 +293,22 @@ public class EOArrey {
 		// System.out.println(xO[1]);
 	}
 
+	public void tBack() {
+		if(time <=0) {
+			
+		}
+		else {
+			time--;
+		}
+	}
+
 	public void eVSPl() {
 		if (time <= 0) {
 			coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height, x, y, width,
 					height);
 			if (coll.Coll1() == 1) {
 				Game.leben--;
+				time = 120;
 			}
 		}
 	}
