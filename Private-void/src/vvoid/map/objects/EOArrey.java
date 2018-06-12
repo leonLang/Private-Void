@@ -15,7 +15,7 @@ public class EOArrey {
 	public static int[] xS = new int[10000]; // x-position (blocks)
 	public static int[] yS = new int[10000]; // y-postion (blocks)
 	public static int oAmount = -1,sAmount; // number of blocks (-1 is for the array who starts with 0)
-	public int counter, counterP, start, s1, s2;
+	public int counter, counterP,counterS, start, s1, s2;
 	public int width, height, x, y, id; // get position and size from enemies
 	public boolean up, right, down, left;
 	private boolean direction = true;
@@ -40,23 +40,40 @@ public class EOArrey {
 	
 
 	public void Objekt(int width, int height, int x, int y) {
-		sAmount++;
+		oAmount++;
 		widthO[oAmount] = width;
 		heightO[oAmount] = height;
 		xO[oAmount] = x;
 		yO[oAmount] = y;
 
 	}
-
 	public void Shot(int width, int height, int x, int y) {
-		oAmount++;
+		System.out.println(width);
 		widthS[sAmount] = width;
 		heightS[sAmount] = height;
 		xS[sAmount] = x;
 		yS[sAmount] = y;
+		sAmount++;
 
 	}
-	
+	public void collShot() {
+		counterS = sAmount;
+		
+		System.out.println(xS[0]);
+		while (counterS >=0) {
+			try {
+				coll = new Collision(this.x, this.y, this.width, this.height, xS[counterS], yS[counterS], widthS[counterS],
+						heightS[counterS]);
+				if(coll.Coll1() == 1) {
+					x= -2000;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			
+			counterS--;
+		}
+	}
 	public void EnemyR() {
 		// System.out.println(Game.player.getY());
 
