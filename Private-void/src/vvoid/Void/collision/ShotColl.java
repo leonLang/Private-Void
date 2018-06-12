@@ -19,10 +19,10 @@ public class ShotColl {
 	}
 
 	public boolean shotColl() {
-		counterE = EOArrey.eAmount;
+		counterE = EnemieColl.eAmount;
 		while (counterE >= 0) {
-			coll = new Collision(x, y, width, height, EOArrey.xE[counterE], EOArrey.yE[counterE],
-					EOArrey.widthE[counterE], EOArrey.heightE[counterE]);
+			coll = new Collision(x, y, width, height, EnemieColl.xE[counterE], EnemieColl.yE[counterE],
+					EnemieColl.widthE[counterE], EnemieColl.heightE[counterE]);
 			if (coll.Coll1() == true) {
 				destroy = counterE;
 				System.out.println(counterE);

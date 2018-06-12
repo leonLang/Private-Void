@@ -3,20 +3,16 @@ package vvoid.map.objects;
 import java.awt.Graphics;
 import java.awt.Image;
 
-import vvoid.Void.collision.EOArrey;
+import vvoid.Void.collision.EnemieColl;
 import vvoid.Void.game.Game;
-import vvoid.init.main.Collision;
 
 public class Enemie {
-	public EnemieMovement move = new EnemieMovement();
-	public EOArrey eo = new EOArrey();
-	public Collision coll, coll1;
-	public int idE;
-	public static int[] widthA = new int[100];
-	public static int id = -1;
-	public int x, y, width, height; // postition and size from the enemy
+	private EnemieMovement move = new EnemieMovement();
+	private EnemieColl eo = new EnemieColl();
+	private int idE;
+	private int x, y, width, height; // postition and size from the enemy
 	private int IDO;
-	public int zA;
+	public static int id = -1;
 
 	public Enemie(int[] data) {
 		id++;
@@ -27,7 +23,6 @@ public class Enemie {
 		this.width = data[4] - 16;
 		this.height = data[5] - 16;
 		eo.enemyS(width, height, x, y, IDO);
-		move.test();
 	}
 
 	public void drawEnemie(Graphics g) {
@@ -152,7 +147,7 @@ public class Enemie {
 		}
 	}
 
-	public void sh(Graphics g, Image a1, Image a2) {
+	private void sh(Graphics g, Image a1, Image a2) {
 		eo.enemyR();
 		eo.destroyE(idE);
 		x = eo.x;

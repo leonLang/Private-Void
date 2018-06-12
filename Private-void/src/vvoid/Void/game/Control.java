@@ -3,7 +3,7 @@ package vvoid.Void.game;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import vvoid.Void.collision.EOArrey;
+import vvoid.Void.collision.EnemieColl;
 import vvoid.Void.collision.PlayerColl;
 import vvoid.init.main.Camera;
 import vvoid.init.main.Main;

@@ -1,35 +1,26 @@
 package vvoid.Void.collision;
 
 import vvoid.Void.game.Game;
-import vvoid.Void.game.Player;
 import vvoid.init.main.Collision;
 
-public class EOArrey {
+public class EnemieColl {
 
-	public static int[] widthO = new int[10000];// width(blocks)
-	public static int[] heightO = new int[10000];// height (blocks)
-	public static int[] xO = new int[10000]; // x-position (blocks)
-	public static int[] yO = new int[10000]; // y-postion (blocks)
+	private Collision coll;
+	private int oben, rechts, unten, links;
+	private int counter, start, time;
+	public boolean up, right, down, left;
+	private boolean direction = true;
+	private boolean o, r, l; // If the enemy stands on more than one block, you have to make that he uses
+								// only 1 block for collision or he will bug
+	public int width, height, x, y, id; // get position and size from enemies
+	public int richtung; // reihenfolge ist oben rechts unten links;
 	public static int[] widthE = new int[10000];// width(blocks)
 	public static int[] heightE = new int[10000];// height (blocks)
 	public static int[] xE = new int[10000]; // x-position (blocks)
 	public static int[] yE = new int[10000]; // y-postion (blocks)
-	public static int oAmount = -1, eAmount = -1; // number of blocks (-1 is for the array who starts with 0)
-	private int counter, counterP, counterE, start;
-	public int width, height, x, y, id; // get position and size from enemies
-	public boolean up, right, down, left;
-	private int time;
-	private boolean direction = true;
-	private boolean o, r, l; // If the enemy stands on mmore than one block, you have to make that he uses
-								// only 1 block for collisiosn or he will bug
-	public int oben, rechts, unten, links, test;
-	public boolean shutdown;
-	public int linksP, rechtsP, untenP, obenP;
-	public Collision coll;
-	public Player pl;
+	public static int eAmount = -1; // number of blocks (-1 is for the array who starts with 0)
 
-	public int richtung; // reihenfolge ist oben rechts unten links;
-
+	
 	public void enemyS(int width, int height, int x, int y, int id) {
 		eAmount++;
 		widthE[eAmount] = width;
@@ -43,29 +34,6 @@ public class EOArrey {
 		this.id = id;
 	}
 
-	public void updateE(int idE, int x, int y) {
-		xE[idE] = x;
-		yE[idE] = y;
-	}
-
-
-	public void destroyE(int idE) {
-		if (ShotColl.destroy < 9000) {
-			if (idE == ShotColl.destroy) {
-				x = 100000;
-			}
-		}
-	}
-
-	public void objekt(int width, int height, int x, int y) {
-		oAmount++;
-		widthO[oAmount] = width;
-		heightO[oAmount] = height;
-		xO[oAmount] = x;
-		yO[oAmount] = y;
-
-	}
-
 	public void enemyR() {
 		// System.out.println(Game.player.getY());
 
@@ -74,14 +42,14 @@ public class EOArrey {
 		 * start Change enemy width to 50 so you can detect if enemy is left from the
 		 * block in the start Change heightO to +16 to detect the enemy under the block
 		 */
-		counter = oAmount; // for editing oAmount without change it
+		counter = ObjektColl.oAmount; // for editing oAmount without change it
 		o = false;
 		r = false;
 		l = false;
 		while (counter >= 0) {
 			if (id >= 5 && id <= 14 || id >= 18 && id <= 20 || id >= 23 && id <= 25) {
-				coll = new Collision(this.x, this.y, this.width, this.height, xO[counter], yO[counter], widthO[counter],
-						heightO[counter]);
+				coll = new Collision(this.x, this.y, this.width, this.height, ObjektColl.xO[counter],
+						ObjektColl.yO[counter], ObjektColl.widthO[counter], ObjektColl.heightO[counter]);
 				if (coll.CollRechts() == true) {
 					direction = false;
 					counter = -1;
@@ -94,30 +62,31 @@ public class EOArrey {
 			} else {
 				// Only do this in the beginning
 				if (start == 0) {
-					coll = new Collision(this.x, this.y, this.width, this.height, xO[counter], yO[counter],
-							widthO[counter], heightO[counter]);
+					coll = new Collision(this.x, this.y, this.width, this.height, ObjektColl.xO[counter],
+							ObjektColl.yO[counter], ObjektColl.widthO[counter], ObjektColl.heightO[counter]);
 
 					if (coll.Coll1() == true) {
 						// Check if block has collision from above
 						start = 1;
 					} else {
-						coll = new Collision(this.x, this.y, this.width, this.height, xO[counter], yO[counter],
-								widthO[counter], heightO[counter] + 16);
+						coll = new Collision(this.x, this.y, this.width, this.height, ObjektColl.xO[counter],
+								ObjektColl.yO[counter], ObjektColl.widthO[counter], ObjektColl.heightO[counter] + 16);
 						if (coll.Coll1() == true) {
 							// Check if block has collision from below
 							y = y - 16;
 							start = 1;
 						} else {
-							coll = new Collision(this.x, this.y, 50, this.height, xO[counter], yO[counter],
-									widthO[counter], heightO[counter]);
+							coll = new Collision(this.x, this.y, 50, this.height, ObjektColl.xO[counter],
+									ObjektColl.yO[counter], ObjektColl.widthO[counter], ObjektColl.heightO[counter]);
 							if (coll.Coll1() == true) {
 								// Check if block has collision from left
 								x = x + 13;
 								start = 1;
 
 							} else {
-								coll = new Collision(this.x, this.y, this.width, this.height, xO[counter], yO[counter],
-										widthO[counter] + 3, heightO[counter]);
+								coll = new Collision(this.x, this.y, this.width, this.height, ObjektColl.xO[counter],
+										ObjektColl.yO[counter], ObjektColl.widthO[counter] + 3,
+										ObjektColl.heightO[counter]);
 								if (coll.Coll1() == true) {
 
 									x = x - 3;
@@ -132,8 +101,8 @@ public class EOArrey {
 					}
 				}
 
-				coll = new Collision(this.x, this.y, this.width, this.height, xO[counter], yO[counter], widthO[counter],
-						heightO[counter]);
+				coll = new Collision(this.x, this.y, this.width, this.height, ObjektColl.xO[counter],
+						ObjektColl.yO[counter], ObjektColl.widthO[counter], ObjektColl.heightO[counter]);
 				counter--;
 
 				if (coll.CollOben() == true) {
@@ -164,7 +133,7 @@ public class EOArrey {
 				}
 				if (up == true) {
 
-					if (oben >= oAmount * 3) {
+					if (oben >= ObjektColl.oAmount * 3) {
 						y = y + 1;
 						up = false;
 					}
@@ -196,7 +165,7 @@ public class EOArrey {
 					rechts++;
 				}
 				if (right == true) {
-					if (rechts >= oAmount * 3) {
+					if (rechts >= ObjektColl.oAmount * 3) {
 						x--;
 						right = false;
 					}
@@ -228,7 +197,7 @@ public class EOArrey {
 					unten++;
 				}
 				if (down == true) {
-					if (unten >= oAmount * 3) {
+					if (unten >= ObjektColl.oAmount * 3) {
 						y--;
 						down = false;
 					}
@@ -253,7 +222,7 @@ public class EOArrey {
 					links++;
 				}
 				if (left == true) {
-					if (links >= oAmount * 3) {
+					if (links >= ObjektColl.oAmount * 3) {
 						x++;
 						left = false;
 					}
@@ -267,6 +236,19 @@ public class EOArrey {
 				x--;
 			}
 			counter = -1;
+		}
+	}
+
+	public void updateE(int idE, int x, int y) {
+		xE[idE] = x;
+		yE[idE] = y;
+	}
+
+	public void destroyE(int idE) {
+		if (ShotColl.destroy < 9000) {
+			if (idE == ShotColl.destroy) {
+				x = 100000;
+			}
 		}
 	}
 
@@ -288,7 +270,5 @@ public class EOArrey {
 			}
 		}
 	}
-
-	
 
 }

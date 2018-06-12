@@ -4,14 +4,14 @@ import vvoid.Void.collision.PlayerColl;
 import vvoid.init.main.Camera;
 
 public class Gravity implements Runnable {
-	public PlayerColl pC = new PlayerColl();
-	int test = 0;
+	private PlayerColl pC = new PlayerColl();
+	private boolean loop;
 
 	public Gravity() {
 	}
 
 	public void grav() {
-		while (test == 0) {
+		while (loop != true) {
 			pC.collPlayer();
 			try {
 				Thread.sleep(1);

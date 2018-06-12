@@ -1,33 +1,27 @@
 package vvoid.init.main;
 
-import java.awt.Toolkit;
-import java.io.InputStream;
 import vvoid.Void.game.Control;
 import vvoid.Void.game.Game;
 import vvoid.Void.game.Menue;
+
 public class Main {
 	public static boolean running = true;
 	public static boolean paused = false;
-	public static boolean menu= true;
+	public static boolean menu = true;
 	public static boolean loading = false;
-	private static int fps = 60;
-	private static int frameCount = 0;
 	public static DrawPanel panel;
 	public static Menue menue;
 	public static Frame mainframe;
 	public static Control control;
-	
-	//public static BindingControl Bcontrol;
+
 	public static void main(String[] args) throws InterruptedException {
 		control = new Control();
-		mainframe = new Frame(Game.WIDTH, Game.HEIGHT,"titel",true);
-		//Bcontrol = new BindingControl();
+		mainframe = new Frame(Game.WIDTH, Game.HEIGHT, "titel", true);
 		menue = new Menue();
 		loop();
 
 	}
 
-	
 	public static void loop() {
 		final double GAME_HERTZ = 30.0;
 		final double TIME_BETWEEN_UPDATES = 1000000000 / GAME_HERTZ;
@@ -54,9 +48,6 @@ public class Main {
 
 				int thisSecond = (int) (lastUpdateTime / 1000000000);
 				if (thisSecond > lastSecondTime) {
-					// System.out.println("NEW SECOND " + thisSecond + " " + frameCount);
-					fps = frameCount;
-					frameCount = 0;
 					lastSecondTime = thisSecond;
 				}
 

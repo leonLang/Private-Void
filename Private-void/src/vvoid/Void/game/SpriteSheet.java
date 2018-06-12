@@ -1,46 +1,49 @@
 package vvoid.Void.game;
+
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
 public class SpriteSheet {
-	private  BufferedImage metroid,  br_grass,br_recolor,br,character;
-	public BufferedImage a1, a2, a3, a4, a5, a6, a7, a8, b1, b2, b3, b4, b5, b6, b7, b8, c1, c2, c3, c4, c5, c6, c7, c8, d1,
-	d2, d3, d4, d5, d6, d7, d8;
-public BufferedImage e, f, g1, h, i, j1, j2, k1, k2, l1, l2, m1, m2, n1, n2;
-public BufferedImage o1, o2, o3, o4, o5, o6, o7, o8, p1, p2, p3, p4, p5, p6, p7, p8, q1, q2, q3, q4, q5, q6, q7, q8;
-public BufferedImage r1, r2, s1, s2, t1, t2;
-public BufferedImage u1, u2, u3, u4, u5, u6, u7, u8, v1, v2, v3, v4, v5, v6, v7, v8;
-public BufferedImage w1, w2, z, zz;
-public BufferedImage[] brD = new BufferedImage[100], brG = new BufferedImage[100],brR = new BufferedImage[100];
-private int x,y;
+	private BufferedImage metroid, br_grass, br_recolor, br;
+	public BufferedImage a1, a2, a3, a4, a5, a6, a7, a8, b1, b2, b3, b4, b5, b6, b7, b8, c1, c2, c3, c4, c5, c6, c7, c8,
+			d1, d2, d3, d4, d5, d6, d7, d8;
+	public BufferedImage e, f, g1, h, i, j1, j2, k1, k2, l1, l2, m1, m2, n1, n2;
+	public BufferedImage o1, o2, o3, o4, o5, o6, o7, o8, p1, p2, p3, p4, p5, p6, p7, p8, q1, q2, q3, q4, q5, q6, q7, q8;
+	public BufferedImage r1, r2, s1, s2, t1, t2;
+	public BufferedImage u1, u2, u3, u4, u5, u6, u7, u8, v1, v2, v3, v4, v5, v6, v7, v8;
+	public BufferedImage w1, w2, z, zz;
+	public BufferedImage[] brD = new BufferedImage[100], brG = new BufferedImage[100], brR = new BufferedImage[100];
+	private int x, y;
+
 	public SpriteSheet() {
 		try {
 			metroid = ImageIO.read(getClass().getResourceAsStream("textures/metroid.png"));
-			//br_column = ImageIO.read(getClass().getResourceAsStream("textures/br_column.png"));
+			// br_column =
+			// ImageIO.read(getClass().getResourceAsStream("textures/br_column.png"));
 			br_grass = ImageIO.read(getClass().getResourceAsStream("textures/br_grass.png"));
-			//br_grass1 = ImageIO.read(getClass().getResourceAsStream("textures/br_grass1.png"));
+			// br_grass1 =
+			// ImageIO.read(getClass().getResourceAsStream("textures/br_grass1.png"));
 			br_recolor = ImageIO.read(getClass().getResourceAsStream("textures/br_recolor.png"));
 			br = ImageIO.read(getClass().getResourceAsStream("textures/br.png"));
-			character = ImageIO.read(getClass().getResourceAsStream("textures/character.jpg"));
+			// character =
+			// ImageIO.read(getClass().getResourceAsStream("textures/character.jpg"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("hi");
 		for (int i = 0; i < 20; i++) {
 			brD[i] = brdefault(x, y, 50, 50);
 			brG[i] = grass(x, y, 50, 50);
-			brR[i] = recolor(x,y,50,50);
-			if(x == 200) {
-				x= 0;
-				y=y+50;
+			brR[i] = recolor(x, y, 50, 50);
+			if (x == 200) {
+				x = 0;
+				y = y + 50;
+			} else {
+				x = x + 50;
 			}
-			else {
-				x= x+50;
-			}
-			
+
 		}
 		a1 = crop(9, 7, 15, 14);
 		a2 = crop(27, 7, 16, 14);
@@ -74,11 +77,11 @@ private int x,y;
 		d6 = crop(501, 7, 16, 14);
 		d7 = crop(519, 7, 16, 14);
 		d8 = crop(536, 7, 16, 14);
-		e =  crop(13, 25, 18, 28);
-		f =  crop(53, 25, 18, 28);
+		e = crop(13, 25, 18, 28);
+		f = crop(53, 25, 18, 28);
 		g1 = crop(91, 25, 18, 28);
-		h =  crop(128, 25, 18, 28);
-		i =  crop(166, 25, 18, 28);
+		h = crop(128, 25, 18, 28);
+		i = crop(166, 25, 18, 28);
 		j1 = crop(212, 28, 25, 23);
 		j2 = crop(238, 28, 25, 23);
 		k1 = crop(264, 28, 25, 23);
@@ -137,7 +140,7 @@ private int x,y;
 		v8 = crop(0, 0, 1, 1);
 		w1 = crop(168, 152, 15, 40);
 		w2 = crop(168, 152, 15, 40);
-		z =  crop(200, 152, 15, 40);
+		z = crop(200, 152, 15, 40);
 		zz = crop(230, 152, 15, 40);
 		a1 = crop(9, 7, 15, 14);
 		a2 = crop(27, 7, 16, 14);
@@ -171,11 +174,11 @@ private int x,y;
 		d6 = crop(501, 7, 16, 14);
 		d7 = crop(519, 7, 16, 14);
 		d8 = crop(536, 7, 16, 14);
-		e =  crop(13, 25, 18, 28);
-		f =  crop(53, 25, 18, 28);
+		e = crop(13, 25, 18, 28);
+		f = crop(53, 25, 18, 28);
 		g1 = crop(91, 25, 18, 28);
-		h =  crop(128, 25, 18, 28);
-		i =  crop(166, 25, 18, 28);
+		h = crop(128, 25, 18, 28);
+		i = crop(166, 25, 18, 28);
 		j1 = crop(212, 28, 25, 23);
 		j2 = crop(238, 28, 25, 23);
 		k1 = crop(264, 28, 25, 23);
@@ -234,7 +237,7 @@ private int x,y;
 		v8 = crop(0, 0, 1, 1);
 		w1 = crop(168, 152, 15, 40);
 		w2 = crop(168, 152, 15, 40);
-		z =  crop(200, 152, 15, 40);
+		z = crop(200, 152, 15, 40);
 		zz = crop(230, 152, 15, 40);
 		a1 = crop(9, 7, 15, 14);
 		a2 = crop(27, 7, 16, 14);
@@ -268,11 +271,11 @@ private int x,y;
 		d6 = crop(501, 7, 16, 14);
 		d7 = crop(519, 7, 16, 14);
 		d8 = crop(536, 7, 16, 14);
-		e =  crop(13, 25, 18, 28);
-		f =  crop(53, 25, 18, 28);
+		e = crop(13, 25, 18, 28);
+		f = crop(53, 25, 18, 28);
 		g1 = crop(91, 25, 18, 28);
-		h =  crop(128, 25, 18, 28);
-		i =  crop(166, 25, 18, 28);
+		h = crop(128, 25, 18, 28);
+		i = crop(166, 25, 18, 28);
 		j1 = crop(212, 28, 25, 23);
 		j2 = crop(238, 28, 25, 23);
 		k1 = crop(264, 28, 25, 23);
@@ -331,25 +334,29 @@ private int x,y;
 		v8 = crop(0, 0, 1, 1);
 		w1 = crop(168, 152, 15, 40);
 		w2 = crop(168, 152, 15, 40);
-		z =  crop(200, 152, 15, 40);
+		z = crop(200, 152, 15, 40);
 		zz = crop(230, 152, 15, 40);
 	}
-	
-	public BufferedImage crop(int x, int y, int width, int height) {
+
+	private BufferedImage crop(int x, int y, int width, int height) {
 		return metroid.getSubimage(x, y, width, height);
 	}
-	public BufferedImage grass(int x, int y, int width, int height) {
+
+	private BufferedImage grass(int x, int y, int width, int height) {
 		return br_grass.getSubimage(x, y, width, height);
 	}
-	public BufferedImage recolor(int x, int y, int width, int height) {
+
+	private BufferedImage recolor(int x, int y, int width, int height) {
 		return br_recolor.getSubimage(x, y, width, height);
 	}
-	public BufferedImage brdefault(int x, int y, int width, int height) {
+
+	private BufferedImage brdefault(int x, int y, int width, int height) {
 		return br.getSubimage(x, y, width, height);
 	}
-	public BufferedImage chare(int x, int y, int width, int height) {
-		return character.getSubimage(x, y, width, height);
-	}
-	
-	
+
+	/*
+	 * private BufferedImage chare(int x, int y, int width, int height) { return
+	 * character.getSubimage(x, y, width, height); }
+	 */
+
 }

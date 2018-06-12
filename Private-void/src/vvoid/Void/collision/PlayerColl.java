@@ -6,14 +6,15 @@ import vvoid.init.main.Collision;
 public class PlayerColl {
 	private int counterP;
 	private Collision coll;
-	public static boolean leftP, rightP, downP, upP;
 	private int linksP, rechtsP, untenP, obenP;
+	public static boolean leftP, rightP, downP, upP;
 
 	public void collPlayer() {
-		counterP = EOArrey.oAmount; // for editing oAmount without change it
+		counterP = ObjektColl.oAmount; // for editing oAmount without change it
 		while (counterP >= 0) {
 			coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height,
-					EOArrey.xO[counterP], EOArrey.yO[counterP], EOArrey.widthO[counterP], EOArrey.heightO[counterP]);
+					ObjektColl.xO[counterP], ObjektColl.yO[counterP], ObjektColl.widthO[counterP],
+					ObjektColl.heightO[counterP]);
 			if (coll.CollLinksP() == true) {
 				counterP = 0;
 				linksP = 1;
@@ -22,10 +23,11 @@ public class PlayerColl {
 			}
 			counterP--;
 		}
-		counterP = EOArrey.oAmount; // for editing oAmount without change it
+		counterP = ObjektColl.oAmount; // for editing oAmount without change it
 		while (counterP >= 0) {
 			coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height,
-					EOArrey.xO[counterP], EOArrey.yO[counterP], EOArrey.widthO[counterP], EOArrey.heightO[counterP]);
+					ObjektColl.xO[counterP], ObjektColl.yO[counterP], ObjektColl.widthO[counterP],
+					ObjektColl.heightO[counterP]);
 			if (coll.CollObenP() == true) {
 				counterP = 0;
 				obenP = 1;
@@ -34,10 +36,11 @@ public class PlayerColl {
 			}
 			counterP--;
 		}
-		counterP = EOArrey.oAmount; // for editing oAmount without change it
+		counterP = ObjektColl.oAmount; // for editing oAmount without change it
 		while (counterP >= 0) {
 			coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height,
-					EOArrey.xO[counterP], EOArrey.yO[counterP], EOArrey.widthO[counterP], EOArrey.heightO[counterP]);
+					ObjektColl.xO[counterP], ObjektColl.yO[counterP], ObjektColl.widthO[counterP],
+					ObjektColl.heightO[counterP]);
 			if (coll.CollRechtsP() == true) {
 				counterP = 0;
 				rechtsP = 1;
@@ -46,10 +49,11 @@ public class PlayerColl {
 			}
 			counterP--;
 		}
-		counterP = EOArrey.oAmount; // for editing oAmount without change it
+		counterP = ObjektColl.oAmount; // for editing oAmount without change it
 		while (counterP >= 0) {
 			coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height,
-					EOArrey.xO[counterP], EOArrey.yO[counterP], EOArrey.widthO[counterP], EOArrey.heightO[counterP]);
+					ObjektColl.xO[counterP], ObjektColl.yO[counterP], ObjektColl.widthO[counterP],
+					ObjektColl.heightO[counterP]);
 			if (coll.CollUntenP() == true) {
 				counterP = 0;
 				untenP = 1;
