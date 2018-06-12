@@ -16,7 +16,7 @@ public class Game extends Thread{
     public static int x = 0;
     public static boolean move = false;
     public static SpriteSheet sheet;
-    
+    public static int leben = 3;
     public void run() {
     	sheet = new SpriteSheet();
         compiler = new LevelCompiler(1);
@@ -36,7 +36,9 @@ public class Game extends Thread{
     } 
 
     public static void draw(Graphics g) {
+    	
         g.drawImage(LevelCompiler.getbackground(), 0, 0, WIDTH, HEIGHT, null);
+        g.drawString("Leben:" + leben, 1100, 20);
         player.drawPlayer(g);
         Graphics g2d = (Graphics2D) g;
         g2d.translate(cam.getX(), cam.getY());

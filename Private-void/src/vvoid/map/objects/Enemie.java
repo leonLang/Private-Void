@@ -6,6 +6,7 @@ import java.awt.Image;
 import vvoid.Void.game.Game;
 import vvoid.Void.game.Player;
 import vvoid.Void.game.SpriteSheet;
+import vvoid.init.main.Camera;
 import vvoid.init.main.Collision;
 
 public class Enemie {
@@ -44,6 +45,7 @@ public class Enemie {
 	}
 
 	public void drawEnemie(Graphics g) {
+		eo.eVSPl();
 		/*
 		 * if(testi == 3 ) { Camera.addy(1); Game.player.addY(-1); testi=0; } else {
 		 * testi++; }

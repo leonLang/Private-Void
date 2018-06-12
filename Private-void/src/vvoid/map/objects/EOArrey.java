@@ -18,6 +18,7 @@ public class EOArrey {
 	private int counter, counterP, counterE, start;
 	public int width, height, x, y, id; // get position and size from enemies
 	public boolean up, right, down, left;
+	private int time;
 	private boolean direction = true;
 	private boolean o, r, u, l; // If the enemy stands on mmore than one block, you have to make that he uses
 								// only 1 block for collisiosn or he will bug
@@ -43,10 +44,12 @@ public class EOArrey {
 		this.y = y;
 		this.id = id;
 	}
-	public void updateE(int idE,int x, int y) {
-		xE[idE] = x; 
-		yE[idE] = y;		
+
+	public void updateE(int idE, int x, int y) {
+		xE[idE] = x;
+		yE[idE] = y;
 	}
+
 	public boolean shotColl(int x, int y, int width, int height) {
 		counterE = eAmount;
 		while (counterE >= 0) {
@@ -55,17 +58,16 @@ public class EOArrey {
 				destroy = counterE;
 				System.out.println(counterE);
 				shutdown = true;
-				counterE =-1;
-				
+				counterE = -1;
+
 			}
 			counterE--;
 		}
-		if(shutdown == true) {
+		if (shutdown == true) {
 			return true;
+		} else {
+			return false;
 		}
-		else {
-		return false;
-	}
 	}
 
 	public void destroyE(int idE) {
@@ -289,6 +291,16 @@ public class EOArrey {
 			counter = -1;
 		}
 		// System.out.println(xO[1]);
+	}
+
+	public void eVSPl() {
+		if (time <= 0) {
+			coll = new Collision(Game.player.x, Game.player.y, Game.player.width, Game.player.height, x, y, width,
+					height);
+			if (coll.Coll1() == 1) {
+				Game.leben--;
+			}
+		}
 	}
 
 	public void CollPlayer() {
