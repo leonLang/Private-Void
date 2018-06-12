@@ -44,6 +44,7 @@ public class Enemie {
 		move.test();
 	}
 
+	
 	public void drawEnemie(Graphics g) {
 		eo.tBack();
 		eo.eVSPl();
