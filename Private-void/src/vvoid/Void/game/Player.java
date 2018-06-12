@@ -121,7 +121,6 @@ public class Player {
 				addX(-1);
 			}
 		}
-		System.out.println(getX());
 	}
 
 	public void setY(int c) {
@@ -137,7 +136,7 @@ public class Player {
 				addX(-1);
 			}
 		}
-		System.out.println(getY());
+
 	}
 
 	private class movment implements Runnable {

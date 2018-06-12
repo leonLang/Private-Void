@@ -46,6 +46,7 @@ public class Panel extends JPanel implements ActionListener  {
 	public void actionPerformed (ActionEvent e) {
 		convertDimensions();
 		lid = LevelIDP.getText();
+		Editor.LID = Integer.parseInt(lid);
 		Editor.LevelID = lid;
 		if(e.getSource() == this.Size1) {
 			if(TempS == null) {

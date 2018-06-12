@@ -37,8 +37,9 @@ public class Rect {
 		}
 	}
 
-	public void setObject(Image s, int IDO, int TID, int i, int o) {
+	public void setObject(Image s,int ID, int IDO, int TID, int i, int o) {
 		this.src = s;
+		this.ID = ID;
 		this.IDO = IDO;
 		this.TextureID = TID;
 		this.ArrayNumberx = i;
