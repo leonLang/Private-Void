@@ -22,10 +22,13 @@ public class Shot {
 	public void draw(Graphics g) {
 		// eo.Shot(width, height, x, y);
 		sC = new ShotColl(width, height, x, y);
+		if(sC.shotCollBlock() == false) {
 		if (sC.shotColl() == false) {
+			sC.shotCollBlock();
 			sC.shotColl();
 			g.drawRect(x, y, width, height);
 			calc();
+		}
 		}
 	}
 

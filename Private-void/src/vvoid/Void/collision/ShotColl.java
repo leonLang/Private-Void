@@ -6,7 +6,7 @@ public class ShotColl {
 
 	private int width, height, x, y;
 	private Collision coll;
-	private int counterE;
+	private int counterE, counterO;
 	private boolean shutdown;
 	public static int destroy = 10000;
 
@@ -31,6 +31,28 @@ public class ShotColl {
 
 			}
 			counterE--;
+		}
+		if (shutdown == true) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public boolean shotCollBlock() {
+		counterO = ObjektColl.oAmount;
+		while (counterO >= 0) {
+			coll = new Collision(ObjektColl.xO[counterO], ObjektColl.yO[counterO], ObjektColl.widthO[counterO],
+					ObjektColl.heightO[counterO], x, y,
+					width, height);
+			if (coll.Coll1() == true) {
+				destroy = counterO;
+				System.out.println(counterO);
+				shutdown = true;
+				counterO = -1;
+
+			}
+			counterO--;
 		}
 		if (shutdown == true) {
 			return true;
