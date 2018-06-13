@@ -3,12 +3,7 @@ package Metroid_Editor.edit.com;
 import java.awt.Cursor;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 import javax.swing.JLabel;
-
-import vvoid.Void.game.Game;
 
 public class ObjectSolid extends JLabel implements MouseListener{
 
@@ -27,7 +22,6 @@ public class ObjectSolid extends JLabel implements MouseListener{
 		this.TextureID = TextureID;
 	}
 	public void setObject() {
-		String Path = "/textures/Objects/" + s +".jpg";
 		Editor.IDO = this.IDO;
 		Editor.ID = ID;
 		Editor.TextureID = TextureID;

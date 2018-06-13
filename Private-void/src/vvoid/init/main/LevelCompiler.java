@@ -32,9 +32,22 @@ public class LevelCompiler {
 	private int lenght = 0;
 	private int liness;
 	public int nr;
+	public int px;
+	public int py;
 
 
 	public LevelCompiler(int nr) {
+		this.px = 0;
+		this.py = 0;
+		this.nr = nr;
+		liness = lines();
+		zahl = liness/100;
+		read();
+	}
+
+	public LevelCompiler(int nr,int x,int y) {
+		this.px = x;
+		this.py = y;
 		this.nr = nr;
 		liness = lines();
 		zahl = liness/100;
@@ -80,8 +93,13 @@ public class LevelCompiler {
 				st = br.readLine();
 				System.out.println("ID: " + st.substring(st.lastIndexOf(":") + 1, st.lastIndexOf(";")));
 				st = br.readLine();
-				PX = (Integer.parseInt(st.substring(1,st.lastIndexOf("Y"))));
-				PY = (Integer.parseInt(st.substring(st.lastIndexOf("Y") + 1,st.lastIndexOf(";"))));
+				if(this.px == 0 && this.py == 0) {
+				Game.player.setX(Integer.parseInt(st.substring(1,st.lastIndexOf("Y"))));
+				Game.player.setY(Integer.parseInt(st.substring(st.lastIndexOf("Y") + 1,st.lastIndexOf(";"))));
+				} else {
+				Game.player.setX(px);
+				Game.player.setY(py);
+				}
 				
 				
 				while ((st = br.readLine()) != null) {
@@ -120,7 +138,13 @@ public class LevelCompiler {
 	}
 
 	public int convertD(String s) {
-		int p = Integer.parseInt(s, 10);
+		int p = 0;
+		try {
+			p = Integer.parseInt(s, 10);
+		} catch(NumberFormatException e) {
+			
+			
+		}
 		return p;
 	}
 

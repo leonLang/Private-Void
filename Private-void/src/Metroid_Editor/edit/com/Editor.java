@@ -34,6 +34,7 @@ public class Editor implements ActionListener{
 	public static String LevelID;
 	public static int LevelIDR;
 	public static int LID;
+	public static int R;
 	
 	private JPanel editor;
 	private JSplitPane splitPane;
@@ -210,7 +211,7 @@ public class Editor implements ActionListener{
 			displayPanel.repaint();
 			try {
 				System.out.println("hi");
-				File Level1 = new File("/home/leonl/lvl" + LevelID + ".pll");
+				File Level1 = new File("D:/lvl" + LevelID + ".pll");
 				BufferedWriter w = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(Level1)));
 				w.write("!pllDOCUMENT");
 				w.newLine();

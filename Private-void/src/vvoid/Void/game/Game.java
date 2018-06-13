@@ -19,9 +19,9 @@ public class Game extends Thread{
     public static int leben = 3;
     public void run() {
     	sheet = new SpriteSheet();
-        compiler = new LevelCompiler(1);
         cam = new Camera(0, 0);
         player = new Player(WIDTH/2,HEIGHT/2-200,40,80,"left");
+        compiler = new LevelCompiler(1);
     }
     public static void setup() {
         /*
