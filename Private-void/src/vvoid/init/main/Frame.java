@@ -22,13 +22,14 @@ public class Frame extends JFrame {
 		int screenWIDTH = (int) screen.getWidth();
 		int screenHEIGHT = (int) screen.getHeight();
 
-		setVisible(true);
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocation(screenWIDTH / 2 - WIDTH / 2, screenHEIGHT / 2 - HEIGHT / 2);
 
 		setTitle(title);
 		setSize(WIDTH, HEIGHT);
 		setResizable(false);
+		setVisible(true);
 
 	}
 

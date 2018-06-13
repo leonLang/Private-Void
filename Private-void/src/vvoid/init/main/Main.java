@@ -42,7 +42,11 @@ public class Main {
 					lastUpdateTime += TIME_BETWEEN_UPDATES;
 					updateCount++;
 				}
-				panel.repaint();
+				try {
+					panel.repaint();
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
 
 				lastRenderTime = now;
 
