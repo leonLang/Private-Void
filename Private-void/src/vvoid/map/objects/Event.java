@@ -1,3 +1,4 @@
+//Peter
 package vvoid.map.objects;
 
 import java.awt.Graphics;

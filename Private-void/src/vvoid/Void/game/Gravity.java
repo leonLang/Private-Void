@@ -1,3 +1,10 @@
+//Leon
+/*
+ * Normalerweise hätte Peter diese Klasse bzw. diesen Teil des Programms erledigt, doch er
+ * war zu inkompetent eine einfache gravitation einzubauen, die nicht alles zur eskalation bringt.
+ * Made by Peter
+ */
+
 package vvoid.Void.game;
 
 import vvoid.Void.collision.PlayerColl;

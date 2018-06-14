@@ -1,3 +1,9 @@
+//Peter
+/*Die Klasse is nicht unbedingt nötig after für Testzwecke gut geeignet.
+ * Da KeyListener nicht optimal ist hätte man auch KeyBindings nutzen können, das Programm
+ * war zur Zeit der Erkentniss aber schon zu fortgeschritten und der Aufwand wäre zu groß
+ * 
+ */
 package vvoid.Void.game;
 
 import java.awt.event.ActionEvent;

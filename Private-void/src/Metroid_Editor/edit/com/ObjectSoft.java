@@ -1,3 +1,4 @@
+//peter
 package Metroid_Editor.edit.com;
 
 public class ObjectSoft extends ObjectSolid{
