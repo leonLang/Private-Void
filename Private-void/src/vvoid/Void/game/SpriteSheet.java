@@ -344,6 +344,8 @@ public class SpriteSheet {
 		sam[6] = chare(340, 1010, 40, 45);
 		sam[7] = chare(190, 308, 40, 45);
 		sam[8] = chare(240, 308, 40, 45);
+		sam[9] = chare(40, 308, 40, 45);
+		sam[10] = chare(40, 503, 40, 45);
 		
 	}
 
