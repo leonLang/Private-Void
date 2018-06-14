@@ -1,13 +1,9 @@
 package vvoid.images;
-
-import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import Metroid_Editor.edit.com.Enemie;
-import vvoid.Void.game.Game;
 
 public class DrawEnemie {
 	private BufferedImage metroid;
