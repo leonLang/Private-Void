@@ -1,4 +1,4 @@
-package vvoid.Void.game;
+package vvoid.images;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;

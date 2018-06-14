@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import vvoid.Void.game.SpriteSheet;
+import vvoid.images.SpriteSheet;
 
 public class Main {
 	public static JFrame frame;

@@ -4,6 +4,7 @@ package vvoid.Void.game;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
+import vvoid.images.SpriteSheet;
 import vvoid.init.main.Camera;
 import vvoid.init.main.LevelCompiler;
 import vvoid.init.main.Main;
