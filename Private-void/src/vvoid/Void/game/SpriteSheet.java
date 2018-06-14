@@ -6,7 +6,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class SpriteSheet {
-	private BufferedImage metroid, br_grass, br_recolor, br;
+	private BufferedImage metroid, br_grass, br_recolor, br, character;
 	public BufferedImage a1, a2, a3, a4, a5, a6, a7, a8, b1, b2, b3, b4, b5, b6, b7, b8, c1, c2, c3, c4, c5, c6, c7, c8,
 			d1, d2, d3, d4, d5, d6, d7, d8;
 	public BufferedImage e, f, g1, h, i, j1, j2, k1, k2, l1, l2, m1, m2, n1, n2;
@@ -14,7 +14,7 @@ public class SpriteSheet {
 	public BufferedImage r1, r2, s1, s2, t1, t2;
 	public BufferedImage u1, u2, u3, u4, u5, u6, u7, u8, v1, v2, v3, v4, v5, v6, v7, v8;
 	public BufferedImage w1, w2, z, zz;
-	public BufferedImage[] brD = new BufferedImage[100], brG = new BufferedImage[100], brR = new BufferedImage[100];
+	public BufferedImage[] brD = new BufferedImage[100], brG = new BufferedImage[100], brR = new BufferedImage[100], sam = new BufferedImage[100];
 	private int x, y;
 
 	public SpriteSheet() {
@@ -27,8 +27,7 @@ public class SpriteSheet {
 			// ImageIO.read(getClass().getResourceAsStream("textures/br_grass1.png"));
 			br_recolor = ImageIO.read(getClass().getResourceAsStream("textures/br_recolor.png"));
 			br = ImageIO.read(getClass().getResourceAsStream("textures/br.png"));
-			// character =
-			// ImageIO.read(getClass().getResourceAsStream("textures/character.jpg"));
+			character = ImageIO.read(getClass().getResourceAsStream("textures/samus.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -336,6 +335,16 @@ public class SpriteSheet {
 		w2 = crop(168, 152, 15, 40);
 		z = crop(200, 152, 15, 40);
 		zz = crop(230, 152, 15, 40);
+		sam[0] = chare(190, 1010, 40, 45);
+		sam[1] = chare(140, 1010, 40, 45);
+		sam[2] = chare(90, 1010, 40, 45);
+		sam[3] = chare(40, 1010, 40, 45);
+		sam[4] = chare(240, 1010, 40, 45);
+		sam[5] = chare(290, 1010, 40, 45);
+		sam[6] = chare(340, 1010, 40, 45);
+		sam[7] = chare(190, 1010, 40, 45);
+		sam[8] = chare(190, 1010, 40, 45);
+		
 	}
 
 	private BufferedImage crop(int x, int y, int width, int height) {
@@ -354,9 +363,8 @@ public class SpriteSheet {
 		return br.getSubimage(x, y, width, height);
 	}
 
-	/*
-	 * private BufferedImage chare(int x, int y, int width, int height) { return
-	 * character.getSubimage(x, y, width, height); }
-	 */
+	private BufferedImage chare(int x, int y, int width, int height) {
+		return character.getSubimage(x, y, width, height);
+	}
 
 }

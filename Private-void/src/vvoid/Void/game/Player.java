@@ -60,6 +60,7 @@ public class Player {
 
 	public void drawPlayer(Graphics g) {
 		g.drawRect(this.XSolid, this.YSolid, this.width, this.height);
+		g.drawImage(Game.sheet.sam[0], this.XSolid, this.YSolid, this.width, this.height,null);
 		// System.out.println(x);
 	}
 
