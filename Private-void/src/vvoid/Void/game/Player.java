@@ -28,6 +28,7 @@ public class Player {
 	public Gravity grav = new Gravity();
 	public PlayerColl pC = new PlayerColl();
 	public Thread gt;
+	private int test2, anim, anim1, time, time1;
 
 	public Player(int x, int y, int width, int height, String facing) {
 		this.x = x;
@@ -51,17 +52,56 @@ public class Player {
 
 		this.ashots = 0;
 		this.shots = new Shot[64];
-		
+
 		this.gt = new Thread(new Gravity());
 		this.gt.start();
 
-		
 	}
 
 	public void drawPlayer(Graphics g) {
-		g.drawRect(this.XSolid, this.YSolid, this.width, this.height);
-		g.drawImage(Game.sheet.sam[7], this.XSolid, this.YSolid, this.width, this.height,null);
+		
 		// System.out.println(x);
+		if (test2 == 1) {
+			g.drawImage(Game.sheet.sam[9], this.XSolid, this.YSolid, this.width, this.height, null);
+		} else if (test2 == 2) {
+			g.drawImage(Game.sheet.sam[10], this.XSolid, this.YSolid, this.width, this.height, null);
+		} else if (test2 == 3) {
+			if (anim <= 10) {
+				g.drawImage(Game.sheet.sam[4], this.XSolid, this.YSolid, this.width, this.height, null);
+				anim++;
+			} else if (anim <= 20) {
+				g.drawImage(Game.sheet.sam[5], this.XSolid, this.YSolid, this.width, this.height, null);
+				anim++;
+			} else if (anim <= 30) {
+				time++;
+				g.drawImage(Game.sheet.sam[6], this.XSolid, this.YSolid, this.width, this.height, null);
+				if (time >= 10) {
+					anim = 0;
+					time = 0;
+				}
+			}
+
+		} else if (test2 == 4) {
+			if (anim1 <= 10) {
+				g.drawImage(Game.sheet.sam[0], this.XSolid, this.YSolid, this.width, this.height, null);
+				anim1++;
+			} else if (anim1 <= 20) {
+				g.drawImage(Game.sheet.sam[1], this.XSolid, this.YSolid, this.width, this.height, null);
+				anim1++;
+			} else if (anim1 <= 30) {
+				g.drawImage(Game.sheet.sam[2], this.XSolid, this.YSolid, this.width, this.height, null);
+				anim1++;
+			} else if (anim1 <= 40) {
+				time1++;
+				g.drawImage(Game.sheet.sam[3], this.XSolid, this.YSolid, this.width, this.height, null);
+				if (time1 >= 10) {
+					anim1 = 0;
+					time1 = 0;
+				}
+			}
+		} else {
+			g.drawImage(Game.sheet.sam[4], this.XSolid, this.YSolid, this.width, this.height, null);
+		}
 	}
 
 	public void Move(String c) {
@@ -89,7 +129,6 @@ public class Player {
 	}
 
 	public void UP() {
-
 	}
 
 	public void DOWN() {
@@ -153,6 +192,7 @@ public class Player {
 		}
 
 		public void MoveLeft() {
+			test2 = 4;
 			pC.collPlayer();
 			facing = "left";
 			while (l) {
@@ -181,6 +221,7 @@ public class Player {
 		}
 
 		public void MoveRight() {
+			test2 = 3;
 			pC.collPlayer();
 
 			facing = "right";
@@ -210,6 +251,7 @@ public class Player {
 		}
 
 		public void MoveUp() {
+			test2 = 1;
 			pC.collPlayer();
 			facing = "up";
 			while (u) {
@@ -238,6 +280,7 @@ public class Player {
 		}
 
 		public void MoveDown() {
+			test2 = 2;
 			pC.collPlayer();
 			facing = "down";
 			while (d) {
