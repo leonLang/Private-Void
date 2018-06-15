@@ -59,7 +59,7 @@ public class Player {
 	}
 
 	public void drawPlayer(Graphics g) {
-		
+		//diese einzelne Methode ist von Leon
 		// System.out.println(x);
 		if (test2 == 1) {
 			g.drawImage(Game.sheet.sam[9], this.XSolid, this.YSolid, this.width, this.height, null);
