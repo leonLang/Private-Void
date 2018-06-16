@@ -211,7 +211,6 @@ public class Editor implements ActionListener{
 			displayPanel.scale = 1;
 			displayPanel.repaint();
 			try {
-				System.out.println("hi");
 				File Level1 = new File("D:/lvl" + LevelID + ".pll");
 				BufferedWriter w = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(Level1)));
 				w.write("!pllDOCUMENT");
