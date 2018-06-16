@@ -3,12 +3,8 @@ package vvoid.map.objects;
 
 import java.awt.Graphics;
 
-import vvoid.Void.collision.EnemieColl;
 import vvoid.Void.collision.EventColl;
 import vvoid.Void.game.Game;
-import vvoid.Void.game.Gravity;
-import vvoid.Void.game.Player;
-import vvoid.init.main.Camera;
 import vvoid.init.main.LevelCompiler;
 
 public class Event {

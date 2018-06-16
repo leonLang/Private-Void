@@ -7,8 +7,8 @@ public class Camera {
 	public static final int step = 1;
 
 	public Camera(int x, int y) {
-		this.x = x;
-		this.y = y;
+		Camera.x = x;
+		Camera.y = y;
 	}
 
 	public int getX() {

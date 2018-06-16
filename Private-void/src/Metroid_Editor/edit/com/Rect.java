@@ -1,7 +1,6 @@
 //peter
 package Metroid_Editor.edit.com;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Rectangle;

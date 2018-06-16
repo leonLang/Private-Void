@@ -6,8 +6,6 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
-import vvoid.Void.game.Game;
-
 public class Frame extends JFrame {
 
 	private static final long serialVersionUID = 9019603114311641540L;

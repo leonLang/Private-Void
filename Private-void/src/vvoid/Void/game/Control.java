@@ -4,9 +4,7 @@ package vvoid.Void.game;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import vvoid.Void.collision.EnemieColl;
 import vvoid.Void.collision.PlayerColl;
-import vvoid.init.main.Camera;
 import vvoid.init.main.Main;
 
 public class Control implements KeyListener, Runnable {
