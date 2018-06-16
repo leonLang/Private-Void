@@ -62,19 +62,19 @@ public class Player {
 		//diese einzelne Methode ist von Leon
 		// System.out.println(x);
 		if (test2 == 1) {
-			g.drawImage(Game.sheet.sam[9], this.XSolid, this.YSolid, this.width, this.height, null);
+			g.drawImage(Game.sheet.dP.sam[9], this.XSolid, this.YSolid, this.width, this.height, null);
 		} else if (test2 == 2) {
-			g.drawImage(Game.sheet.sam[10], this.XSolid, this.YSolid, this.width, this.height, null);
+			g.drawImage(Game.sheet.dP.sam[10], this.XSolid, this.YSolid, this.width, this.height, null);
 		} else if (test2 == 3) {
 			if (anim <= 10) {
-				g.drawImage(Game.sheet.sam[4], this.XSolid, this.YSolid, this.width, this.height, null);
+				g.drawImage(Game.sheet.dP.sam[4], this.XSolid, this.YSolid, this.width, this.height, null);
 				anim++;
 			} else if (anim <= 20) {
-				g.drawImage(Game.sheet.sam[5], this.XSolid, this.YSolid, this.width, this.height, null);
+				g.drawImage(Game.sheet.dP.sam[5], this.XSolid, this.YSolid, this.width, this.height, null);
 				anim++;
 			} else if (anim <= 30) {
 				time++;
-				g.drawImage(Game.sheet.sam[6], this.XSolid, this.YSolid, this.width, this.height, null);
+				g.drawImage(Game.sheet.dP.sam[6], this.XSolid, this.YSolid, this.width, this.height, null);
 				if (time >= 10) {
 					anim = 0;
 					time = 0;
@@ -83,24 +83,24 @@ public class Player {
 
 		} else if (test2 == 4) {
 			if (anim1 <= 10) {
-				g.drawImage(Game.sheet.sam[0], this.XSolid, this.YSolid, this.width, this.height, null);
+				g.drawImage(Game.sheet.dP.sam[0], this.XSolid, this.YSolid, this.width, this.height, null);
 				anim1++;
 			} else if (anim1 <= 20) {
-				g.drawImage(Game.sheet.sam[1], this.XSolid, this.YSolid, this.width, this.height, null);
+				g.drawImage(Game.sheet.dP.sam[1], this.XSolid, this.YSolid, this.width, this.height, null);
 				anim1++;
 			} else if (anim1 <= 30) {
-				g.drawImage(Game.sheet.sam[2], this.XSolid, this.YSolid, this.width, this.height, null);
+				g.drawImage(Game.sheet.dP.sam[2], this.XSolid, this.YSolid, this.width, this.height, null);
 				anim1++;
 			} else if (anim1 <= 40) {
 				time1++;
-				g.drawImage(Game.sheet.sam[3], this.XSolid, this.YSolid, this.width, this.height, null);
+				g.drawImage(Game.sheet.dP.sam[3], this.XSolid, this.YSolid, this.width, this.height, null);
 				if (time1 >= 10) {
 					anim1 = 0;
 					time1 = 0;
 				}
 			}
 		} else {
-			g.drawImage(Game.sheet.sam[4], this.XSolid, this.YSolid, this.width, this.height, null);
+			g.drawImage(Game.sheet.dP.sam[4], this.XSolid, this.YSolid, this.width, this.height, null);
 		}
 	}
 

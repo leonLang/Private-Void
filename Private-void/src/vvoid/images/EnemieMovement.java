@@ -1,5 +1,5 @@
 //Leon
-package vvoid.map.objects;
+package vvoid.images;
 
 import java.awt.Graphics;
 import java.awt.Image;

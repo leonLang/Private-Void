@@ -25,11 +25,11 @@ public class Objekt {
 		for (int i = 1; i < 61; i++) {
 			if (this.TextureID == i) {
 				if (this.TextureID <= 20) {
-					ft(Game.sheet.brD[i - 1], g);
+					ft(Game.sheet.dO.brD[i - 1], g);
 				} else if (this.TextureID <= 40) {
-					ft(Game.sheet.brG[i - 21], g);
+					ft(Game.sheet.dO.brG[i - 21], g);
 				} else if (this.TextureID <= 60) {
-					ft(Game.sheet.brR[i - 41], g);
+					ft(Game.sheet.dO.brR[i - 41], g);
 				}
 
 			}

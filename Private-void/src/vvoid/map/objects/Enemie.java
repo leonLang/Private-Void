@@ -6,6 +6,7 @@ import java.awt.Image;
 
 import vvoid.Void.collision.EnemieColl;
 import vvoid.Void.game.Game;
+import vvoid.images.EnemieMovement;
 
 public class Enemie {
 	private EnemieMovement move = new EnemieMovement();
