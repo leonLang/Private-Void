@@ -1,9 +1,10 @@
+//Leon
 package vvoid.images;
+
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-
 
 public class DrawEnemie {
 	private BufferedImage metroid;
@@ -314,7 +315,7 @@ public class DrawEnemie {
 		z = crop(200, 152, 15, 40);
 		zz = crop(230, 152, 15, 40);
 	}
-	
+
 	private BufferedImage crop(int x, int y, int width, int height) {
 		return metroid.getSubimage(x, y, width, height);
 	}
