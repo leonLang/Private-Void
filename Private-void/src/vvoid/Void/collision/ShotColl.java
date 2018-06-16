@@ -1,8 +1,6 @@
 //Leon
 package vvoid.Void.collision;
 
-import vvoid.init.main.Collision;
-
 public class ShotColl {
 
 	private int width, height, x, y;

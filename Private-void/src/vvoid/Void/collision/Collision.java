@@ -1,5 +1,5 @@
 //Leon
-package vvoid.init.main;
+package vvoid.Void.collision;
 
 public class Collision {
 

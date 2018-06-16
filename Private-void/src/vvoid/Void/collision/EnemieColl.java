@@ -2,7 +2,6 @@
 package vvoid.Void.collision;
 
 import vvoid.Void.game.Game;
-import vvoid.init.main.Collision;
 
 public class EnemieColl {
 	private Collision coll;
