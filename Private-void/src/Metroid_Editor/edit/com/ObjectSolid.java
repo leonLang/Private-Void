@@ -29,15 +29,14 @@ public class ObjectSolid extends JLabel implements MouseListener{
 		for (int i = 1; i < 61; i++) {
 			if(Editor.TextureID == i) {
 				if(Editor.TextureID <= 20) {
-					Editor.SelectedObject = Main.sheet.brD[i];
+					Editor.SelectedObject = Main.sheet.dO.brD[i];
 				}
 					else if (Editor.TextureID <= 40) {
-						Editor.SelectedObject = Main.sheet.brG[i-20];
+						Editor.SelectedObject = Main.sheet.dO.brG[i-20];
 					}
 					else if (Editor.TextureID <= 60) {
-						Editor.SelectedObject = Main.sheet.brR[i-40];
+						Editor.SelectedObject = Main.sheet.dO.brR[i-40];
 					}
-				
 			}
 		}
 		//Editor.SelectedObject = ImageIO.read(ResourceLoader.load(Path));
