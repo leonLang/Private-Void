@@ -6,6 +6,7 @@ import vvoid.Void.game.Game;
 import vvoid.Void.game.Menue;
 
 public class Main {
+	//Modified from: http://www.java-gaming.org/index.php?topic=24220.0
 	public static boolean running = true;
 	public static boolean paused = false;
 	public static boolean menu = true;
