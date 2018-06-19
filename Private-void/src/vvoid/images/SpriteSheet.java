@@ -1,8 +1,6 @@
 //Leon
 package vvoid.images;
 
-import java.awt.image.BufferedImage;
-
 public class SpriteSheet {
 	public DrawEnemie dE;
 	public DrawPlayer dP;
