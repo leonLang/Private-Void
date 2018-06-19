@@ -4,6 +4,7 @@ package vvoid.Void.collision;
 import vvoid.Void.game.Game;
 
 public class EnemieColl {
+	private boolean correction;
 	private Collision coll;
 	private int oben, rechts, unten, links;
 	private int counter, start, time;
@@ -53,6 +54,7 @@ public class EnemieColl {
 			}
 
 		}
+		falsePlaced();
 		fly();
 	}
 
@@ -130,6 +132,20 @@ public class EnemieColl {
 						}
 					}
 				}
+			}
+		}
+	}
+
+	private void falsePlaced() {
+		if (id >= 5 && id <= 14 || id >= 18 && id <= 20 || id >= 23 && id <= 25) {
+
+		} else {
+			if (start == 0) {
+				if (correction == false) {
+					correction = true;
+					x++;
+				}
+				y++;
 			}
 		}
 	}
